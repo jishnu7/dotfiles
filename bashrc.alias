@@ -27,3 +27,5 @@ alias ..='cd ..'
 alias ...='cd ../..'
 
 alias youtube-dl='youtube-dl -t'
+
+alias tcal='cal | sed "s/^/ /;s/$/ /;s/ $(date +%e) / $(date +%e | sed '\''s/./#/g'\'') /"'
