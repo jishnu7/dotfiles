@@ -1,0 +1,9 @@
+export EDITOR="vim"
+
+export DEBFULLNAME='Jishnu Mohan'
+export DEBEMAIL='jishnu7@gmail.com'
+
+# Android SDK, NDK path
+export PATH=${PATH}:~/android/android-sdk/platform-tools:~/android/android-sdk/tools:~/android/apk-tool:~/android/android-ndk-r6b:~/android/androgenizer:~/bin/
+
+

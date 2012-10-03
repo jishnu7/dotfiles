@@ -1,0 +1,42 @@
+function ii() {
+    MY_IP=$(/sbin/ifconfig wlan0 | awk "/inet/ { print $2 } " | sed -e s/addr://)
+    echo -e "\nYou are logged on ${RED}$HOST"
+    echo -e "\nAdditionnal information:$NC " ; uname -a
+    echo -e "\n${RED}Users logged on:$NC " ; w -h
+    echo -e "\n${RED}Current date :$NC " ; date
+    echo -e "\n${RED}Machine stats :$NC " ; uptime
+    echo -e "\n${RED}Memory stats :$NC " ; free
+    my_ip 2>&- ;
+    echo -e "\n${RED}Local IP Address :$NC" ; echo ${MY_IP:-"Not connected"}
+    echo
+}
+
+function myps() {
+    ps $@ -u $USER -o pid,%cpu,%mem,bsdtime,command ;
+}
+
+function pp() {
+    myps f | awk '!/awk/ && $0~var' var=${1:-".*"} ;
+}
+
+# extract various archive formats
+function extract() {
+    if [ -f $1 ] ; then
+    case $1 in
+        *.tar.bz2) tar xvjf $1 ;;
+        *.tar.gz) tar xvzf $1 ;;
+        *.bz2) bunzip2 $1 ;;
+        *.rar) unrar x $1 ;;
+        *.gz) gunzip $1 ;;
+        *.tar) tar xvf $1 ;;
+        *.tbz2) tar xvjf $1 ;;
+        *.tgz) tar xvzf $1 ;;
+        *.zip) unzip $1 ;;
+        *.Z) uncompress $1 ;;
+        *.7z) 7z x $1 ;;
+        *) echo "don't know how to extract '$1'..." ;;
+    esac
+    else
+        echo "'$1' is not a valid file!"
+        fi
+}
