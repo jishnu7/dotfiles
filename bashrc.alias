@@ -28,4 +28,14 @@ alias ...='cd ../..'
 
 alias youtube-dl='youtube-dl -t'
 
-alias tcal='cal | sed "s/^/ /;s/$/ /;s/ $(date +%e) / $(date +%e | sed '\''s/./#/g'\'') /"'
+alias today='cal | sed "s/^/ /;s/$/ /;s/ $(date +%e) / $(date +%e | sed '\''s/./#/g'\'') /"'
+
+# Git
+alias gits='git status -s'
+alias gitd='git diff'
+alias gitl='git log --pretty=format:"%Cred%h %Cgreen%an<%ae> %Creset%s" --graph -10'
+alias gitr='git reset'
+alias gitc='git commit -m'
+
+# Typo
+alias claer='clear'
