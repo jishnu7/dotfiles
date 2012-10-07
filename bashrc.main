@@ -67,6 +67,9 @@ source $HOME/.bashrc.exports
 #### white="\[\033[1;37m\]"
 ##############################
 
+# 8 stinking colors, huh ?
+export TERM=xterm-256color
+
 PS1='\[\e[1;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]₹\[\e[m\] \[\e[1;37m\]'
 
 # Shared history among all opened terminals.
