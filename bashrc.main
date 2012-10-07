@@ -50,6 +50,7 @@ source $HOME/.bashrc.exports
 #### black="\[\033[0;30m\]"s
 #### high="\[\e[01;33m\]"
 #### dark gray="\[\033[1;30m\]"
+#### light gray="\[\033[0;37m\]"
 #### blue="\[\033[0;34m\]"
 #### light blue="\[\033[1;34m\]"
 #### green="\[\033[0;32m\]"
@@ -61,8 +62,8 @@ source $HOME/.bashrc.exports
 #### purple="\[\033[0;35m\]"
 #### light purple="\[\033[1;35m\]"
 #### brown="\[\033[0;33m\]"
-#### yellow="\[\033[1;33m\]"
-#### light gray="\[\033[0;37m\]"
+#### yellow="\[\033[0;33m\]"
+#### light yellow = "\[\033[1;33m\]"
 #### white="\[\033[1;37m\]"
 ##############################
 
