@@ -1,0 +1,42 @@
+[submodule "vim/pathogen"]
+	path = vim/pathogen
+	url = git://github.com/tpope/vim-pathogen.git
+[submodule "vim/bundle/fugitive"]
+	path = vim/bundle/fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "vim/bundle/delmitmate"]
+	path = vim/bundle/delmitmate
+	url = git://github.com/Raimondi/delimitMate.git
+[submodule "vim/bundle/closetag"]
+	path = vim/bundle/closetag
+	url = git://github.com/docunext/closetag.vim.git
+[submodule "vim/bundle/pyflakes"]
+	path = vim/bundle/pyflakes
+	url = git://github.com/kevinw/pyflakes-vim.git
+[submodule "vim/bundle/supertab"]
+	path = vim/bundle/supertab
+	url = git://github.com/ervandew/supertab.git
+[submodule "vim/bundle/tagbar"]
+	path = vim/bundle/tagbar
+	url = git://github.com/majutsushi/tagbar.git
+[submodule "vim/bundle/surround"]
+	path = vim/bundle/surround
+	url = git://github.com/tpope/vim-surround.git
+[submodule "vim/bundle/indent-guides"]
+	path = vim/bundle/indent-guides
+	url = git://github.com/nathanaelkane/vim-indent-guides.git
+[submodule "vim/bundle/python"]
+	path = vim/bundle/python
+	url = git://github.com/olivierverdier/python-syntax.vim.git
+[submodule "vim/bundle/colors-solarized"]
+	path = vim/bundle/colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "vim/bundle/csapprox"]
+	path = vim/bundle/csapprox
+	url = git://github.com/godlygeek/csapprox.git
+[submodule "gnome-terminal/dircolors-solarized"]
+	path = gnome-terminal/dircolors-solarized
+	url = git://github.com/seebi/dircolors-solarized.git
+[submodule "gnome-terminal/colors-solarized"]
+	path = gnome-terminal/colors-solarized
+	url = git://github.com/sigurdga/gnome-terminal-colors-solarized.git
