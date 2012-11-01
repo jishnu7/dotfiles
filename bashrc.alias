@@ -33,6 +33,7 @@ alias today='cal | sed "s/^/ /;s/$/ /;s/ $(date +%e) / $(date +%e | sed '\''s/./
 # Git
 alias gits='git status -s'
 alias gitd='git diff'
+alias gitd2='git log|grep commit|cut -d " " -f2|head -n 2|xargs -n 2 git diff -R'
 alias gitl='git log --pretty=format:"%Cred%h %Cgreen%an<%ae> %Creset%s" --graph -10'
 alias gitr='git reset'
 alias gitc='git commit -m'
@@ -40,3 +41,7 @@ alias gitb='git branch -a'
 
 # Typo
 alias claer='clear'
+
+#empty a file
+alias empty="cat /dev/null > "
+alias reload="source ~/.bashrc"
