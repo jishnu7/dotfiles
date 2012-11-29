@@ -34,7 +34,7 @@ alias today='cal | sed "s/^/ /;s/$/ /;s/ $(date +%e) / $(date +%e | sed '\''s/./
 alias gits='git status -s'
 alias gitd='git diff'
 alias gitd2='git log|grep commit|cut -d " " -f2|head -n 2|xargs -n 2 git diff -R'
-alias gitl='git log --pretty=format:"%Cred%h %Cgreen%an<%ae> %Creset%s" --graph -10'
+alias gitl='git log --pretty=format:"%Cred%h %Cgreen%an<%ae> %Creset%s" --graph'
 alias gitr='git reset'
 alias gitc='git commit -m'
 alias gitb='git branch -a'
@@ -45,3 +45,15 @@ alias claer='clear'
 #empty a file
 alias empty="cat /dev/null > "
 alias reload="source ~/.bashrc"
+
+#debian packaging stuff
+alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
+
+#lamp in arch
+alias lampp="sudo systemctl restart httpd mysqld memcached"
+
+#largest 50 files in folder
+alias largest="find . -type f -print0 | xargs -0 du -s | sort -n | tail -50 | cut -f2 | xargs -I{} du -sh {}"
+
+#folder size
+alias foldersize="du -sh"

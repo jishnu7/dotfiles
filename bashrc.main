@@ -79,3 +79,6 @@ export PROMPT_COMMAND="history -a; history -c; history -r;  $PROMPT_COMMAND"
 #if [ "$PS1" ]; then
 #    echo -e "\e[00;33m$(/usr/bin/fortune)\e[00m"
 #fi
+
+#catch common scp mistake
+scp(){ if [[ "$@" =~ : ]];then /usr/bin/scp $@ ; else echo 'You forgot the colon dumbass!'; fi;}
