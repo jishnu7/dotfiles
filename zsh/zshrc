@@ -1,7 +1,7 @@
-DOTFILES_GIT=$HOME/git/dotfiles/
+DOTFILES_GIT=$HOME/git/dotfiles
 
 # Path to oh-my-zsh configuration.
-ZSH=$DOTFILES_GIT/oh-my-zsh
+ZSH=$DOTFILES_GIT/zsh/oh-my-zsh
 
 # Set name of the theme to load.
 ZSH_THEME="agnoster"

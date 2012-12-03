@@ -63,5 +63,5 @@ alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 
 # Start kate & gedit always silent
-alias kate='kate >/dev/null 2>&1 &'
-alias gedit='gedit >/dev/null 2>&1 &'
+alias kate='kate >/dev/null 2>&1'
+alias gedit='gedit >/dev/null 2>&1'
