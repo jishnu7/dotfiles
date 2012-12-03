@@ -1,3 +1,5 @@
+DOTFILES_GIT=$HOME/git/dotfiles/
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -37,9 +39,9 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 complete -cf sudo
 
-source $HOME/.bashrc.functions
-source $HOME/.bashrc.alias
-source $HOME/.bashrc.exports
+source $DOTFILES_GIT/functions
+source $DOTFILES_GIT/aliases
+source $DOTFILES_GIT/exports
 
 # Colors
 ##############################
@@ -67,9 +69,6 @@ source $HOME/.bashrc.exports
 #### white="\[\033[1;37m\]"
 ##############################
 
-# 8 stinking colors, huh ?
-export TERM=xterm-256color
-
 PS1='\[\e[1;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]₹\[\e[m\] \[\e[1;37m\]'
 
 # Shared history among all opened terminals.
@@ -78,7 +77,4 @@ export PROMPT_COMMAND="history -a; history -c; history -r;  $PROMPT_COMMAND"
 # Random Quotes - Fortune
 #if [ "$PS1" ]; then
 #    echo -e "\e[00;33m$(/usr/bin/fortune)\e[00m"
-#fi
-
-#catch common scp mistake
-scp(){ if [[ "$@" =~ : ]];then /usr/bin/scp $@ ; else echo 'You forgot the colon dumbass!'; fi;}
+#fis

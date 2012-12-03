@@ -1,0 +1,16 @@
+[user]
+	email = jishnu7@gmail.com
+	name = Jishnu Mohan
+[color]
+	ui = auto
+	pager = true
+[giggle]
+	main-window-maximized = false
+	main-window-geometry = 981x615+64+44
+	history-view-vpane-position = 260
+	main-window-view = HistoryView
+	file-view-vpane-position = 280
+[review "review.cyanogenmod.com"]
+	username = jishnu7
+[alias]
+	tagcommit = !sh -c 'git rev-list $0 | head -n 1'

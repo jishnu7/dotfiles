@@ -1,0 +1,21 @@
+DOTFILES_GIT=$HOME/git/dotfiles/
+
+# Path to oh-my-zsh configuration.
+ZSH=$DOTFILES_GIT/oh-my-zsh
+
+# Set name of the theme to load.
+ZSH_THEME="agnoster"
+
+
+COMPLETION_WAITING_DOTS="true"
+
+DEFAULT_USER="jishnu"
+
+plugins=(git archlinux systemd sublime urltools)
+
+source $ZSH/oh-my-zsh.sh
+
+# alias
+source $DOTFILES_GIT/aliases
+source $DOTFILES_GIT/exports
+source $DOTFILES_GIT/functions
