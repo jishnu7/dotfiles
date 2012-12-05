@@ -14,3 +14,6 @@
 	username = jishnu7
 [alias]
 	tagcommit = !sh -c 'git rev-list $0 | head -n 1'
+    ignore = !git update-index --assume-unchanged 
+    unignore = !git update-index --no-assume-unchanged
+    ignored = !git ls-files -v | grep ^[a-z]
