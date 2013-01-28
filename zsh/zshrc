@@ -6,9 +6,6 @@ ZSH=$DOTFILES_GIT/zsh/oh-my-zsh
 # Set name of the theme to load.
 ZSH_THEME="agnoster"
 
-
-COMPLETION_WAITING_DOTS="true"
-
 DEFAULT_USER="jishnu"
 
 plugins=(git archlinux systemd sublime urltools)
