@@ -16,12 +16,13 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # Overwrite confirmation
-alias cp='cp -i'
+#alias cp='cp -i'
 
 # Overwrite confirmation
-alias mv='mv -i'
+#alias mv='mv -i'
 
 alias ping='ping -c 4'
+alias pingg='ping -c 100 8.8.8.8'
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -34,7 +35,7 @@ alias today='cal | sed "s/^/ /;s/$/ /;s/ $(date +%e) / $(date +%e | sed '\''s/./
 alias gits='git status -s'
 alias gitd='git diff'
 alias gitd2='git log|grep commit|cut -d " " -f2|head -n 2|xargs -n 2 git diff -R'
-alias gitl='git log --pretty=format:"%Cred%h %Cgreen%an<%ae> %Creset%s" --graph'
+alias gitl='git log --pretty=format:"%Cred%h %Cgreen%an<%ae>%Cred%d %Creset%s" --graph'
 alias gitr='git reset'
 alias gitc='git commit -m'
 alias gitb='git branch -a'
@@ -61,7 +62,12 @@ alias foldersize="du -sh"
 #zsh
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
+alias zshreload="source ~/.zshrc"
 
 # Start kate & gedit always silent
 alias kate='kate >/dev/null 2>&1'
 alias gedit='gedit >/dev/null 2>&1'
+
+# System
+alias hibernate="systemctl hibernate"
+alias suspend="systemctl suspend"
