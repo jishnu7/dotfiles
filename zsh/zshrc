@@ -16,3 +16,7 @@ source $ZSH/oh-my-zsh.sh
 source $DOTFILES_GIT/aliases
 source $DOTFILES_GIT/exports
 source $DOTFILES_GIT/functions
+
+DISABLE_LS_COLORS=true
+
+unsetopt correct_all
