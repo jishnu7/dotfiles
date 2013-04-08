@@ -52,3 +52,8 @@ sprunge () {
         cat
     fi | curl -F 'sprunge=<-' http://sprunge.us
 }
+
+# cd & ls
+function cl() {
+    cd "$@" && la;
+}
