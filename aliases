@@ -22,7 +22,7 @@ fi
 #alias mv='mv -i'
 
 alias ping='ping -c 4'
-alias pingg='ping -c 100 8.8.8.8'
+alias pingg='ping -c 1000 8.8.8.8'
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -71,3 +71,11 @@ alias gedit='gedit >/dev/null 2>&1'
 # System
 alias hibernate="systemctl hibernate"
 alias suspend="systemctl suspend"
+
+# Python server
+alias server='python2 -m SimpleHTTPServer'
+
+alias emulator-jb="emulator -avd 42 -partition-size 300 -system ~/.android/avd/42.avd/system.img"
+alias virtualbox-load="sudo modprobe vboxdrv"
+
+alias open="gnome-open"
