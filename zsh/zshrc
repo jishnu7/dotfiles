@@ -21,3 +21,6 @@ source $DOTFILES_GIT/functions
 DISABLE_LS_COLORS=true
 
 unsetopt correct_all
+
+# auto rehash commands
+zstyle ':completion:*' rehash true
