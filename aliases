@@ -79,3 +79,7 @@ alias emulator-jb="emulator -avd 42 -partition-size 300 -system ~/.android/avd/4
 alias virtualbox-load="sudo modprobe vboxdrv"
 
 alias open="gnome-open"
+
+alias pastebin="sprunge"
+
+alias ftp-android="systemctl start proftpd"
