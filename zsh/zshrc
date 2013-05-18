@@ -8,7 +8,7 @@ ZSH_THEME="agnoster"
 
 DEFAULT_USER="jishnu"
 
-plugins=(git archlinux systemd sublime urltools)
+plugins=(git archlinux systemd sublime urltools zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -24,3 +24,4 @@ unsetopt correct_all
 
 # auto rehash commands
 zstyle ':completion:*' rehash true
+
