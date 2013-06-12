@@ -1,5 +1,8 @@
 PWD=$(pwd)
 
+git submodule init
+git submodule update
+
 #bash
 rm -f ~/.bashrc
 ln -s $PWD/bash/bashrc ~/.bashrc
@@ -29,3 +32,4 @@ ln -s $PWD/vim ~/.vim
 #terminator
 rm -rf ~/.config/terminator
 ln -s $PWD/terminator ~/.config/terminator
+
