@@ -12,6 +12,10 @@ ln -s $PWD/zsh/zshrc ~/.zshrc
 rm -f ~/.gitconfig
 ln -s $PWD/git/gitconfig ~/.gitconfig
 
+#npm
+rm -f ~/.npmrc
+ln -s $PWD/npmrc ~/.npmrc
+
 #debian
 rm -f ~/.quiltrc-dpkg
 ln -s $PWD/debian/quiltrc-dpkg ~/.quiltrc-dpkg
