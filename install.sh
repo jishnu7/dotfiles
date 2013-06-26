@@ -33,3 +33,9 @@ ln -s $PWD/vim ~/.vim
 rm -rf ~/.config/terminator
 ln -s $PWD/terminator ~/.config/terminator
 
+#mpd & ncmpcpp
+mkdir -p ~/.mpd ~/.ncmpp
+rm -f ~/.mpd/mpd.conf
+ln -s $PWD/mpd/mpd.conf ~/.mpd/mpd.conf
+rm -f ~/.ncmpcpp/config
+ln -s $PWD/mpd/ncmpcpp.config ~/.ncmpcpp/config
