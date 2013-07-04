@@ -46,3 +46,6 @@
 [submodule "vim/bundle/minibufexpl"]
 	path = vim/bundle/minibufexpl
 	url = https://github.com/fholgado/minibufexpl.vim.git
+[submodule "xchat"]
+	path = xchat
+	url = https://github.com/solarized/xchat-colors-solarized.git
