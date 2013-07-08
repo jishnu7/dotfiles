@@ -34,7 +34,7 @@ function run_once(cmd)
 --run_once("urxvtd")
 run_once("unclutter -idle 10")
 run_once("xchat")
--- run_once("setxkbmap -option caps:swapescape")
+run_once("xmodmap ~/.xmodmap")
 run_once("terminator")
 run_once("firefox")
 
@@ -787,45 +787,27 @@ awful.rules.rules = {
                       size_hints_honor = false
                      }
     },
-   
-    { rule = { class = "MPlayer" },
+
+    -- Youtube
+    { rule = { instance = "plugin-container" },
+        properties = { floating = true } },
+
+    { rule = { class = "Vlc" },
       properties = { floating = true } },
 
-    { rule = { class = "Dwb" },
-          properties = { tag = tags[1][1],
-              maximized_vertical=true,
-              maximized_horizontal=true } },
+    { rule = { class = "Terminator" },
+          properties = { tag = tags[1][1] } },
 
-    { rule = { class = "Midori" },
-          properties = { tag = tags[1][1],
-               maximized_vertical=true,
-               maximized_horizontal=true } },
-
-    { rule = { class = "Geany" },
+    { rule = { class = "Firefox" },
           properties = { tag = tags[1][2] } },
 
-    { rule = { class = "Zathura" },
+    { rule = { class = "Chromium" },
+          properties = { tag = tags[1][2] } },
+
+    { rule = { class = "Xchat" },
           properties = { tag = tags[1][3] } },
 
-    { rule = { class = "Thunderbird" },
-          properties = { tag = tags[1][3] } },
-
-    { rule = { class = "Dia" },
-          properties = { tag = tags[1][4], 
-          floating = true } },
-
-    { rule = { class = "Gimp" },
-          properties = { tag = tags[1][4],
-          floating = true } },
-
-    { rule = { class = "Inkscape" },
-          properties = { tag = tags[1][4],
-          floating = true } },
-
-    { rule = { class = "Transmission-gtk" },
-          properties = { tag = tags[1][5] } },
-
-    { rule = { class = "Torrent-search" },
+    { rule = { class = "Hipchat" },
           properties = { tag = tags[1][5] } },
 }
 

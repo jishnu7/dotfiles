@@ -40,6 +40,9 @@ set list
 
 set hidden "manage hidden buffers
 
+set nocompatible   " Disable vi-compatibility
+set laststatus=2   " Always show the statusline
+
 " FileType based settings
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
