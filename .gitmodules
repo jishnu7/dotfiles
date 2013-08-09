@@ -52,3 +52,12 @@
 [submodule "vim/bundle/poweline"]
 	path = vim/bundle/poweline
 	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule "vim/bundle/easymotion"]
+	path = vim/bundle/easymotion
+	url = git://github.com/Lokaltog/vim-easymotion.git
+[submodule "vim/bundle/detectindent"]
+	path = vim/bundle/detectindent
+	url = https://github.com/ciaranm/detectindent.git
+[submodule "dircolors"]
+	path = dircolors
+	url = https://github.com/seebi/dircolors-solarized.git
