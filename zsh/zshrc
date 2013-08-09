@@ -25,3 +25,6 @@ unsetopt correct_all
 # auto rehash commands
 zstyle ':completion:*' rehash true
 
+# Home, Insert key fix for urxvt
+bindkey "^[[7~" beginning-of-line
+bindkey "^[[8~" end-of-line
