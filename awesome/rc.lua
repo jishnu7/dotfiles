@@ -31,12 +31,14 @@ function run_once(cmd)
   awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. cmd .. ")")
  end 
 
---run_once("urxvtd")
+run_once("urxvtd")
 run_once("unclutter -idle 10")
 run_once("xchat")
-run_once("xmodmap ~/.xmodmap")
-run_once("terminator")
+run_once("setxkbmap -option caps:swapescape")
+--run_once("xmodmap ~/.xmodmap")
+run_once("fcitx")
 run_once("firefox")
+run_once("xscreensaver -no-splash")
 
 -- }}}
 
@@ -85,7 +87,7 @@ active_theme = themes .. "/powerarrow-darker"
 -- Themes define colours, icons, and wallpapers
 beautiful.init(active_theme .. "/theme.lua")
 
-terminal = "terminator"
+terminal = "urxvtc"
 editor = "vim"
 editor_cmd = terminal .. " -e " .. editor
 gui_editor = "gedit -ps"
@@ -574,6 +576,7 @@ end
 -- {{{ Mouse Bindings
 
 root.buttons(awful.util.table.join(
+    awful.key({ modkey,        }, "q",      function () awful.util.spawn( "dwb", false ) end),
     awful.button({ }, 4, awful.tag.viewnext),
     awful.button({ }, 5, awful.tag.viewprev)
 ))
@@ -585,6 +588,9 @@ globalkeys = awful.util.table.join(
 
     -- Capture a screenshot
     awful.key({ altkey }, "p", function() awful.util.spawn("gnome-screenshot",false) end),
+    -- Lock screen
+    awful.key({ altkey, "Control" }, "l", function() awful.util.spawn("xscreensaver-command -lock", false) end),
+    awful.key({ altkey, "Control" }, "s", function() awful.util.spawn("setxkbmap -option caps:swapescape",false) end),
 
     -- Move clients
     awful.key({ altkey }, "Next",  function () awful.client.moveresize( 1,  1, -2, -2) end),
@@ -644,9 +650,6 @@ globalkeys = awful.util.table.join(
     -- Dropdown terminal
     awful.key({ modkey,           }, "z",     function () scratch.drop(terminal) end),
 
-    -- Widgets popups
-    awful.key({ altkey,           }, "c",     function () add_calendar(7) end),
-
     -- Volume control
     awful.key({ "Control" }, "Up", function ()
                                        awful.util.spawn("amixer set Master playback 5%+", false )
@@ -687,11 +690,10 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,        }, "c",      function () os.execute("xsel -p -o | xsel -i -b") end),
 
     -- User programs
-    awful.key({ modkey,        }, "q",      function () awful.util.spawn( "dwb", false ) end),
     awful.key({ modkey,        }, "a",      function () awful.util.spawn( "firefox", false ) end),
-    awful.key({ modkey,        }, "s",      function () awful.util.spawn(gui_editor) end),
-    awful.key({ modkey,        }, "t",      function () awful.util.spawn( "thunderbird", false ) end),
+    awful.key({ modkey,        }, "s",      function () awful.util.spawn( "chromium", false ) end),
     awful.key({ modkey,        }, "d",      function () awful.util.spawn( "spacefm", false ) end),
+    awful.key({ modkey,        }, "q",      function () awful.util.spawn( "hipchat", false ) end),
     
     -- Prompt
     awful.key({ modkey }, "r", function () mypromptbox[mouse.screen]:run() end),
