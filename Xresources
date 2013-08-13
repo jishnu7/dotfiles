@@ -2,17 +2,17 @@
 Xft.dpi:                    96
 Xft.antialias:              true
 Xft.rgba:                   rgb
-!Xft.hinting:                true
-!Xft.hintstyle:              hintslight
+Xft.hinting:                true
+Xft.hintstyle:              hintslight
 
 URxvt.depth:                32
 !URxvt.geometry:             90x30
 !URxvt.transparent:          false
 !URxvt.fading:               0
-!URxvt.urgentOnBell:         true
+URxvt.urgentOnBell:         true
 !URxvt.visualBell:           true
-!URxvt.loginShell:           true
-!URxvt.saveLines:            50
+URxvt.loginShell:           true
+URxvt.saveLines:            65535
 !URxvt.internalBorder:       3
 !URxvt.lineSpace:            0
 
