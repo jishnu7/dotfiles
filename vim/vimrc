@@ -17,6 +17,8 @@ set si "smart indent
 set wrap "wrap lines
 
 set showmatch "show matching brackets
+set hlsearch "highlight matches
+set ignorecase "ignore case on search
 
 syntax enable "syntax highlighting
 set background=dark
