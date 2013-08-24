@@ -7,8 +7,8 @@ Xft.hintstyle:              hintslight
 
 URxvt.depth:                32
 !URxvt.geometry:             90x30
-!URxvt.transparent:          false
-!URxvt.fading:               0
+URxvt.transparent:          false
+URxvt.fading:               0
 URxvt.urgentOnBell:         true
 !URxvt.visualBell:           true
 URxvt.loginShell:           true
@@ -17,16 +17,20 @@ URxvt.saveLines:            65535
 !URxvt.lineSpace:            0
 
 ! Fonts
-URxvt*font: xft:Inconsolata for Powerline:size=11
-URxvt*boldFont: xft:Inconsolata for Powerline:size=11
+URxvt*font: xft:Inconsolata for Powerline:regular:pixelsize=16,xft:Dejavu Sans Mono
+!URxvt*imFont: xft:Inconsolata for Powerline:regular:pixelsize=16:antialias=true:hinting:true
+!URxvt*boldFont: xft:Inconsolata for Powerline:bold:pixelsize=16:antialias=true:hinting:true
+!URxvt*italicFont: xft:Inconsolata for Powerline:italic:pixelsize=16:antialias=true:hinting:true
+!URxvt*boldItalicFont: xft:Inconsolata for Powerline:bold:italic:pixelsize=16:antialias=true:hinting:true
+
 ! Fix font space
-URxvt*letterSpace: -2
+!URxvt*letterSpace: -2
 
 ! Scrollbar
 !URxvt.scrollStyle:          rxvt
 URxvt.scrollBar:            false
 ! do not scroll with output
-!URxvt*scrollTtyOutput: false
+URxvt*scrollTtyOutput: false
 ! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
 URxvt.scrollWithBuffer: true
 ! scroll back to the bottom on keypress
