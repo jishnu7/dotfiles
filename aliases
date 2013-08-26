@@ -83,3 +83,8 @@ alias open="gnome-open"
 alias pastebin="sprunge"
 
 alias ftp-android="systemctl start proftpd"
+
+# With grep
+#alias mpd-kill="ps -ef | grep mpd | grep -v grep | awk '{print $2}' | xargs kill -9"
+# Without grep
+alias mpd-kill="ps -ef | awk '/mpd/ && !/awk/ {print $2}' | xargs kill -9"
