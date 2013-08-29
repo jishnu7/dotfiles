@@ -57,3 +57,16 @@ sprunge () {
 function cl() {
     cd "$@" && la;
 }
+
+# save path on cd
+function cd {
+    builtin cd $@
+    pwd > ~/.last_dir
+}
+
+# restore last saved path
+function lastd {
+    if [ -f ~/.last_dir ]
+        then cd `cat ~/.last_dir`
+    fi
+}
