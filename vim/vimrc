@@ -3,14 +3,18 @@ call pathogen#helptags()
 
 set encoding=utf8 "utf8 as standard
 
-set nu "always show line numbers
+"hybrid number mode
+set relativenumber
+set number
+autocmd InsertEnter * :set nu nornu
+autocmd InsertLeave * :set rnu nu
 
 " Tabs
 set smarttab
+set tabstop=4 "width of tab character
+set softtabstop=4 "finetunes amount of white spaces to be inserted/deleted
+set shiftwidth=4 "amount of white space to be inserted/deleted on normal mode
 set expandtab "space instead of tab
-set shiftwidth=4 "tab = spaces
-set tabstop=4
-set softtabstop=4 
 
 set ai "auto indent
 set si "smart indent
@@ -37,8 +41,12 @@ filetype plugin on
 autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
 autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
 
+let mapleader = "\<space>"
+
+" Show invisible characters
 set listchars=tab:▸\ ,eol:¬
 set list
+nmap <leader>l :set list!<CR>
 
 set hidden "manage hidden buffers
 
@@ -46,15 +54,14 @@ set nocompatible   " Disable vi-compatibility
 set laststatus=2   " Always show the statusline
 
 " EasyMotion keybinding and shading
-" let g:EasyMotion_leader_key = '<Leader>'
 hi link EasyMotionTarget ErrorMsg
 hi link EasyMotionShade  Comment
 
 " FileType based settings
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+"autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
+"autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType php setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType xml setlocal ts=2 sts=2 sw=2 expandtab
 
