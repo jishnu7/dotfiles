@@ -78,7 +78,7 @@ alias server='python2 -m SimpleHTTPServer'
 alias emulator-jb="emulator -avd 42 -partition-size 300 -system ~/.android/avd/42.avd/system.img"
 alias virtualbox-load="sudo modprobe vboxdrv"
 
-alias open="gnome-open"
+alias open="xdg-open"
 
 alias pastebin="sprunge"
 
@@ -88,3 +88,7 @@ alias ftp-android="systemctl start proftpd"
 #alias mpd-kill="ps -ef | grep mpd | grep -v grep | awk '{print \$2}' | xargs kill -9"
 # Without grep
 alias mpd-kill="ps -ef | awk '/mpd/ && !/awk/ {print \$2}' | xargs kill -9"
+
+alias ifconfig-pub="curl ifconfig.me"
+
+alias tmux-reload="tmux source-file ~/.tmux.conf"
