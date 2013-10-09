@@ -149,51 +149,6 @@ for s = 1, screen.count() do
 end
 -- }}}
                                           
--- {{{ Menu
-myaccessories = {
-   { "archives", "7zFM" },
-   { "file manager", "spacefm" },
-   { "editor", gui_editor },
-}
-myinternet = {
-    { "browser", browser },
-    { "irc client" , chat },
-    { "torrent" , "rtorrent" },
-    { "torrtux" , terminal .. " -e torrtux " },
-    { "torrent search" , "torrent-search" }
-}
-mygames = {
-    { "NES", "fceux" },
-    { "Super NES", "zsnes" },
-}
-mygraphics = {
-    { "gimp" , "gimp" },
-    { "inkscape", "inkscape" },
-    { "dia", "dia" },
-    { "image viewer" , "viewnior" }
-}
-myoffice = {
-    { "writer" , "lowriter" },
-    { "impress" , "loimpress" },
-}
-mysystem = {
-    { "appearance" , "lxappearance" },
-    { "cleaning" , "bleachbit" },
-    { "powertop" , terminal .. " -e sudo powertop " },
-    { "task manager" , tasks }
-}
-mymainmenu = awful.menu({ items = {
-				    { "accessories" , myaccessories },
-				    { "graphics" , mygraphics },
-				    { "internet" , myinternet },
-				    { "games" , mygames },
-				    { "office" , myoffice },
-				    { "system" , mysystem },
-            }
-            })
-mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
-                                     menu = mymainmenu })
--- }}}
 
 -- {{{ Wibox
 
@@ -250,7 +205,7 @@ local function create_calendar()
    local first_day = os.time({ day = 1, month = cal_month, year = cal_year})
    local first_day_in_week =
       os.date("%w", first_day)
-   local result = "do lu ma me gi ve sa\n"
+   local result = "su mo tu we th fr sa\n"
    for i = 1, first_day_in_week do
       result = result .. "   "
    end
@@ -352,7 +307,7 @@ cpuicon:buttons(awful.util.table.join(awful.button({ }, 1, function () awful.uti
 -- Temp widget
 tempicon = wibox.widget.imagebox()
 tempicon:set_image(beautiful.widget_temp)
-tempicon:buttons(awful.util.table.join(awful.button({ }, 1, function () awful.util.spawn(terminal .. " -e sudo powertop ", false) end)))
+--tempicon:buttons(awful.util.table.join(awful.button({ }, 1, function () awful.util.spawn(terminal .. " -e sudo powertop ", false) end)))
 tempwidget = wibox.widget.textbox()
 vicious.register(tempwidget, vicious.widgets.thermal, '<span font="Terminus 12"> <span font="Terminus 9">$1°C </span></span>', 9, {"coretemp.0", "core"} )
 hddtempwidget = wibox.widget.textbox()
@@ -692,7 +647,7 @@ globalkeys = awful.util.table.join(
     -- User programs
     awful.key({ modkey,        }, "a",      function () awful.util.spawn( "firefox", false ) end),
     awful.key({ modkey,        }, "s",      function () awful.util.spawn( "chromium", false ) end),
-    awful.key({ modkey,        }, "d",      function () awful.util.spawn( "spacefm", false ) end),
+    awful.key({ modkey,        }, "d",      function () awful.util.spawn( "nautilus", false ) end),
     awful.key({ modkey,        }, "q",      function () awful.util.spawn( "hipchat", false ) end),
     
     -- Prompt
@@ -776,45 +731,6 @@ root.keys(globalkeys)
 
 -- }}}
 
--- {{{ Rules
-
-awful.rules.rules = {
-     -- All clients will match this rule.
-     { rule = { },
-       properties = { border_width = beautiful.border_width,
-                      border_color = beautiful.border_normal,
-                      focus = true,
-                      keys = clientkeys,
-                      buttons = clientbuttons,
-                      size_hints_honor = false
-                     }
-    },
-
-    -- Youtube
-    { rule = { instance = "plugin-container" },
-        properties = { floating = true } },
-
-    { rule = { class = "Vlc" },
-      properties = { floating = true } },
-
-    { rule = { class = "Terminator" },
-          properties = { tag = tags[1][1] } },
-
-    { rule = { class = "Firefox" },
-          properties = { tag = tags[1][2] } },
-
-    { rule = { class = "Chromium" },
-          properties = { tag = tags[1][2] } },
-
-    { rule = { class = "Xchat" },
-          properties = { tag = tags[1][3] } },
-
-    { rule = { class = "Hipchat" },
-          properties = { tag = tags[1][5] } },
-}
-
--- }}}
-
 -- {{{ Signals
 
 -- Signal function to execute when a new client appears.
@@ -883,3 +799,5 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
 -- }}}
+
+dofile(awful.util.getdir("config") .. "/" .. "apps.lua")
