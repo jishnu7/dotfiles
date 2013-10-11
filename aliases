@@ -28,6 +28,8 @@ alias ..='cd ..'
 alias ...='cd ../..'
 
 alias youtube-dl='youtube-dl -t'
+alias youtube-mp3='youtube-dl -t -x --audio-format mp3 --audio-quality 0'
+alias youtube-playlist='youtube-dl -t -A --autonumber-size 2 -x --audio-format mp3 --audio-quality 0 -i'
 
 alias today='cal | sed "s/^/ /;s/$/ /;s/ $(date +%e) / $(date +%e | sed '\''s/./#/g'\'') /"'
 
