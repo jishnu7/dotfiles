@@ -733,6 +733,12 @@ root.keys(globalkeys)
 
 -- {{{ Signals
 
+client.connect_signal("property::ontop", function(c)
+   if c.class == "Vlc" then
+      c.ontop = true
+   end
+end)
+
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function (c, startup)
     -- Enable sloppy focus
