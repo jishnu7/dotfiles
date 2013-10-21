@@ -18,13 +18,11 @@ os.setlocale(os.getenv("LANG"))
 
 -- }}}
 
-require("modules.error")
-
 require("settings.config")
-require("settings.apps")
+require("modules.error")
 require("settings.startup")
 require("settings.keys")
-
+require("settings.apps")
 require("modules.signals")
 require("modules.clock")
 require("modules.music")
