@@ -101,5 +101,4 @@ netwidget = wibox.widget.textbox()
 vicious.register(netwidget, vicious.widgets.net, '<span font="Terminus 13" rise="2000"> <span font="Terminus 9" color="#7AC82E">${wlan0 down_kb}</span> <span font="Terminus 7" color="#EEDDDD">↓↑</span> <span font="Terminus 9" color="#46A8C3">${wlan0 up_kb} </span></span>', 3)
 neticon = wibox.widget.imagebox()
 neticon:set_image(beautiful.widget_net)
-netwidget:buttons(awful.util.table.join(awful.button({ }, 1, function () awful.util.spawn_with_shell(iptraf) end)))
 
