@@ -43,6 +43,9 @@ autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bu
 
 let mapleader = "\<space>"
 
+" Spell check
+nmap <silent> <leader>s :set spell!<CR>
+
 " Show invisible characters
 set listchars=tab:▸\ ,eol:¬
 set list
