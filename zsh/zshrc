@@ -12,9 +12,9 @@ plugins=(git archlinux systemd sublime urltools zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-# alias
+# custom alias, exports, functions
 source $DOTFILES_GIT/aliases
-source $DOTFILES_GIT/ssh
+source $DOTFILES_GIT/secrets
 source $DOTFILES_GIT/exports
 source $DOTFILES_GIT/functions
 
