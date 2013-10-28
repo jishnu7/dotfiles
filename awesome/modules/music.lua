@@ -23,7 +23,7 @@ vicious.register(mpdwidget, vicious.widgets.mpd,
         -- play
         if (args["{state}"] == "Play") then
             mpdicon:set_image(beautiful.widget_music_on)
-            return "<span font='Terminus 13' rise='2000'> <span font='Terminus 9'>" .. red .. args["{Title}"] .. coldef .. colwhi .. " - " .. coldef .. colwhi  .. args["{Artist}"] .. coldef .. " </span></span>"
+            return "<span font='Terminus 13' rise='2000'> <span font='Terminus 9'>" .. red .. args["{Title}"] .. coldef .. colwhi .. " - " .. coldef .. colwhi  .. args["{Album}"] .. coldef .. " </span></span>"
         -- pause
         elseif (args["{state}"] == "Pause") then
             mpdicon:set_image(beautiful.widget_music)
