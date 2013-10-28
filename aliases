@@ -94,3 +94,5 @@ alias mpd-kill="ps -ef | awk '/mpd/ && !/awk/ {print \$2}' | xargs kill -9"
 alias ifconfig-pub="curl ifconfig.me"
 
 alias tmux-reload="tmux source-file ~/.tmux.conf"
+
+alias bower='noglob bower'
