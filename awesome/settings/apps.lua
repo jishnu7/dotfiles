@@ -39,6 +39,9 @@ awful.rules.rules = {
 
     { rule = { class = "Audacious" },
       properties = { floating = true, ontop = true } },
+
+    { rule = { class = "Shotwell" },
+      properties = { floating = true } },
 }
 
 -- }}}
