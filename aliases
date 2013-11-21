@@ -41,6 +41,8 @@ alias gitl='git log --pretty=format:"%Cred%h %Cgreen%an<%ae>%Cred%d %Creset%s" -
 alias gitr='git reset'
 alias gitc='git commit -m'
 alias gitb='git branch -a'
+# remove all merged branches
+alias gitb-rm='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 
 # Typo
 alias claer='clear'
@@ -82,6 +84,7 @@ alias virtualbox-load="sudo modprobe vboxdrv"
 
 alias open="xdg-open"
 
+# pastebin service
 alias pastebin="sprunge"
 
 alias ftp-android="systemctl start proftpd"
@@ -91,8 +94,18 @@ alias ftp-android="systemctl start proftpd"
 # Without grep
 alias mpd-kill="ps -ef | awk '/mpd/ && !/awk/ {print \$2}' | xargs kill -9"
 
+# show public ip
 alias ifconfig-pub="curl ifconfig.me"
 
+# tmux reload
 alias tmux-reload="tmux source-file ~/.tmux.conf"
 
 alias bower='noglob bower'
+
+# network connection
+wificonnect() {
+    nmcli device wifi connect $1 password $2
+}
+alias nmcli-connect=wificonnect
+alias nmcli-status='nmcli con status'
+alias nmcli-scan='nmcli dev wifi list'

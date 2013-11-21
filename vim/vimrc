@@ -22,6 +22,7 @@ set wrap "wrap lines
 
 set showmatch "show matching brackets
 set hlsearch "highlight matches
+set cursorline "highlight current line
 set ignorecase "ignore case on search
 
 syntax enable "syntax highlighting
