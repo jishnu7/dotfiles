@@ -26,10 +26,9 @@ set cursorline "highlight current line
 set ignorecase "ignore case on search
 
 syntax enable "syntax highlighting
-set background=dark
-"colorscheme ir_black
 
 "set background=light
+set background=dark
 let g:solarized_termtrans=1
 let g:solarized_termcolors=256
 let g:solarized_contrast="high"
@@ -60,6 +59,10 @@ set laststatus=2   " Always show the statusline
 " EasyMotion keybinding and shading
 hi link EasyMotionTarget ErrorMsg
 hi link EasyMotionShade  Comment
+
+" airline
+let g:airline_powerline_fonts=1
+let g:airline_theme="murmur"
 
 " FileType based settings
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab

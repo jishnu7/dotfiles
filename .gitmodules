@@ -43,15 +43,9 @@
 [submodule "vim/bundle/nerdcommenter"]
 	path = vim/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
-[submodule "vim/bundle/minibufexpl"]
-	path = vim/bundle/minibufexpl
-	url = https://github.com/fholgado/minibufexpl.vim.git
 [submodule "xchat"]
 	path = xchat
 	url = https://github.com/solarized/xchat-colors-solarized.git
-[submodule "vim/bundle/poweline"]
-	path = vim/bundle/poweline
-	url = https://github.com/Lokaltog/vim-powerline.git
 [submodule "vim/bundle/easymotion"]
 	path = vim/bundle/easymotion
 	url = git://github.com/Lokaltog/vim-easymotion.git
@@ -64,3 +58,9 @@
 [submodule "vim/bundle/ctrlp"]
 	path = vim/bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule "vim/bundle/vim-airline"]
+	path = vim/bundle/vim-airline
+	url = git@github.com:bling/vim-airline.git
+[submodule "vim/bundle/bufferline"]
+	path = vim/bundle/bufferline
+	url = git@github.com:bling/vim-bufferline.git
