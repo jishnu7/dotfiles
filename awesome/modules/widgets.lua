@@ -46,7 +46,9 @@ batwidget = wibox.widget.textbox()
 vicious.register(batwidget, vicious.widgets.bat,
 function (widget, args)
   -- plugged
-  if (batstate() == 'Cable plugged') then
+  if (batstate() == 'Fully charged') then
+   return '<span font="Terminus 12"> <span font="Terminus 9">Full </span></span>'
+  elseif (batstate() == 'Cable plugged') then
     baticon:set_image(beautiful.widget_ac)     
     return '<span font="Terminus 12"> <span font="Terminus 9">AC </span></span>'
     -- critical
