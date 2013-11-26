@@ -16,7 +16,7 @@ editor_cmd = terminal .. " -e " .. editor
 gui_editor = "gedit -ps"
 browser = "firefox"
 browser2 = "chromium"
-mail = terminal .. " -e mutt "
+mail = terminal .. " -e geary "
 chat = terminal .. " -e xchat "
 tasks = terminal .. " -e htop "
 iptraf = terminal .. " -g 180x54-20+34 -e sudo iptraf-ng -i all "
@@ -53,8 +53,8 @@ layouts =
 
 -- Define a tag table which hold all screen tags.
 tags = {
-       names = { "term", "web", "chat", "media", "misc"},
-       layout = { layouts[2], layouts[2], layouts[3], layouts[1], layouts[7] }
+       names = { "term", "web", "chat", "media", "misc", "mail"},
+       layout = { layouts[2], layouts[2], layouts[4], layouts[1], layouts[7], layouts[10] }
        }
 for s = 1, screen.count() do
 -- Each screen has its own tag table.

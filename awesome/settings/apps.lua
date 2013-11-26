@@ -25,11 +25,14 @@ awful.rules.rules = {
     { rule = { class = "Chromium" },
           properties = { tag = tags[1][2] } },
 
+    { rule = { class = "Geary" },
+          properties = { tag = tags[1][6] } },
+
     { rule = { class = "Xchat" },
           properties = { tag = tags[1][3] } },
 
-    { rule = { class = "Hipchat" },
-          properties = { tag = tags[1][5] } },
+    { rule = { class = "HipChat" },
+          properties = { tag = tags[1][3] } },
 
     { rule = { class = "Deluge" },
           properties = { tag = tags[1][5] } },
