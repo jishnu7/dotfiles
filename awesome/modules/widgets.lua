@@ -17,8 +17,8 @@ tempicon:set_image(beautiful.widget_temp)
 --tempicon:buttons(awful.util.table.join(awful.button({ }, 1, function () awful.util.spawn(terminal .. " -e sudo powertop ", false) end)))
 tempwidget = wibox.widget.textbox()
 vicious.register(tempwidget, vicious.widgets.thermal, '<span font="Terminus 12"> <span font="Terminus 9">$1°C </span></span>', 9, {"coretemp.0", "core"} )
-hddtempwidget = wibox.widget.textbox()
-vicious.register(hddtempwidget, vicious.widgets.hddtemp, '<span font="Terminus 12"> <span font="Terminus 9">${/dev/sda}°C </span></span>', 9)
+--hddtempwidget = wibox.widget.textbox()
+--vicious.register(hddtempwidget, vicious.widgets.hddtemp, '<span font="Terminus 12"> <span font="Terminus 9">${/dev/sda}°C </span></span>', 9)
 
 -- Battery widget
 baticon = wibox.widget.imagebox()
