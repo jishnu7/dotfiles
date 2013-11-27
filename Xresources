@@ -17,7 +17,7 @@ URxvt.saveLines:            65535
 !URxvt.lineSpace:            0
 
 ! Fonts
-URxvt*font: xft:Inconsolata for Powerline:regular:pixelsize=16,xft:Dejavu Sans Mono
+URxvt*font: xft:Inconsolata for Powerline:regular:pixelsize=17,xft:Dejavu Sans Mono
 !URxvt*imFont: xft:Inconsolata for Powerline:regular:pixelsize=16:antialias=true:hinting:true
 !URxvt*boldFont: xft:Inconsolata for Powerline:bold:pixelsize=16:antialias=true:hinting:true
 !URxvt*italicFont: xft:Inconsolata for Powerline:italic:pixelsize=16:antialias=true:hinting:true
@@ -106,7 +106,7 @@ URxvt.intensityStyles: false
 *color15: S_base3
 
 ! extensions
-URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select,tabbedex,font-size
+URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select,font-size
 URxvt.url-select.launcher:  /usr/bin/firefox
 URxvt.url-select.underline: true
 URxvt.clipboard.autocopy:   true
