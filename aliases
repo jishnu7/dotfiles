@@ -109,3 +109,7 @@ wificonnect() {
 alias nmcli-connect=wificonnect
 alias nmcli-status='nmcli con status'
 alias nmcli-scan='nmcli dev wifi list'
+
+export PAGER=/usr/bin/vimpager
+alias less=$PAGER
+alias zless=$PAGER
