@@ -18,5 +18,7 @@ run_once("fcitx")
 run_once("firefox")
 run_once("xscreensaver -no-splash")
 run_once("geary")
+run_once("mpd")
+run_once("numlockx")
 
 -- }}}
