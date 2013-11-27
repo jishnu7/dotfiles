@@ -19,6 +19,9 @@ run_once("firefox")
 run_once("xscreensaver -no-splash")
 run_once("geary")
 run_once("mpd")
+-- turn on numblock
 run_once("numlockx")
+-- diasble trackpad while typing
+run_once("syndaemon -t -k -i 2 -d")
 
 -- }}}
