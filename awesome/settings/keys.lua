@@ -27,7 +27,7 @@ globalkeys = awful.util.table.join(
             awful.client.focus.byidx(-1)
             if client.focus then client.focus:raise() end
         end),
-    awful.key({ modkey,           }, "w", function () awful.util.spawn("gedit", false) end),
+
 
     -- Show/Hide Wibox
     awful.key({ modkey }, "b", function ()
@@ -109,6 +109,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,        }, "s",      function () awful.util.spawn( "chromium", false ) end),
     awful.key({ modkey,        }, "d",      function () awful.util.spawn( "nautilus", false ) end),
     awful.key({ modkey,        }, "q",      function () awful.util.spawn( "hipchat", false ) end),
+    awful.key({ modkey,        }, "w",      function () awful.util.spawn( "gedit", false) end),
+    awful.key({ modkey,        }, "e",      function () awful.util.spawn( "gnome-calculator", false) end),
     
     -- Prompt
     awful.key({ modkey }, "r", function () mypromptbox[mouse.screen]:run() end),
