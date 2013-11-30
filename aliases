@@ -110,6 +110,9 @@ alias nmcli-connect=wificonnect
 alias nmcli-status='nmcli con status'
 alias nmcli-scan='nmcli dev wifi list'
 
-export PAGER=/usr/bin/vimpager
-alias less=$PAGER
-alias zless=$PAGER
+# vimpager is really slow!
+#export PAGER=/usr/bin/vimpager
+#alias less=$PAGER
+#alias zless=$PAGER
+
+alias grepc="grep --color=always"
