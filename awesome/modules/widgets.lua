@@ -43,11 +43,25 @@ function batstate()
 end
 
 batwidget = wibox.widget.textbox()
+flag_full = false
 vicious.register(batwidget, vicious.widgets.bat,
 function (widget, args)
   -- plugged
   if (batstate() == 'Fully charged') then
-   return '<span font="Terminus 12"> <span font="Terminus 9">Full </span></span>'
+    if(flag_full == false) then
+      flag_full = true
+      naughty.notify({
+        text = "Battery is full",
+        title = "Unplug power to save battery.",
+        position = "top_right",
+        timeout = 1,
+        fg="#000000",
+        bg="#ffffff",
+        screen = 1,
+        ontop = true,
+      })
+      end
+    return '<span font="Terminus 12"> <span font="Terminus 9">Full </span></span>'
   elseif (batstate() == 'Cable plugged') then
     baticon:set_image(beautiful.widget_ac)     
     return '<span font="Terminus 12"> <span font="Terminus 9">AC </span></span>'
@@ -79,7 +93,8 @@ function (widget, args)
     })
    else baticon:set_image(beautiful.widget_battery)
   end
-    return '<span font="Terminus 12"> <span font="Terminus 9">' .. args[2] .. '% </span></span>'
+  flag_full = false
+  return '<span font="Terminus 12"> <span font="Terminus 9">' .. args[2] .. '% </span></span>'
 end, 1, 'BAT1')
 
 -- Volume widget
