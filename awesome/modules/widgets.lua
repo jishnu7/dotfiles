@@ -54,7 +54,7 @@ function (widget, args)
         text = "Battery is full",
         title = "Unplug power to save battery.",
         position = "top_right",
-        timeout = 1,
+        timeout = 0,
         fg="#000000",
         bg="#ffffff",
         screen = 1,
