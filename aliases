@@ -118,3 +118,5 @@ alias nmcli-scan='nmcli dev wifi list'
 alias grepc="grep --color=always"
 
 alias battery_status="cat /sys/class/power_supply/BAT1/status"
+
+alias webcam="vlc v4l:// :v4l-vdev='/dev/video1'"
