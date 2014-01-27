@@ -3,4 +3,5 @@
 set defsearch=duckduckgo
 source! /home/jishnu/.vimperatorrc.local
 
+set editor=gedit
 " vim: set ft=vimperator:

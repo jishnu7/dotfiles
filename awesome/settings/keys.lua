@@ -2,7 +2,7 @@
 globalkeys = awful.util.table.join(
 
     -- Capture a screenshot
-    awful.key({ }, "Print", function () awful.util.spawn("scrot -e 'mv $f /media/data/pictures/; shotwell /media/data/pictures/$f'") end),
+    awful.key({ altkey }, "p", function () awful.util.spawn("scrot -e 'mv $f /media/data/pictures/; shotwell /media/data/pictures/$f'") end),
     -- Lock screen
     awful.key({ altkey, "Control" }, "l", function() awful.util.spawn("xscreensaver-command -lock", false) end),
     awful.key({ altkey, "Control" }, "s", function() awful.util.spawn("setxkbmap -option caps:swapescape",false) end),

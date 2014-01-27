@@ -17,6 +17,7 @@ source $DOTFILES_GIT/aliases
 source $DOTFILES_GIT/secrets
 source $DOTFILES_GIT/exports
 source $DOTFILES_GIT/functions
+source /usr/share/doc/pkgfile/command-not-found.zsh
 
 DISABLE_LS_COLORS=true
 
@@ -32,3 +33,4 @@ bindkey "^[[8~" end-of-line
 precmd () (
     echo -ne '\a'
 )
+

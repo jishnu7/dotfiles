@@ -19,6 +19,9 @@ awful.rules.rules = {
     { rule = { class = "Vlc" },
       properties = { floating = true, ontop = true } },
 
+    { rule = { class = "Umplayer" },
+      properties = { floating = true, ontop = true } },
+
     { rule = { class = "Firefox" },
           properties = { tag = tags[1][2] } },
 

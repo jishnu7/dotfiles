@@ -73,7 +73,7 @@ autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 "autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType php setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType xml setlocal ts=2 sts=2 sw=2 expandtab
-
+let g:syntastic_php_checkers=[]
 " KeyMaps
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 " STOP using arrow keys!

@@ -23,5 +23,6 @@ run_once("mpd")
 run_once("numlockx")
 -- diasble trackpad while typing
 run_once("syndaemon -t -k -i 2 -d")
+run_once("xfce4-power-manager")
 
 -- }}}
