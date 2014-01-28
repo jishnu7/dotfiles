@@ -62,10 +62,7 @@ function (widget, args)
       })
       end
     return '<span font="Terminus 12"> <span font="Terminus 9">Full </span></span>'
-  elseif (batstate() == 'Cable plugged') then
-    baticon:set_image(beautiful.widget_ac)     
-    return '<span font="Terminus 12"> <span font="Terminus 9">AC </span></span>'
-    -- critical
+  -- critical
   elseif (args[2] <= 5 and batstate() == 'Discharging') then
     baticon:set_image(beautiful.widget_battery_empty)
     naughty.notify({
@@ -78,7 +75,7 @@ function (widget, args)
       screen = 1,
       ontop = true,
     })
-    -- low
+  -- low
   elseif (args[2] <= 10 and batstate() == 'Discharging') then
     baticon:set_image(beautiful.widget_battery_low)
     naughty.notify({
@@ -91,7 +88,9 @@ function (widget, args)
       screen = 1,
       ontop = true,
     })
-   else baticon:set_image(beautiful.widget_battery)
+  elseif (batstate() == 'Charging') then
+    baticon:set_image(beautiful.widget_ac)
+  else baticon:set_image(beautiful.widget_battery)
   end
   flag_full = false
   return '<span font="Terminus 12"> <span font="Terminus 9">' .. args[2] .. '% </span></span>'
@@ -101,14 +100,14 @@ end, 1, 'BAT1')
 volicon = wibox.widget.imagebox()
 volicon:set_image(beautiful.widget_vol)
 volumewidget = wibox.widget.textbox()
-vicious.register(volumewidget, vicious.widgets.volume,  
+vicious.register(volumewidget, vicious.widgets.volume,
 function (widget, args)
-  if (args[2] ~= "♩" ) then 
+  if (args[2] ~= "♩" ) then
       if (args[1] == 0) then volicon:set_image(beautiful.widget_vol_no)
       elseif (args[1] <= 50) then  volicon:set_image(beautiful.widget_vol_low)
       else volicon:set_image(beautiful.widget_vol)
       end
-  else volicon:set_image(beautiful.widget_vol_mute) 
+  else volicon:set_image(beautiful.widget_vol_mute)
   end
   return '<span font="Terminus 12"> <span font="Terminus 9">' .. args[1] .. '% </span></span>'
 end, 1, "Master")
