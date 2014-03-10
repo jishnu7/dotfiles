@@ -112,3 +112,6 @@ function! <SID>StripTrailingWhitespaces()
     let @/=_s
     call cursor(l, c)
 endfunction
+
+" Save read-only files
+cnoremap sudow w !sudo tee % >/dev/null
