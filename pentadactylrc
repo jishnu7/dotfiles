@@ -2,7 +2,8 @@
 
 loadplugins '\.(js|penta)$'
 group user
-set editor=gedit
 set defsearch=duckduckgo
+set editor=gedit
+set passkeys=tweetdeck.twitter.com/:N<Up><Down><Left><Right>
 
 " vim: set ft=pentadactyl:
