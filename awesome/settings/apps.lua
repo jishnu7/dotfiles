@@ -17,7 +17,7 @@ awful.rules.rules = {
         properties = { floating = true } },
 
     { rule = { class = "Vlc" },
-      properties = { floating = true, ontop = true } },
+      properties = { floating = true, ontop = true, sticky = true } },
 
     { rule = { class = "Umplayer" },
       properties = { floating = true, ontop = true } },
@@ -48,6 +48,9 @@ awful.rules.rules = {
 
     { rule = { class = "Shotwell" },
       properties = { floating = true } },
+
+    { rule = { class = "Bitcoin" },
+          properties = { tag = tags[1][5] } },
 }
 
 -- }}}
