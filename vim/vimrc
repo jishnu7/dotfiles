@@ -23,6 +23,7 @@ set wrap "wrap lines
 set showmatch "show matching brackets
 set hlsearch "highlight matches
 set cursorline "highlight current line
+"set colorcolumn=80
 set ignorecase "ignore case on search
 
 syntax enable "syntax highlighting
@@ -71,6 +72,7 @@ autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 "autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
 "autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType less setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType php setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType xml setlocal ts=2 sts=2 sw=2 expandtab
 let g:syntastic_php_checkers=[]
