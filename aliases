@@ -95,7 +95,11 @@ alias ftp-android="systemctl start proftpd"
 alias mpd-kill="ps -ef | awk '/mpd/ && !/awk/ {print \$2}' | xargs kill -9"
 
 # show public ip
-alias ifconfig-pub="curl ifconfig.me"
+#alias ifconfig-pub="curl ifconfig.me"
+alias ifconfig-pub="curl ipecho.net/plain; echo"
+alias ifconfig-pub2="curl icanhazip.com"
+alias ifconfig-pub3="curl ipv4.ipogre.com"
+alias ifconfig-pub4="curl ident.me; echo"
 
 # tmux reload
 alias tmux-reload="tmux source-file ~/.tmux.conf"
