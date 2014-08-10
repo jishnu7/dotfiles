@@ -7,7 +7,7 @@ scriptdir = confdir .. "/scripts/"
 themes = confdir .. "/themes"
 active_theme = themes .. "/powerarrow-darker"
 
--- Themes define colours, icons, and wallpapers
+-- Themes define colours, icons
 beautiful.init(active_theme .. "/theme.lua")
 
 terminal = "urxvtc"
@@ -46,7 +46,6 @@ layouts =
     --awful.layout.suit.max.fullscreen,     -- 11
     --awful.layout.suit.magnifier           -- 12
 }
-
 -- }}}
 
 -- {{{ Tags

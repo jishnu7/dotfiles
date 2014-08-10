@@ -28,7 +28,6 @@ globalkeys = awful.util.table.join(
             if client.focus then client.focus:raise() end
         end),
 
-
     -- Show/Hide Wibox
     awful.key({ modkey }, "b", function ()
     mywibox[mouse.screen].visible = not mywibox[mouse.screen].visible
@@ -78,28 +77,29 @@ globalkeys = awful.util.table.join(
                                        awful.util.spawn("amixer set Master playback toggle", false )
                                        vicious.force({ volumewidget })
                                      end),
-    awful.key({ altkey, "Control" }, "m", function () 
+    awful.key({ altkey, "Control" }, "m", function ()
                                               awful.util.spawn("amixer set Master playback 100%", false )
                                               vicious.force({ volumewidget })
                                           end),
 
     -- Music control
-    awful.key({ altkey, "Control" }, "Up", function () 
-                                              awful.util.spawn( "ncmpcpp toggle", false ) 
+    awful.key({ altkey, "Control" }, "Up", function ()
+                                              awful.util.spawn( "ncmpcpp toggle", false )
                                               vicious.force({ mpdwidget } )
                                            end),
-    awful.key({ altkey, "Control" }, "Down", function () 
-                                                awful.util.spawn( "ncmpcpp stop", false ) 
+    awful.key({ altkey, "Control" }, "Down", function ()
+                                                awful.util.spawn( "ncmpcpp stop", false )
                                                 vicious.force({ mpdwidget } )
                                              end ),
     awful.key({ altkey, "Control" }, "Left", function ()
                                                 awful.util.spawn( "ncmpcpp prev", false )
                                                 vicious.force({ mpdwidget } )
                                              end ),
-    awful.key({ altkey, "Control" }, "Right", function () 
+    awful.key({ altkey, "Control" }, "Right", function ()
                                                 awful.util.spawn( "ncmpcpp next", false )
                                                 vicious.force({ mpdwidget } )
                                               end ),
+    awful.key({ altkey, "Control" }, "w", random_wallpaper),
 
     -- Copy to clipboard
     awful.key({ modkey,        }, "c",      function () os.execute("xsel -p -o | xsel -i -b") end),
@@ -111,7 +111,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,        }, "q",      function () awful.util.spawn( "hipchat", false ) end),
     awful.key({ modkey,        }, "w",      function () awful.util.spawn( "gedit", false) end),
     awful.key({ modkey,        }, "e",      function () awful.util.spawn( "gnome-calculator", false) end),
-    
+
     -- Prompt
     awful.key({ modkey }, "r", function () mypromptbox[mouse.screen]:run() end),
 
@@ -146,14 +146,6 @@ clientkeys = awful.util.table.join(
 )
 -- }}}
 
--- {{{ Mouse Bindings
-root.buttons(awful.util.table.join(
-    awful.key({ modkey,        }, "q",      function () awful.util.spawn( "dwb", false ) end),
-    awful.button({ }, 4, awful.tag.viewnext),
-    awful.button({ }, 5, awful.tag.viewprev)
-))
--- }}}
-
 -- Compute the maximum number of digit we need, limited to 9
 keynumber = 0
 for s = 1, screen.count() do
@@ -167,14 +159,14 @@ for i = 1, keynumber do
     globalkeys = awful.util.table.join(globalkeys,
         awful.key({ modkey }, "#" .. i + 9,
                   function ()
-                        screen = mouse.screen
+                        local screen = mouse.screen
                         if tags[screen][i] then
                             awful.tag.viewonly(tags[screen][i])
                         end
                   end),
         awful.key({ modkey, "Control" }, "#" .. i + 9,
                   function ()
-                      screen = mouse.screen
+                      local screen = mouse.screen
                       if tags[screen][i] then
                           awful.tag.viewtoggle(tags[screen][i])
                       end
@@ -202,4 +194,3 @@ clientbuttons = awful.util.table.join(
 root.keys(globalkeys)
 
 -- }}}
-

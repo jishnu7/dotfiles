@@ -7,7 +7,7 @@ function run_once(cmd)
      findme = cmd:sub(0, firstspace-1)
   end
   awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. cmd .. ")")
- end 
+end
 
 run_once("urxvtd")
 run_once("unclutter -idle 10")
@@ -17,12 +17,12 @@ run_once("setxkbmap -option caps:swapescape")
 run_once("fcitx")
 run_once("firefox")
 run_once("xscreensaver -no-splash")
-run_once("geary")
+--run_once("geary")
 run_once("mpd")
 -- turn on numblock
 run_once("numlockx")
 -- diasble trackpad while typing
 run_once("syndaemon -t -k -i 2 -d")
-run_once("xfce4-power-manager")
+--run_once("xfce4-power-manager")
 
 -- }}}

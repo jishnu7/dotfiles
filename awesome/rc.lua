@@ -21,21 +21,12 @@ os.setlocale(os.getenv("LANG"))
 require("settings.config")
 require("modules.error")
 require("settings.startup")
-require("settings.keys")
 require("settings.apps")
 require("modules.signals")
 require("modules.clock")
 require("modules.music")
 require("modules.widgets")
 require("modules.layout")
-
-
--- {{{ Wallpaper
-
-if beautiful.wallpaper then
-    for s = 1, screen.count() do
-        gears.wallpaper.maximized(beautiful.wallpaper, s, true)
-    end
-end
-
--- }}}
+require("settings.wallpaper")
+require("settings.keys")
+--dofile(awful.util.getdir("config") .. "/settings/apps.lua")
