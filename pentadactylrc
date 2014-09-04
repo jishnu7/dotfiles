@@ -6,4 +6,42 @@ set defsearch=duckduckgo
 set editor=gedit
 set passkeys=tweetdeck.twitter.com/:N<Up><Down><Left><Right>
 
+" to enable urlbar
+"set guioptions+=T
+
+" websites
+map go :tabopen google 
+map wi :tabopen wikipedia 
+map yt :tabopen youtube 
+map ff :tabopen addons 
+map ar :tabopen arch 
+map gr :tabopen goodreads 
+map eb :tabopen ebay 
+map am :tabopen amazon 
+map fl :tabopen flipkart 
+map pl :tabopen play 
+map mi :tabopen imdb 
+map ml :tabopen letterboxd 
+map gt :tabopen https://twitter.com<CR>
+map fb :tabopen https://www.facebook.com/<CR>
+map fe :tabopen https://feedly.com/index.html#index<CR>
+map po :tabopen https://getpocket.com/a/queue/<CR>
+map le :tabopen http://letterboxd.com/<CR>
+map it :tabopen https://www.reddit.com/<CR>
+map yf :tabopen https://www.youtube.com/feed/subscriptions<CR>
+map gp :tabopen https://plus.google.com/<CR>
+map gh :tabopen https://github.com/<CR>
+map gk :tabopen https://keep.google.com/<CR>
+map ir :tabopen https://www.irctc.co.in/<CR>
+map ba :tabopen https://retail.onlinesbi.com/retail/login.htm<CR>
+
+" plugins/bookmarklets etc
+map rl :open pocket<CR>
+map rn :open readability<CR>
+map qr :open qrcode<CR>
+map ar :open rightclickCR>
+map at :open textselection<CR>
+map af :open autofill<CR>
+map ac :open unical<CR>
+
 " vim: set ft=pentadactyl:
