@@ -1,0 +1,3 @@
+# /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT="quite splash i965.modeset=1"
+# update-grub
