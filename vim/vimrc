@@ -24,7 +24,8 @@ set showmatch "show matching brackets
 set hlsearch "highlight matches
 set cursorline "highlight current line
 "set colorcolumn=80
-set ignorecase "ignore case on search
+"set ignorecase "ignore case on search
+set incsearch
 
 syntax enable "syntax highlighting
 
