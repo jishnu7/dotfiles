@@ -84,19 +84,19 @@ globalkeys = awful.util.table.join(
 
     -- Music control
     awful.key({ altkey, "Control" }, "Up", function ()
-                                              awful.util.spawn( "ncmpcpp toggle", false )
+                                              awful.util.spawn( "mpc toggle", false )
                                               vicious.force({ mpdwidget } )
                                            end),
     awful.key({ altkey, "Control" }, "Down", function ()
-                                                awful.util.spawn( "ncmpcpp stop", false )
+                                                awful.util.spawn( "mpc stop", false )
                                                 vicious.force({ mpdwidget } )
                                              end ),
     awful.key({ altkey, "Control" }, "Left", function ()
-                                                awful.util.spawn( "ncmpcpp prev", false )
+                                                awful.util.spawn( "mpc prev", false )
                                                 vicious.force({ mpdwidget } )
                                              end ),
     awful.key({ altkey, "Control" }, "Right", function ()
-                                                awful.util.spawn( "ncmpcpp next", false )
+                                                awful.util.spawn( "mpc next", false )
                                                 vicious.force({ mpdwidget } )
                                               end ),
     awful.key({ altkey, "Control" }, "w", random_wallpaper),

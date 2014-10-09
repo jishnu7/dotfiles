@@ -17,40 +17,40 @@ awful.rules.rules = {
         properties = { floating = true } },
 
     { rule = { class = "Vlc" },
-      properties = { floating = true, ontop = true, sticky = true } },
+        properties = { floating = true, ontop = true, sticky = true } },
 
     { rule = { class = "Umplayer" },
-      properties = { floating = true, ontop = true } },
+        properties = { floating = true, ontop = true } },
 
     { rule = { class = "Firefox" },
-          properties = { tag = tags[1][2] } },
+        properties = { tag = tags[1][2] } },
 
     { rule = { class = "Chromium" },
-          properties = { tag = tags[1][2] } },
+        properties = { floating = false, tag = tags[1][2] } },
 
     { rule = { class = "Geary" },
-          properties = { tag = tags[1][6] } },
+        properties = { tag = tags[1][6] } },
 
     { rule = { class = "Xchat" },
-          properties = { tag = tags[1][3] } },
+        properties = { tag = tags[1][3] } },
 
     { rule = { class = "HipChat" },
-          properties = { tag = tags[1][3] } },
+        properties = { tag = tags[1][3] } },
 
     { rule = { class = "Deluge" },
-          properties = { tag = tags[1][5] } },
+        properties = { tag = tags[1][5] } },
 
     { rule = { class = "Nautilus" },
-          properties = { tag = tags[1][4] } },
+        properties = { tag = tags[1][4] } },
 
     { rule = { class = "Audacious" },
-      properties = { floating = true, ontop = true } },
+        properties = { floating = true, ontop = true } },
 
     { rule = { class = "Shotwell" },
-      properties = { floating = true } },
+        properties = { floating = true } },
 
     { rule = { class = "Bitcoin" },
-          properties = { tag = tags[1][5] } },
+        properties = { tag = tags[1][5] } },
 }
 
 -- }}}

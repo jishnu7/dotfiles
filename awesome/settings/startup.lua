@@ -17,7 +17,7 @@ run_once("setxkbmap -option caps:swapescape")
 run_once("fcitx")
 run_once("firefox")
 run_once("xscreensaver -no-splash")
---run_once("geary")
+run_once("geary")
 run_once("mpd")
 -- turn on numblock
 run_once("numlockx")
