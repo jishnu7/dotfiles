@@ -4,7 +4,6 @@ function scandir(directory, filter)
     if not filter then
         filter = function(s) return true end
     end
-    print(filter)
     for filename in popen('ls -a "'..directory..'"'):lines() do
         if filter(filename) then
             i = i + 1
@@ -23,6 +22,10 @@ wp_filter = function(s) return string.match(s,"%.png$") or string.match(s,"%.jpg
 wp_files = scandir(wp_path, wp_filter)
 
 function random_wallpaper()
+
+  if #wp_files == 0 then
+      return
+  end
 
   wp_index = math.random( 1, #wp_files)
   -- set wallpaper to current index for all screens
