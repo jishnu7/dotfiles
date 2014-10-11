@@ -25,6 +25,9 @@ awful.rules.rules = {
     { rule = { class = "Firefox" },
         properties = { tag = tags[1][2] } },
 
+    { rule = { class = "Iceweasel" },
+        properties = { tag = tags[1][2] } },
+
     { rule = { class = "Chromium" },
         properties = { floating = false, tag = tags[1][2] } },
 
