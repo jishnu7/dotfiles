@@ -70,3 +70,9 @@
 [submodule "vim/bundle/vim-less"]
 	path = vim/bundle/vim-less
 	url = https://github.com/groenewege/vim-less.git
+[submodule "tmux/plugins/tpm"]
+	path = tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
+[submodule "awesome/lain"]
+	path = awesome/lain
+	url = git://github.com/copycat-killer/lain.git

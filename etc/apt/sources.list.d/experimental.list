@@ -1,0 +1,2 @@
+deb http://debian.mirror.net.in/debian/ experimental main contrib non-free
+deb-src http://debian.mirror.net.in/debian/ experimental main contrib non-free
