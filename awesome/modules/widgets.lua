@@ -1,3 +1,5 @@
+local lain = require("lain")
+
 -- MEM widget
 memicon = wibox.widget.imagebox()
 memicon:set_image(beautiful.widget_mem)
@@ -12,13 +14,12 @@ vicious.register(cpuwidget, vicious.widgets.cpu, '<span font="Terminus 13" rise=
 cpuicon:buttons(awful.util.table.join(awful.button({ }, 1, function () awful.util.spawn(tasks, false) end)))
 
 -- Temp widget
-tempicon = wibox.widget.imagebox()
-tempicon:set_image(beautiful.widget_temp)
---tempicon:buttons(awful.util.table.join(awful.button({ }, 1, function () awful.util.spawn(terminal .. " -e sudo powertop ", false) end)))
-tempwidget = wibox.widget.textbox()
-vicious.register(tempwidget, vicious.widgets.thermal, '<span font="Terminus 12"> <span font="Terminus 9">$1°C </span></span>', 9, {"coretemp.0", "core"} )
---hddtempwidget = wibox.widget.textbox()
---vicious.register(hddtempwidget, vicious.widgets.hddtemp, '<span font="Terminus 12"> <span font="Terminus 9">${/dev/sda}°C </span></span>', 9)
+tempicon = wibox.widget.imagebox(beautiful.widget_temp);
+tempwidget = lain.widgets.temp({
+    settings = function()
+        widget:set_text(" " .. coretemp_now .. "°C ")
+    end
+})
 
 -- Battery widget
 baticon = wibox.widget.imagebox()
@@ -101,16 +102,16 @@ volicon = wibox.widget.imagebox()
 volicon:set_image(beautiful.widget_vol)
 volumewidget = wibox.widget.textbox()
 vicious.register(volumewidget, vicious.widgets.volume,
-function (widget, args)
-  if (args[2] ~= "♩" ) then
-      if (args[1] == 0) then volicon:set_image(beautiful.widget_vol_no)
-      elseif (args[1] <= 50) then  volicon:set_image(beautiful.widget_vol_low)
-      else volicon:set_image(beautiful.widget_vol)
+    function (widget, args)
+      if (args[2] ~= "♩" ) then
+          if (args[1] == 0) then volicon:set_image(beautiful.widget_vol_no)
+          elseif (args[1] <= 50) then  volicon:set_image(beautiful.widget_vol_low)
+          else volicon:set_image(beautiful.widget_vol)
+          end
+      else volicon:set_image(beautiful.widget_vol_mute)
       end
-  else volicon:set_image(beautiful.widget_vol_mute)
-  end
-  return '<span font="Terminus 12"> <span font="Terminus 9">' .. args[1] .. '% </span></span>'
-end, 1, "Master")
+      return '<span font="Terminus 12"> <span font="Terminus 9">' .. args[1] .. '% </span></span>'
+    end, 1, "Master")
 
 -- Net widget
 netwidget = wibox.widget.textbox()
