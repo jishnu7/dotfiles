@@ -124,7 +124,7 @@ for s = 1, screen.count() do
     layout:set_middle(mytasklist[s])
     layout:set_right(right_layout)    
     mywibox[s]:set_widget(layout)
-
+    --mywibox[s]:set_bg("#3e3e3e")
 end
 
 -- }}}
