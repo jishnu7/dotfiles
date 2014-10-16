@@ -70,3 +70,8 @@ function lastd {
         then cd `cat ~/.last_dir`
     fi
 }
+
+# copy file with progressbar
+cpstat () {
+    sudo tar cf - "$1" | pv | (cd "$2";tar xf -)
+}
