@@ -37,7 +37,7 @@ map _yf :tabopen https://www.youtube.com/feed/subscriptions<CR>
 
 " plugins/bookmarklets etc
 map _af :open autofill<CR>
-map _rc :open rightclickCR>
+map _rc :open rightclick<CR>
 map _at :open textselection<CR>
 map _rl :open pocket<CR>
 map _rn :open readability<CR>
