@@ -21,7 +21,10 @@ if [[ -s '/etc/zsh_command_not_found' ]];
 then
     source /etc/zsh_command_not_found
 else
-    source /usr/share/doc/pkgfile/command-not-found.zsh
+    if [[ -s '/usr/share/doc/pkgfile/command-not-found.zsh' ]];
+    then
+        source /usr/share/doc/pkgfile/command-not-found.zsh
+    fi
 fi
 
 DISABLE_LS_COLORS=true
@@ -38,4 +41,3 @@ bindkey "^[[8~" end-of-line
 precmd () (
     echo -ne '\a'
 )
-
