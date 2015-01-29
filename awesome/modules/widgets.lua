@@ -45,8 +45,7 @@ end
 
 batwidget = wibox.widget.textbox()
 flag_full = false
-vicious.register(batwidget, vicious.widgets.bat,
-function (widget, args)
+vicious.register(batwidget, vicious.widgets.bat, function (widget, args)
   -- plugged
   if (batstate() == 'Fully charged') then
     if(flag_full == false) then
@@ -91,7 +90,8 @@ function (widget, args)
     })
   elseif (batstate() == 'Charging') then
     baticon:set_image(beautiful.widget_ac)
-  else baticon:set_image(beautiful.widget_battery)
+  else
+    baticon:set_image(beautiful.widget_battery)
   end
   flag_full = false
   return '<span font="Terminus 12"> <span font="Terminus 9">' .. args[2] .. '% </span></span>'
