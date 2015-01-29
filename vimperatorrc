@@ -1,7 +1,43 @@
 "3.7.1 (created: 2013/05/22 20:32:57)
 
 set defsearch=duckduckgo
-source! /home/jishnu/.vimperatorrc.local
-
 set editor=gedit
+set gui=nonavigation
+
+"ignorekeys add tweetdeck.twitter.com/
+
+" websites
+map go :tabopen google 
+map _ad :tabopen addons 
+map _am :tabopen amazon 
+map _ar :tabopen arch 
+map _eb :tabopen ebay 
+map _fb :tabopen https://www.facebook.com/<CR>
+map _fe :tabopen https://feedly.com/index.html#index<CR>
+map _fl :tabopen flipkart 
+map _gh :tabopen https://github.com/<CR>
+map _gk :tabopen https://keep.google.com/<CR>
+map _gm :tabopen https://mail.google.com/mail/ca/u/0/<CR>
+map _gp :tabopen https://plus.google.com/<CR>
+map _gr :tabopen goodreads 
+map _im :tabopen imdb 
+map _ir :tabopen https://www.irctc.co.in/<CR>
+map _lb :tabopen letterboxd 
+map _pl :tabopen play 
+map _po :tabopen https://getpocket.com/a/queue/<CR>
+map _sb :tabopen https://retail.onlinesbi.com/retail/login.htm<CR>
+map _re :tabopen https://www.reddit.com/<CR>
+map _tw :tabopen https://twitter.com<CR>
+map _wi :tabopen wikipedia 
+map _yt :tabopen youtube 
+map _yf :tabopen https://www.youtube.com/feed/subscriptions<CR>
+
+" plugins/bookmarklets etc
+map _af :open autofill<CR>
+map _rc :open rightclickCR>
+map _at :open textselection<CR>
+map _rl :open pocket<CR>
+map _rn :open readability<CR>
+map _uc :open unical<CR>
+map _qr :open qrcode<CR>
 " vim: set ft=vimperator:
