@@ -13,3 +13,5 @@
     ignored = !git ls-files -v | grep ^[a-z]
     dc = !git diff --cached
     edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
+    contributors = !git shortlog -s -n
+    sl = "!git stash list | awk -F: '{ print $0; system(\"git stash show -p \" $1); }' -"
