@@ -1,6 +1,10 @@
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
 
+    -- screen brightness
+    awful.key({ modkey }, "Down", function() awful.util.spawn("xbacklight -2", false) end),
+    awful.key({ modkey }, "Up", function() awful.util.spawn("xbacklight +2", false) end),
+
     -- Capture a screenshot
     awful.key({ altkey }, "p", function () awful.util.spawn("scrot -e 'mv $f /media/data/pictures/; shotwell /media/data/pictures/$f'") end),
     -- Lock screen
