@@ -10,6 +10,7 @@ ln -s $PWD/bash/bashrc ~/.bashrc
 #zsh
 rm -f ~/.zshrc
 ln -s $PWD/zsh/zshrc ~/.zshrc
+ln -s $PWD/zsh/zlogin ~/.zlogin
 
 #git
 rm -f ~/.gitconfig
@@ -39,3 +40,7 @@ rm -f ~/.mpd/mpd.conf
 ln -s $PWD/mpd/mpd.conf ~/.mpd/mpd.conf
 rm -f ~/.ncmpcpp/config
 ln -s $PWD/mpd/ncmpcpp.config ~/.ncmpcpp/config
+
+#mount
+rm -f ~/.mount_data
+ln -s $PWD/mount_data ~/.mount_data
