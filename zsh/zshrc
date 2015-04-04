@@ -8,7 +8,7 @@ ZSH_THEME="agnoster"
 
 DEFAULT_USER="jishnu"
 
-plugins=(git archlinux systemd sublime urltools zsh-syntax-highlighting)
+plugins=(git archlinux systemd sublime urltools zsh-syntax-highlighting command-not-found)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -17,15 +17,8 @@ source $DOTFILES_GIT/aliases
 source $DOTFILES_GIT/secrets
 source $DOTFILES_GIT/exports
 source $DOTFILES_GIT/functions
-if [[ -s '/etc/zsh_command_not_found' ]];
-then
-    source /etc/zsh_command_not_found
-else
-    if [[ -s '/usr/share/doc/pkgfile/command-not-found.zsh' ]];
-    then
-        source /usr/share/doc/pkgfile/command-not-found.zsh
-    fi
-fi
+
+autoload -U zmv
 
 DISABLE_LS_COLORS=true
 
@@ -41,3 +34,9 @@ bindkey "^[[8~" end-of-line
 precmd () (
     echo -ne '\a'
 )
+
+export ANDROID_HOME="/home/jishnu/android/android-sdk/"
+
+if [ -f $DOTFILES_GIT/zsh/bash_greeter.sh ]; then
+    . $DOTFILES_GIT/zsh/bash_greeter.sh
+fi

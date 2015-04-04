@@ -1,4 +1,4 @@
 #[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && $HOME/mount_data
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && $HOME/.mount_data
 #[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
