@@ -80,7 +80,7 @@ alias suspend="systemctl suspend"
 alias server='python2 -m SimpleHTTPServer'
 
 alias emulator-jb="emulator -avd 42 -partition-size 300 -system ~/.android/avd/42.avd/system.img"
-alias virtualbox-load="sudo modprobe vboxdrv"
+alias virtualbox-load="sudo modprobe vboxdrv vboxnetflt"
 
 alias open="xdg-open"
 
@@ -126,3 +126,15 @@ alias battery_status="cat /sys/class/power_supply/BAT1/status"
 alias webcam="cvlc v4l:// :v4l-vdev='/dev/video1'"
 
 alias catv="vimpager"
+alias gdiff="meld"
+
+alias calibre-update="sudo -v && wget -nv -O- https://raw.githubusercontent.com/kovidgoyal/calibre/master/setup/linux-installer.py | sudo python -c \"import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()\""
+
+# Suffix aliases
+if [ $SHELL = 'zsh' ]; then
+    alias -s js="vim"
+    alias -s json="vim"
+    alias -s php="vim"
+fi
+
+alias timestep="cd modules/devkit-core/modules/timestep/src"
