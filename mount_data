@@ -1,0 +1,2 @@
+sudo cryptsetup --allow-discards luksOpen /dev/sdc data
+sudo mount /dev/mapper/data /media/data
