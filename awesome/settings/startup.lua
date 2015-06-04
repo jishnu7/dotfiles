@@ -1,29 +1,23 @@
 -- {{{ Autostart
 
-function run_once(cmd)
-  findme = cmd
-  firstspace = cmd:find(" ")
-  if firstspace then
-     findme = cmd:sub(0, firstspace-1)
-  end
-  awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. cmd .. ")")
-end
+local r = require("../modules/runonce")
 
-run_once("urxvtd")
-run_once("unclutter -idle 10")
-run_once("xchat")
-run_once("setxkbmap -option caps:swapescape")
---run_once("xmodmap ~/.xmodmap")
-run_once("fcitx")
-run_once("firefox")
-run_once("xscreensaver -no-splash")
-run_once("geary")
-run_once("mpd")
+r.run("urxvtd")
+r.run("unclutter -idle 10")
+r.run("xchat")
+r.run("setxkbmap -option caps:swapescape")
+--r.run("xmodmap ~/.xmodmap")
+r.run("fcitx")
+r.run("firefox")
+r.run("xscreensaver -no-splash")
+r.run("geary")
+r.run("mpd")
 -- turn on numblock
-run_once("numlockx")
+r.run("numlockx")
 -- diasble trackpad while typing
-run_once("syndaemon -t -k -i 2 -d")
-run_once("xfce4-power-manager")
-run_once("nm-applet")
+r.run("syndaemon -t -k -i 2 -d")
+r.run("xfce4-power-manager")
+r.run("nm-applet")
+r.run("scudcloud")
 
 -- }}}
