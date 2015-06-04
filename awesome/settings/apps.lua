@@ -16,6 +16,7 @@ awful.rules.rules = {
     { rule = { instance = "plugin-container" },
         properties = { floating = true } },
 
+    -- Use `xprop` to identify class name
     { rule = { class = "Vlc" },
         properties = { floating = true, ontop = true, sticky = true } },
 
@@ -37,7 +38,7 @@ awful.rules.rules = {
     { rule = { class = "Xchat" },
         properties = { tag = tags[1][3] } },
 
-    { rule = { class = "HipChat" },
+    { rule = { class = "Scudcloud" },
         properties = { tag = tags[1][3] } },
 
     { rule = { class = "Deluge" },
@@ -54,6 +55,10 @@ awful.rules.rules = {
 
     { rule = { class = "Bitcoin" },
         properties = { tag = tags[1][5] } },
+
+    { rule = { class = "VirtualBox" },
+        properties = { tag = tags[1][5] } },
+
 }
 
 -- }}}
