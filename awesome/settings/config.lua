@@ -21,6 +21,7 @@ chat = terminal .. " -e xchat "
 tasks = terminal .. " -e htop "
 iptraf = terminal .. " -g 180x54-20+34 -e sudo iptraf-ng -i all "
 musicplr = terminal .. " -g 130x34-320+16 -e ncmpcpp "
+calendarapp = "gnome-calendar "
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.

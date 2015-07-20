@@ -49,7 +49,7 @@ awful.rules.rules = {
     { rule = { class = "Geary" },
         properties = { tag = tags[1][6] } },
 
-    { rule_any = { class = {"Shotwell", "feh"} },
+    { rule_any = { class = {"Shotwell", "feh", "Gnome-calendar"} },
         properties = { floating = true } },
 
     -- Google Keep, Floating Youtube

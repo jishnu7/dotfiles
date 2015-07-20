@@ -107,6 +107,7 @@ end
 
 mytextclock:connect_signal("mouse::enter", function() show(0) end)
 mytextclock:connect_signal("mouse::leave", hide)
-mytextclock:buttons(util.table.join( awful.button({ }, 1, function() show(-1) end),
-                                     awful.button({ }, 3, function() show(1) end)))
+mytextclock:buttons(util.table.join(awful.button({ }, 1, function () util.spawn(calendarapp) end)))
+--mytextclock:buttons(util.table.join( awful.button({ }, 1, function() show(-1) end),
+                                     --awful.button({ }, 3, function() show(1) end)))
 
