@@ -20,45 +20,42 @@ awful.rules.rules = {
     { rule = { class = "Vlc" },
         properties = { floating = true, ontop = true, sticky = true } },
 
-    { rule = { class = "Umplayer" },
+    { rule_any = { class = { "Umplayer", "Audacious" } },
         properties = { floating = true, ontop = true } },
 
-    { rule = { class = "Firefox" },
-        properties = { tag = tags[1][2] } },
-
-    { rule = { class = "Iceweasel" },
+    { rule_any = { class = { "Firefox", "Iceweasel" } },
         properties = { tag = tags[1][2] } },
 
     { rule = { class = "Chromium" },
         properties = { floating = false, tag = tags[1][2] } },
 
-    { rule = { class = "Geary" },
-        properties = { tag = tags[1][6] } },
-
     { rule = { class = "Xchat" },
         properties = { tag = tags[1][3] } },
 
+    -- Slack
     { rule = { class = "Scudcloud" },
         properties = { tag = tags[1][3] } },
-
-    { rule = { class = "Deluge" },
-        properties = { tag = tags[1][5] } },
 
     { rule = { class = "Nautilus" },
         properties = { tag = tags[1][4] } },
 
-    { rule = { class = "Audacious" },
-        properties = { floating = true, ontop = true } },
-
-    { rule = { class = "Shotwell" },
-        properties = { floating = true } },
-
-    { rule = { class = "Bitcoin" },
+    { rule_any = { class = { "Deluge", "Bitcoin"} },
         properties = { tag = tags[1][5] } },
 
     { rule = { class = "VirtualBox" },
-        properties = { tag = tags[1][5] } },
+        except = { name = "Oracle VM VirtualBox Manager" },
+        properties = { floating = true, tag = tags[1][5] } },
 
+    { rule = { class = "Geary" },
+        properties = { tag = tags[1][6] } },
+
+    { rule_any = { class = {"Shotwell", "feh"} },
+        properties = { floating = true } },
+
+    -- Google Keep, Floating Youtube
+    { rule_any = { instance = { "crx_hmjkmjkepdijhoojdojkdfohbdgmmhki",
+                                "jjphmlaoffndcnecccgemfdaaoighkel" } },
+        properties = { floating = true } }
 }
 
 -- }}}
