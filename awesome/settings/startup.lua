@@ -17,7 +17,9 @@ r.run("numlockx")
 -- diasble trackpad while typing
 r.run("syndaemon -t -k -i 2 -d")
 r.run("xfce4-power-manager")
-r.run("nm-applet")
+--r.run("nm-applet")
 r.run("scudcloud")
+r.run("redshift")
+r.run("redshift-gtk")
 
 -- }}}
