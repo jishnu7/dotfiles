@@ -8,7 +8,7 @@ ZSH_THEME="agnoster"
 
 DEFAULT_USER="jishnu"
 
-plugins=(git archlinux systemd sublime urltools zsh-syntax-highlighting command-not-found)
+plugins=(git archlinux systemd urltools zsh-syntax-highlighting command-not-found)
 
 source $ZSH/oh-my-zsh.sh
 
