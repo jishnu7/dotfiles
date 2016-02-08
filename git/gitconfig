@@ -8,11 +8,12 @@
 	username = jishnu7
 [alias]
 	tagcommit = !sh -c 'git rev-list $0 | head -n 1'
-    ignore = !git update-index --assume-unchanged 
-    unignore = !git update-index --no-assume-unchanged
-    ignored = !git ls-files -v | grep ^[a-z]
-    dc = !git diff --cached
-    edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
-    edit-modified = "!f() { git ls-files --modified | cut -f2 ; }; vim `f`"
-    contributors = !git shortlog -s -n
-    sl = "!git stash list | awk -F: '{ print $0; system(\"git stash show -p \" $1); }' -"
+	ignore = !git update-index --assume-unchanged
+	unignore = !git update-index --no-assume-unchanged
+	ignored = !git ls-files -v | grep ^[a-z]
+	dc = !git diff --cached
+	edit-unmerged = "!f() { git ls-files --unmerged ./ | cut -f2 | sort -u ; }; vim `f`"
+	edit-modified = "!f() { git ls-files --modified ./ | cut -f2 ; }; vim `f`"
+	contributors = !git shortlog -s -n
+	sl = "!git stash list | awk -F: '{ print $0; system(\"git stash show -p \" $1); }' -"
+

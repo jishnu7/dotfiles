@@ -20,6 +20,9 @@ awful.rules.rules = {
     { rule = { class = "Vlc" },
         properties = { floating = true, ontop = true, sticky = true } },
 
+    { rule = { instance = "crx_gidgenkbbabolejbgbpnhbimgjbffefm" },
+        properties = { floating = true, ontop = true, sticky = true } },
+
     { rule_any = { class = { "Umplayer", "Audacious" } },
         properties = { floating = true, ontop = true } },
 
@@ -46,7 +49,7 @@ awful.rules.rules = {
         except = { name = "Oracle VM VirtualBox Manager" },
         properties = { floating = true, tag = tags[1][5] } },
 
-    { rule = { class = "Geary" },
+    { rule_any = { class = {"Geary", "Nylas N1"} },
         properties = { tag = tags[1][6] } },
 
     { rule_any = { class = {"Shotwell", "feh", "Gnome-calendar"} },

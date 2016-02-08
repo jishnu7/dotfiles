@@ -75,3 +75,8 @@ function lastd {
 cpstat () {
     sudo tar cf - "$1" | pv | (cd "$2";tar xf -)
 }
+
+# network connection
+wifi-connect() {
+    nmcli device wifi connect $1 password $2
+}

@@ -28,7 +28,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 
 alias youtube-dl='youtube-dl -t'
-alias youtube-mp3='youtube-dl -t -x --audio-format mp3 --audio-quality 0'
+alias youtube-mp3='youtube-dl -t -x -k --audio-format mp3 --audio-quality 0'
 alias youtube-playlist='youtube-dl -t -A --autonumber-size 2 -x --audio-format mp3 --audio-quality 0 -i'
 
 alias today='cal | sed "s/^/ /;s/$/ /;s/ $(date +%e) / $(date +%e | sed '\''s/./#/g'\'') /"'
@@ -49,7 +49,9 @@ alias claer='clear'
 
 #empty a file
 alias empty="cat /dev/null > "
-alias reload="source ~/.bashrc"
+alias bashreload="source ~/.bashrc"
+alias fixfile="find ./ -type f -exec chmod 644 {} +"
+alias fixfolder="find ./ -type d -exec chmod 755 {} +"
 
 #debian packaging stuff
 alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
@@ -80,7 +82,7 @@ alias suspend="systemctl suspend"
 alias server='python2 -m SimpleHTTPServer'
 
 alias emulator-jb="emulator -avd 42 -partition-size 300 -system ~/.android/avd/42.avd/system.img"
-alias virtualbox-load="sudo modprobe vboxdrv vboxnetflt"
+alias virtualbox-load="sudo modprobe vboxdrv" # vboxnetflt"
 
 alias open="xdg-open"
 
@@ -106,13 +108,7 @@ alias tmux-reload="tmux source-file ~/.tmux.conf"
 
 alias bower='noglob bower'
 
-# network connection
-wificonnect() {
-    nmcli device wifi connect $1 password $2
-}
-alias nmcli-connect=wificonnect
-alias nmcli-status='nmcli con status'
-alias nmcli-scan='nmcli dev wifi list'
+alias wifi-scan='nmcli dev wifi list'
 
 # vimpager is really slow!
 #export PAGER=/usr/bin/vimpager
@@ -137,4 +133,17 @@ if [ $SHELL = 'zsh' ]; then
     alias -s php="vim"
 fi
 
-alias timestep="cd modules/devkit-core/modules/timestep/src"
+# gameclosure
+alias gc-timestep="cd modules/devkit-core/modules/timestep/src"
+alias gc-native-android="cd modules/devkit-core/modules/native-android"
+alias gc-native-inspector="node ~/git/gameclosure/nativeinspector/NativeInspector.js && chromium --app=http://localhost:9220"
+
+# webapps
+alias keep="chromium '--profile-directory=Profile 2' --app-id=hmjkmjkepdijhoojdojkdfohbdgmmhki"
+alias slack="chromium '--profile-directory=Profile 2' --app-id=jeogkiiogjbmhklcnbgkdcjoioegiknm"
+alias youtube="chromium --profile-directory=Default --app-id=jjphmlaoffndcnecccgemfdaaoighkel"
+
+#alias indiclog="adb logcat | grep `adb shell ps | grep in.androidtweak.inputmethod.indic | cut -c11-15`"
+#
+#git-edit-unmerged = "git ls-files --unmerged | cut -f2 | sort -u ; vim "
+#git-edit-modified = "git ls-files --modified | cut -f2 ; vim `"

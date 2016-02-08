@@ -25,6 +25,6 @@ r.run("redshift-gtk")
 local day = os.date("*t").wday;
 if day > 1 and day < 7 then
     r.run("scudcloud")
-    r.run("geary")
+    --r.run("geary")
 end
 -- }}}

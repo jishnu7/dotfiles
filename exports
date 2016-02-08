@@ -4,7 +4,7 @@ export DEBFULLNAME='Jishnu Mohan'
 export DEBEMAIL='jishnu7@gmail.com'
 
 # Android SDK, NDK path
-export PATH=${PATH}:~/android/android-sdk/platform-tools:~/android/android-sdk/tools:~/android/android-sdk/build-tools/20.0.0/:~/android/apk-tool:~/android/android-ndk-r9:~/android/androgenizer:~/android/android-studio/bin:~/.bin:~/.npm-bin/bin:~/.gem/ruby/2.0.0/bin
+export PATH=${PATH}:~/android/android-sdk/platform-tools:~/android/android-sdk/tools:~/android/android-sdk/build-tools/22.0.1:~/android/apk-tool:~/android/android-ndk-r9:~/android/androgenizer:~/android/android-studio/bin:~/.bin:~/.npm-bin/bin:~/.gem/ruby/2.0.0/bin
 
 # 8 stinking colors, huh ?
 [ "$TERM" '==' "xterm" ] && export TERM=xterm-256color

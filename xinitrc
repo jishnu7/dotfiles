@@ -1,7 +1,8 @@
 xrdb -merge ~/.Xresources
 
 # Start a D-Bus session
-source /etc/X11/xinit/xinitrc.d/30-dbus.sh
+# Not needed from systemd 226
+#source /etc/X11/xinit/xinitrc.d/30-dbus.sh
 # Start GNOME Keyring
 eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
 
