@@ -79,3 +79,12 @@
 [submodule "vim/bundle/vim-airline-themes"]
 	path = vim/bundle/vim-airline-themes
 	url = git@github.com:vim-airline/vim-airline-themes.git
+[submodule "vim/bundle/nextval"]
+	path = vim/bundle/nextval
+	url = git@github.com:vim-scripts/nextval.git
+[submodule "urxvt/ext"]
+	path = urxvt/extensions/perls
+	url = https://github.com/muennich/urxvt-perls.git
+[submodule "urxvt/extensions/font-size"]
+	path = urxvt/extensions/font-size
+	url = git@github.com:majutsushi/urxvt-font-size.git
