@@ -32,11 +32,11 @@ awful.rules.rules = {
     { rule = { class = "Chromium" },
         properties = { floating = false, tag = tags[1][2] } },
 
-    { rule = { class = "Xchat" },
+    { rule_any = { class = {"Xchat", "Hexchat"} },
         properties = { tag = tags[1][3] } },
 
     -- Slack
-    { rule = { class = "Scudcloud" },
+    { rule_any = { class = {"Scudcloud", "Slack"} },
         properties = { tag = tags[1][3] } },
 
     { rule = { class = "Nautilus" },

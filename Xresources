@@ -36,6 +36,10 @@ URxvt.scrollWithBuffer: true
 ! scroll back to the bottom on keypress
 URxvt.scrollTtyKeypress: true
 
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 1
+URxvt.secondaryWheel: 1
+
 ! Cursor
 URxvt.cursorBlink:          true
 URxvt.cursorColor:          #657b83
@@ -142,6 +146,7 @@ URxvt*color15: S_base3
 !*.color21: base06
 
 ! extensions
+URxvt.perl-lib:             ~/.urxvt/ext
 URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select,font-size,matcher
 URxvt.url-launcher:         /usr/bin/firefox
 URxvt.url-select.launcher:  /usr/bin/firefox

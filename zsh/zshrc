@@ -8,7 +8,7 @@ ZSH_THEME="agnoster"
 
 DEFAULT_USER="jishnu"
 
-plugins=(git archlinux systemd urltools zsh-syntax-highlighting command-not-found)
+plugins=(git archlinux systemd urltools zsh-syntax-highlighting command-not-found history-substring-search web-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -35,8 +35,11 @@ precmd () (
     echo -ne '\a'
 )
 
-export ANDROID_HOME="/home/jishnu/android/android-sdk/"
-
 if [ -f $DOTFILES_GIT/zsh/bash_greeter.sh ]; then
     . $DOTFILES_GIT/zsh/bash_greeter.sh
+fi
+
+if [ -n "$DESKTOP_SESSION" ];then
+    eval $(gnome-keyring-daemon --start)
+    export SSH_AUTH_SOCK
 fi

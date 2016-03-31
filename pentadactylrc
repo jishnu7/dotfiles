@@ -5,9 +5,11 @@ group user
 set defsearch=duckduckgo
 set editor=gedit
 set passkeys=tweetdeck.twitter.com/:N<Up><Down><Left><Right>
+"set passkeys+='drive.google.com':jkxANTPSDFcuarvzs<Return>./d?,gn,gl,gf,gd
+"autocmd LocationChange google.com :normal! <C-z>
 
 " to enable urlbar
-"set guioptions+=T
+" set guioptions+=T
 
 " websites
 map go :tabopen google 
