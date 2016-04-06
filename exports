@@ -8,7 +8,9 @@ export PATH=${PATH}:~/android/android-sdk/platform-tools:~/android/android-sdk/t
 
 export ANDROID_HOME="/home/jishnu/android/android-sdk/"
 export ANDROID_SDK_HOME=~/android/android-sdk
+export ANDROID_SDK_ROOT=~/android/android-sdk
 export NDK_HOME=~/android/android-ndk-r9
+export ANDROID_NDK_ROOT=~/android/android-ndk-r9
 
 # 8 stinking colors, huh ?
 [ "$TERM" '==' "xterm" ] && export TERM=xterm-256color
