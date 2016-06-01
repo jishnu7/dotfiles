@@ -112,7 +112,6 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,        }, "a",      function () awful.util.spawn( "firefox", false ) end),
     awful.key({ modkey,        }, "s",      function () awful.util.spawn( "chromium", false ) end),
     awful.key({ modkey,        }, "d",      function () awful.util.spawn( "nautilus", false ) end),
-    awful.key({ modkey,        }, "q",      function () awful.util.spawn( "hipchat", false ) end),
     awful.key({ modkey,        }, "w",      function () awful.util.spawn( "gedit", false) end),
     awful.key({ modkey,        }, "e",      function () awful.util.spawn( "gnome-calculator", false) end),
 

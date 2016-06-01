@@ -24,7 +24,7 @@ r.run("redshift-gtk")
 -- office apps
 local day = os.date("*t").wday;
 if day > 1 and day < 7 then
-    r.run("slack")
+    --r.run("slack")
     --r.run("geary")
 end
 -- }}}

@@ -17,7 +17,7 @@ awful.rules.rules = {
         properties = { floating = true } },
 
     -- Use `xprop` to identify class name
-    { rule = { class = "Vlc" },
+    { rule_any = { class = { "vlc", "Vlc" } },
         properties = { floating = true, ontop = true, sticky = true } },
 
     { rule = { instance = "crx_gidgenkbbabolejbgbpnhbimgjbffefm" },
@@ -55,9 +55,11 @@ awful.rules.rules = {
     { rule_any = { class = {"Shotwell", "feh", "Gnome-calendar"} },
         properties = { floating = true } },
 
-    -- Google Keep, Floating Youtube
+    -- Google Keep, Floating Youtube, Pomodoro
     { rule_any = { instance = { "crx_hmjkmjkepdijhoojdojkdfohbdgmmhki",
-                                "jjphmlaoffndcnecccgemfdaaoighkel" } },
+                                "jjphmlaoffndcnecccgemfdaaoighkel",
+                                "crx_hfilbmblidibnmifcabmolhlaekpfhak"
+                              } },
         properties = { floating = true } }
 }
 

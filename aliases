@@ -146,3 +146,6 @@ alias youtube="chromium --profile-directory=Default --app-id=jjphmlaoffndcnecccg
 #
 #git-edit-unmerged = "git ls-files --unmerged | cut -f2 | sort -u ; vim "
 #git-edit-modified = "git ls-files --modified | cut -f2 ; vim `"
+
+# to make aliases available with sudo
+alias sudo='sudo '

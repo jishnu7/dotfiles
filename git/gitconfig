@@ -1,6 +1,7 @@
 [user]
 	email = jishnu7@gmail.com
 	name = Jishnu Mohan
+	signingkey = EA2732BA
 [color]
 	ui = auto
 	pager = true
