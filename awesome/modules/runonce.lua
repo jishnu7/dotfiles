@@ -1,17 +1,19 @@
 -- @author Peter J. Kranz (Absurd-Mind, peter@myref.net)
 -- Any questions, criticism or praise just drop me an email
 
+local awful = { util = require('awful.util') }
+
 local M = {}
 
 -- get the current Pid of awesome
 local function getCurrentPid()
     -- get awesome pid from pgrep
     local fpid = io.popen("pgrep -u " .. os.getenv("USER") .. " -o awesome")
-    local pid = fpid:read("*n")
+    local pid = tonumber(fpid:read("*n"))
     fpid:close()
 
     -- sanity check
-    if pid == nil then
+    if pid == nil or pid <= 0 then
         return -1
     end
 
@@ -26,11 +28,11 @@ local function getOldPid(filename)
     end
 
     -- read number
-    local pid = pidFile:read("*n")
+    local pid = tonumber(pidFile:read("*n"))
     pidFile:close()
 
     -- sanity check
-    if pid <= 0 then
+    if not pid or pid <= 0 then
         return -1
     end
 
@@ -39,8 +41,12 @@ end
 
 local function writePid(filename, pid)
     local pidFile = io.open(filename, "w+")
-    pidFile:write(pid)
-    pidFile:close()
+    if pidFile == nil then
+        print("failed to write pid " .. pid .. " to " .. filename)
+    else
+        pidFile:write(pid)
+        pidFile:close()
+    end
 end
 
 local function shallExecute(oldPid, newPid)
@@ -53,7 +59,12 @@ local function shallExecute(oldPid, newPid)
 end
 
 local function getPidFile()
-    local host = io.lines("/proc/sys/kernel/hostname")()
+    local host = awful.util.pread("/proc/sys/kernel/hostname")
+    if host == nil then
+       local fhost = io.popen("hostname")
+       host = fhost:read()
+       fhost:close()
+    end
     return awful.util.getdir("cache") .. "/awesome." .. host .. ".pid"
 end
 
