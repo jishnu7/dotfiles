@@ -41,6 +41,16 @@ ln -s $PWD/mpd/mpd.conf ~/.mpd/mpd.conf
 rm -f ~/.ncmpcpp/config
 ln -s $PWD/mpd/ncmpcpp.config ~/.ncmpcpp/config
 
-#mount
-rm -f ~/.mount_data
-ln -s $PWD/mount_data ~/.mount_data
+#xinit
+rm -rf ~/.xinitrc
+rm -rf ~/.Xresources
+ln -s $PWD/xinitrc ~/.xinitrc
+ln -s $PWD/Xresources ~/.Xresource
+
+#tmux
+rm -rf ~/.tmux.conf
+ln -s $PWD/tmux.conf ~/.tmux.conf
+
+#dircolors
+rm -rf ~/.dircolors
+ln -s $PWD/dircolors/dircolors.ansi-dark ~/.dircolors
