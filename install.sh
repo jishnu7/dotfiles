@@ -9,6 +9,7 @@ ln -s $PWD/bash/bashrc ~/.bashrc
 
 #zsh
 rm -f ~/.zshrc
+rm -f ~/.zlogin
 ln -s $PWD/zsh/zshrc ~/.zshrc
 ln -s $PWD/zsh/zlogin ~/.zlogin
 
@@ -30,12 +31,8 @@ rm -rf ~/.vim
 ln -s $PWD/vim/vimrc ~/.vimrc
 ln -s $PWD/vim ~/.vim
 
-#terminator
-rm -rf ~/.config/terminator
-ln -s $PWD/terminator ~/.config/terminator
-
 #mpd & ncmpcpp
-mkdir -p ~/.mpd ~/.ncmpp
+mkdir -p ~/.mpd ~/.ncmpcpp
 rm -f ~/.mpd/mpd.conf
 ln -s $PWD/mpd/mpd.conf ~/.mpd/mpd.conf
 rm -f ~/.ncmpcpp/config
@@ -45,7 +42,7 @@ ln -s $PWD/mpd/ncmpcpp.config ~/.ncmpcpp/config
 rm -rf ~/.xinitrc
 rm -rf ~/.Xresources
 ln -s $PWD/xinitrc ~/.xinitrc
-ln -s $PWD/Xresources ~/.Xresource
+ln -s $PWD/Xresources ~/.Xresources
 
 #tmux
 rm -rf ~/.tmux.conf
