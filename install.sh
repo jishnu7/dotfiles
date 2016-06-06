@@ -38,11 +38,14 @@ ln -s $PWD/mpd/mpd.conf ~/.mpd/mpd.conf
 rm -f ~/.ncmpcpp/config
 ln -s $PWD/mpd/ncmpcpp.config ~/.ncmpcpp/config
 
-#xinit
+#awesome & xinit
+mkdir -p ~/.config
 rm -rf ~/.xinitrc
 rm -rf ~/.Xresources
+rm -rf ~/.config/awesome
 ln -s $PWD/xinitrc ~/.xinitrc
 ln -s $PWD/Xresources ~/.Xresources
+ln -s $PWD/awesome ~/.config/awesome
 
 #tmux
 rm -rf ~/.tmux.conf
