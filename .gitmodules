@@ -1,42 +1,42 @@
 [submodule "vim/pathogen"]
 	path = vim/pathogen
-	url = git://github.com/tpope/vim-pathogen.git
+	url = https://github.com/tpope/vim-pathogen.git
 [submodule "vim/bundle/fugitive"]
 	path = vim/bundle/fugitive
-	url = git://github.com/tpope/vim-fugitive.git
+	url = https://github.com/tpope/vim-fugitive.git
 [submodule "vim/bundle/closetag"]
 	path = vim/bundle/closetag
-	url = git://github.com/docunext/closetag.vim.git
+	url = https://github.com/docunext/closetag.vim.git
 [submodule "vim/bundle/supertab"]
 	path = vim/bundle/supertab
-	url = git://github.com/ervandew/supertab.git
+	url = https://github.com/ervandew/supertab.git
 [submodule "vim/bundle/surround"]
 	path = vim/bundle/surround
-	url = git://github.com/tpope/vim-surround.git
+	url = https://github.com/tpope/vim-surround.git
 [submodule "vim/bundle/indent-guides"]
 	path = vim/bundle/indent-guides
-	url = git://github.com/nathanaelkane/vim-indent-guides.git
+	url = https://github.com/nathanaelkane/vim-indent-guides.git
 [submodule "vim/bundle/python"]
 	path = vim/bundle/python
-	url = git://github.com/olivierverdier/python-syntax.vim.git
+	url = https://github.com/olivierverdier/python-syntax.vim.git
 [submodule "vim/bundle/colors-solarized"]
 	path = vim/bundle/colors-solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
+	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "vim/bundle/csapprox"]
 	path = vim/bundle/csapprox
-	url = git://github.com/godlygeek/csapprox.git
+	url = https://github.com/godlygeek/csapprox.git
 [submodule "gnome-terminal/dircolors-solarized"]
 	path = gnome-terminal/dircolors-solarized
-	url = git://github.com/seebi/dircolors-solarized.git
+	url = https://github.com/seebi/dircolors-solarized.git
 [submodule "gnome-terminal/colors-solarized"]
 	path = gnome-terminal/colors-solarized
-	url = git://github.com/sigurdga/gnome-terminal-colors-solarized.git
+	url = https://github.com/sigurdga/gnome-terminal-colors-solarized.git
 [submodule "terminator/solarized"]
 	path = terminator/solarized
-	url = git://github.com/ghuntley/terminator-solarized.git
+	url = https://github.com/ghuntley/terminator-solarized.git
 [submodule "zsh/oh-my-zsh"]
 	path = zsh/oh-my-zsh
-	url = git://github.com/robbyrussell/oh-my-zsh.git
+	url = https://github.com/robbyrussell/oh-my-zsh.git
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
@@ -48,7 +48,7 @@
 	url = https://github.com/solarized/xchat-colors-solarized.git
 [submodule "vim/bundle/easymotion"]
 	path = vim/bundle/easymotion
-	url = git://github.com/Lokaltog/vim-easymotion.git
+	url = https://github.com/Lokaltog/vim-easymotion.git
 [submodule "vim/bundle/detectindent"]
 	path = vim/bundle/detectindent
 	url = https://github.com/ciaranm/detectindent.git
@@ -60,10 +60,10 @@
 	url = https://github.com/kien/ctrlp.vim.git
 [submodule "vim/bundle/vim-airline"]
 	path = vim/bundle/vim-airline
-	url = git@github.com:bling/vim-airline.git
+	url = https://github.com/bling/vim-airline.git
 [submodule "vim/bundle/bufferline"]
 	path = vim/bundle/bufferline
-	url = git@github.com:bling/vim-bufferline.git
+	url = https://github.com/bling/vim-bufferline.git
 [submodule "vim/bundle/vim-javascript"]
 	path = vim/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
@@ -75,16 +75,16 @@
 	url = https://github.com/tmux-plugins/tpm
 [submodule "awesome/lain"]
 	path = awesome/lain
-	url = git://github.com/copycat-killer/lain.git
+	url = https://github.com/copycat-killer/lain.git
 [submodule "vim/bundle/vim-airline-themes"]
 	path = vim/bundle/vim-airline-themes
-	url = git@github.com:vim-airline/vim-airline-themes.git
+	url = https://github.com/vim-airline/vim-airline-themes.git
 [submodule "vim/bundle/nextval"]
 	path = vim/bundle/nextval
-	url = git@github.com:vim-scripts/nextval.git
+	url = https://github.com/vim-scripts/nextval.git
 [submodule "urxvt/ext"]
 	path = urxvt/extensions/perls
 	url = https://github.com/muennich/urxvt-perls.git
 [submodule "urxvt/extensions/font-size"]
 	path = urxvt/extensions/font-size
-	url = git@github.com:majutsushi/urxvt-font-size.git
+	url = https://github.com/majutsushi/urxvt-font-size.git
