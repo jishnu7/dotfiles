@@ -66,7 +66,7 @@ function ping() {
 }
 
 function start_vpn() {
-    sudo ip netns exec frootvpn openvpn --config /etc/openvpn/AzireVPN-US.ovpn &
+    sudo ip netns exec frootvpn openvpn --config /etc/openvpn/us.ovpn &
     sudo ip netns exec frootvpn ip a show dev vpn1 up;
 }
 
