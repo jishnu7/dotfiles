@@ -140,7 +140,6 @@ alias gc-native-inspector="node ~/git/gameclosure/nativeinspector/NativeInspecto
 
 # webapps
 alias keep="chromium '--profile-directory=Profile 2' --app-id=hmjkmjkepdijhoojdojkdfohbdgmmhki"
-alias youtube="chromium --profile-directory=Default --app-id=jjphmlaoffndcnecccgemfdaaoighkel"
 
 #alias indiclog="adb logcat | grep `adb shell ps | grep in.androidtweak.inputmethod.indic | cut -c11-15`"
 #
