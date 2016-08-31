@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Google Keep
+Exec=/usr/bin/chromium "--profile-directory=Profile 2" --app-id=hmjkmjkepdijhoojdojkdfohbdgmmhki
+Icon=/home/jishnu/.local/share/icons/hicolor/128x128/apps/chrome-hmjkmjkepdijhoojdojkdfohbdgmmhki-Profile_2.png
+StartupWMClass=crx_hmjkmjkepdijhoojdojkdfohbdgmmhki

@@ -23,7 +23,7 @@ awful.rules.rules = {
     { rule = { instance = "crx_gidgenkbbabolejbgbpnhbimgjbffefm" },
         properties = { floating = true, ontop = true, sticky = true } },
 
-    { rule_any = { class = { "Umplayer", "Audacious" } },
+    { rule_any = { class = { "Umplayer", "Audacious", "xpad" } },
         properties = { floating = true, ontop = true } },
 
     { rule_any = { class = { "Firefox", "Iceweasel" } },

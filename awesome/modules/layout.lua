@@ -1,3 +1,5 @@
+local launchbar = require("../modules/launchbar")
+
 -- Separators
 spr = wibox.widget.textbox(' ')
 arrl = wibox.widget.imagebox()
@@ -10,6 +12,7 @@ arrl_ld:set_image(beautiful.arrl_ld)
 -- {{{ Layout
 
 -- Create a wibox for each screen and add it
+local mylaunchbar = launchbar("/home/jishnu/.config/awesome/launchbar/")
 mywibox = {}
 mypromptbox = {}
 mylayoutbox = {}
@@ -78,7 +81,7 @@ for s = 1, screen.count() do
 
     -- Create the upper wibox
     mywibox[s] = awful.wibox({ position = "top", screen = s, height = 18 }) 
-        
+
     -- Widgets that are aligned to the upper left
     local left_layout = wibox.layout.fixed.horizontal()
     left_layout:add(spr)
@@ -89,6 +92,7 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the upper right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
+    right_layout:add(mylaunchbar)
     right_layout:add(spr)
     right_layout:add(arrl)
     right_layout:add(mpdicon)
