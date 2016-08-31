@@ -55,9 +55,9 @@ function vpnip() {
     echo ""
 
     echo "Public IP: "
-    curl icanhazip.com; echo
+    curl http://ipinfo.io/; echo
     echo "VPN IP:"
-    ip netns exec frootvpn curl icanhazip.com;
+    ip netns exec frootvpn curl http://ipinfo.io/
     echo ""
 }
 
@@ -66,7 +66,7 @@ function ping() {
 }
 
 function start_vpn() {
-    sudo ip netns exec frootvpn openvpn --config /etc/openvpn/us.ovpn &
+    sudo ip netns exec frootvpn openvpn --config /etc/openvpn/us.ovpn
     sudo ip netns exec frootvpn ip a show dev vpn1 up;
 }
 

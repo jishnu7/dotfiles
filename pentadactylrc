@@ -36,6 +36,7 @@ map _tw :tabopen https://twitter.com<CR>
 map _wi :tabopen wikipedia 
 map _yt :tabopen youtube 
 map _yf :tabopen https://www.youtube.com/feed/subscriptions<CR>
+map _yp :tabopen https://www.youtube.com/channel/UCF0pVplsI8R5kcAqgtoRqoA<CR>
 
 " plugins/bookmarklets etc
 map _af :open autofill<CR>
