@@ -121,4 +121,6 @@ endfunction
 " Save read-only files
 cnoremap sudow w !sudo tee % >/dev/null
 
-let g:ctrlp_custom_ignore = 'node_modules'
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\.git$\|bower_components$\|dist$\|node_modules$\|build$\|modules$\|coverage$',
+    \ 'file': '\.so$\|\.pyc$' }
