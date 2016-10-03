@@ -8,8 +8,20 @@ awful.rules.rules = {
                       focus = true,
                       keys = clientkeys,
                       buttons = clientbuttons,
+                      maximized_vertical   = false,
+                      maximized_horizontal = false,
                       size_hints_honor = false
-                     }
+                     },
+        -- Move child windows to the same screen
+        callback = function (c)
+            local clients = client.get()
+            for i, c2 in pairs(clients) do
+                if c.class == c2.class then
+                    c.screen = c2.screen
+                end
+
+            end
+        end
     },
 
     -- Youtube
@@ -23,7 +35,7 @@ awful.rules.rules = {
     { rule = { instance = "crx_gidgenkbbabolejbgbpnhbimgjbffefm" },
         properties = { floating = true, ontop = true, sticky = true } },
 
-    { rule_any = { class = { "Umplayer", "Audacious", "xpad" } },
+    { rule_any = { class = { "Umplayer", "Audacious", "xpad", "MPlayer", "mpv" } },
         properties = { floating = true, ontop = true } },
 
     { rule_any = { class = { "Firefox", "Iceweasel" } },
