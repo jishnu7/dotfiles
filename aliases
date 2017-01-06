@@ -151,3 +151,5 @@ alias vpn='~/git/dotfiles/vpnns.sh'
 
 # to make aliases available with sudo
 alias sudo='sudo '
+
+alias tree='tree -I node_modules'

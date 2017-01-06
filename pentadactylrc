@@ -9,7 +9,7 @@ set passkeys=tweetdeck.twitter.com/:N<Up><Down><Left><Right>
 "autocmd LocationChange google.com :normal! <C-z>
 
 " to enable urlbar
-" set guioptions+=T
+set guioptions+=T
 
 " websites
 map go :tabopen google 
@@ -36,7 +36,9 @@ map _tw :tabopen https://twitter.com<CR>
 map _wi :tabopen wikipedia 
 map _yt :tabopen youtube 
 map _yf :tabopen https://www.youtube.com/feed/subscriptions<CR>
-map _yp :tabopen https://www.youtube.com/channel/UCF0pVplsI8R5kcAqgtoRqoA<CR>
+map _yp :tabopen https://www.youtube.com/channel/UCF0pVplsI8R5kcAqgtoRqoA<CR> " popular
+map _ym :tabopen https://www.youtube.com/channel/UC-9-kyTW8ZkZNDHQJ6FgpwQ<CR> " music
+map _yi :tabopen https://www.youtube.com/channel/UCAh9DbAZny_eoGFsYlH2JZw<CR> " popular-india
 
 " plugins/bookmarklets etc
 map _af :open autofill<CR>
