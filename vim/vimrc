@@ -31,6 +31,21 @@ set pastetoggle=<F2>
 
 syntax enable "syntax highlighting
 
+set wildmenu " Display all matching files when we tab complete
+"set path+=** "search subfolders
+command! MakeTags !ctags -R .
+"- Use ^] Jump to tag under the cursor
+"- g^] for ambiguos tags
+"- ^t jum back up the stack
+
+" File Browsing
+let g:netrw_banner=0
+let g:netrw_browse_split=4
+let g:netrw_altv=1
+let g:netrw_liststyle=3
+let g:netrw_list_hide=netrw_gitignore#Hide()
+let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
+
 "set background=light
 set background=dark
 let g:solarized_termtrans=1
@@ -81,6 +96,9 @@ autocmd FileType less setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType php setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType xml setlocal ts=2 sts=2 sw=2 expandtab
 let g:syntastic_php_checkers=[]
+
+let g:jsx_ext_required = 0
+
 " KeyMaps
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 " STOP using arrow keys!

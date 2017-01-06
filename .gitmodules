@@ -88,3 +88,6 @@
 [submodule "urxvt/extensions/font-size"]
 	path = urxvt/extensions/font-size
 	url = https://github.com/majutsushi/urxvt-font-size.git
+[submodule "vim/bundle/vim-jsx"]
+	path = vim/bundle/vim-jsx
+	url = https://github.com/mxw/vim-jsx.git
