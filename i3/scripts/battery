@@ -2,6 +2,7 @@
 #
 # Copyright 2014 Pierre Mavro <deimos@deimos.fr>
 # Copyright 2014 Vivien Didelot <vivien@didelot.org>
+# Copyright 2017 Jishnu Mohan <jishnu7@gmail.com>
 #
 # Licensed under the terms of the GNU GPL v3, or any later version.
 #
@@ -21,6 +22,9 @@ my $status;
 my $percent;
 my $full_text;
 my $short_text;
+my $status_text;
+my $icon;
+my $color;
 my $bat_number = $ENV{BLOCK_INSTANCE} || 0;
 
 # read the first line of the "acpi" command output
@@ -35,37 +39,46 @@ if ($acpi !~ /: (\w+), (\d+)%/) {
 
 $status = $1;
 $percent = $2;
-$full_text = "$percent%";
+
+if ($percent < 20) {
+	$icon = "";
+	$color = "#FF0000";
+} elsif ($percent < 40) {
+	$icon = "";
+	$color = "#FFAE00";
+} elsif ($percent < 60) {
+	$icon = "";
+	$color = "#FFF600";
+} elsif ($percent < 85) {
+	$icon = "";
+	$color = "#A8FF00";
+} else {
+	$icon = "";
+	$color = "#A8FF00";
+}
 
 if ($status eq 'Discharging') {
-	$full_text .= ' DIS';
+	$status_text = '';
 } elsif ($status eq 'Charging') {
-	$full_text .= ' CHR';
+	$status_text = ' ⚡';
 }
+
+$full_text = "$percent%";
 
 $short_text = $full_text;
 
 if ($acpi =~ /(\d\d:\d\d):/) {
-	$full_text .= " ($1)";
+	$full_text .= " $1";
 }
 
-# print text
-print "$full_text\n";
+# to print utf-8
+use open ':std', ':encoding(UTF-8)';
+
+print "$icon $status_text $full_text\n";
 print "$short_text\n";
 
-# consider color and urgent flag only on discharge
 if ($status eq 'Discharging') {
-
-	if ($percent < 20) {
-		print "#FF0000\n";
-	} elsif ($percent < 40) {
-		print "#FFAE00\n";
-	} elsif ($percent < 60) {
-		print "#FFF600\n";
-	} elsif ($percent < 85) {
-		print "#A8FF00\n";
-	}
-
+	print "$color\n";
 	if ($percent < 5) {
 		exit(33);
 	}
