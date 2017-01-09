@@ -1,9 +1,13 @@
 ! Xft settings
-Xft.dpi:                    96
+!Xft.dpi:                    276
+!Xft.dpi:                    96
+Xft.dpi:                    192
+Xft.autohint:               0
+Xft.lcdfilter:              lcddefault
+Xft.hintstyle:              hintfull
+Xft.hinting:                true
 Xft.antialias:              true
 Xft.rgba:                   rgb
-Xft.hinting:                true
-Xft.hintstyle:              hintslight
 
 URxvt.depth:                32
 !URxvt.geometry:             90x30
@@ -17,7 +21,8 @@ URxvt.saveLines:            65535
 !URxvt.lineSpace:            0
 
 ! Fonts
-URxvt*font: xft:Inconsolata for Powerline:regular:pixelsize=17,xft:Dejavu Sans Mono, xft:Meera
+URxvt*font: xft:Inconsolata for Powerline:regular,xft:Dejavu Sans Mono, xft:Meera
+
 !URxvt*imFont: xft:Inconsolata for Powerline:regular:pixelsize=16:antialias=true:hinting:true
 !URxvt*boldFont: xft:Inconsolata for Powerline:bold:pixelsize=16:antialias=true:hinting:true
 !URxvt*italicFont: xft:Inconsolata for Powerline:italic:pixelsize=16:antialias=true:hinting:true
@@ -162,3 +167,17 @@ URxvt.keysym.M-C-v:         perl:clipboard:paste_escaped
 URxvt.keysym.C-KP_Add:      perl:font-size:increase
 URxvt.keysym.C-KP_Subtract: perl:font-size:decrease
 URxvt.tabbed.autohide:      yes
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: argb:ba000000, argb:0ffffff, argb:0ffffff
+rofi.color-normal: argb:0ffffff, #ffffff, argb:0ffffff, argb:0ffffff, #e91e63
+rofi.color-active: argb:0ffffff, #03a9f4, argb:0ffffff, argb:0ffffff, #e91e63
+rofi.color-urgent: argb:0ffffff, #ff5722, argb:0ffffff, argb:0ffffff, #e91e63
+rofi.modi:                           window,run
+rofi.font:                           Inconsolata for Powerline 8
+rofi.padding:                        750
+rofi.fullscreen:                     true
+rofi.dpi:                            276
