@@ -142,5 +142,5 @@ endfunction
 cnoremap sudow w !sudo tee % >/dev/null
 
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\.git$\|bower_components$\|dist$\|node_modules$\|build$\|modules$\|coverage$',
+    \ 'dir':  '\.git$\|bower_components$\|dist$\|node_modules$\|build$\|coverage$',
     \ 'file': '\.so$\|\.pyc$' }
