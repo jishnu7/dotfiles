@@ -16,6 +16,10 @@ my $t_warn = 50;
 my $t_crit = 80;
 my $cpu_usage = -1;
 
+if ($ENV{'BLOCK_BUTTON'} == 1) {
+    system("urxvt -e htop");
+}
+
 sub help {
     print "Usage: cpu_usage [-w <warning>] [-c <critical>]\n";
     print "-w <percent>: warning threshold to become yellow\n";

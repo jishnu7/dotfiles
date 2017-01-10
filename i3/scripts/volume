@@ -62,9 +62,10 @@ format() {
 #------------------------------------------------------------------------
 
 case $BLOCK_BUTTON in
-  3) amixer -q -D $MIXER sset $SCONTROL $(capability) toggle ;;  # right click, mute/unmute
-  4) amixer -q -D $MIXER sset $SCONTROL $(capability) ${STEP}+ unmute ;; # scroll up, increase
-  5) amixer -q -D $MIXER sset $SCONTROL $(capability) ${STEP}- unmute ;; # scroll down, decrease
+  1) amixer -q -D $MIXER sset $SCONTROL $(capability) toggle ;;  # left click, mute/unmute
+  3) pavucontrol ;;  # right click, open gui
+  4) amixer -q -D $MIXER sset $SCONTROL $(capability) ${STEP}- unmute ;; # scroll down, decrease
+  5) amixer -q -D $MIXER sset $SCONTROL $(capability) ${STEP}+ unmute ;; # scroll up, increase
 esac
 
 volume | format

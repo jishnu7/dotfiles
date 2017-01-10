@@ -2,12 +2,12 @@
 
 # Left click
 if [[ "${BLOCK_BUTTON}" -eq 1 ]]; then
-  amixer -q sset Capture 5%+
-# Middle click
-elif [[ "${BLOCK_BUTTON}" -eq 2 ]]; then
   amixer -q sset Capture toggle
-# Right click
-elif [[ "${BLOCK_BUTTON}" -eq 3 ]]; then
+# scroll up
+elif [[ "${BLOCK_BUTTON}" -eq 5 ]]; then
+  amixer -q sset Capture 5%+
+# scroll down
+elif [[ "${BLOCK_BUTTON}" -eq 4 ]]; then
   amixer -q sset Capture 5%-
 fi
 

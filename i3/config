@@ -72,8 +72,8 @@ set $ws4 "4 "
 set $ws5 "5 "
 set $ws6 "6 "
 set $ws7 "7 "
-set $ws8 "8 "
-set $ws9 "9 "
+set $ws8 "8 "
+set $ws9 "9 "
 set $ws10 "10 "
 
 # switch to workspace
@@ -131,19 +131,20 @@ set $bg-color            #2f343f
 set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
+set $urgent-bg-color     #ff5722
 
 # window colors
 #                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          #00ff00
-client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
-client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
-client.urgent $urgent-bg-color $urgent-bg-color $text-color #00ff00
+client.focused          $bg-color           $bg-color          $text-color          #8bc34a
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
+client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
 
+hide_edge_borders both
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
-bindsym $mod+d exec exec rofi -show run -lines 5 -eh 2 -width 100 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Inconsolata for Powerline 8" -fake-background "screenshot" -fake-transparency true
+bindsym $mod+d exec rofi -show run
 
 bar {
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
@@ -186,6 +187,23 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+#bindsym Control+Mod1+Up exec playerctl play-pause
+bindsym Control+Mod1+Down exec playerctl stop
+#bindsym Control+Mod1+Right exec playerctl next
+#bindsym Control+Mod1+Left exec playerctl previous
+bindsym Print exec "scrot -e 'mv $f ~/Pictures/screenshots/; shotwell ~/Pictures/screenshots/$f'"
+
+# Apps
+assign [class="Firefox"] $ws2
+assign [class="Chromium"] $ws2
+assign [class="Nautilus"] $ws3
+assign [class="Hexchat"] $ws8
+assign [class="Geary"] $ws9
+assign [class="Lollypop"] $ws10
+assign [class="Google Play Music Desktop Player"] $ws10
+for_window [class="Pavucontrol"] floating enable
+for_window [class="Vlc"] floating enable sticky enable
+
 # Startup
 exec --no-startup-id feh --bg-scale ~/Pictures/wall.jpg
 exec --no-startup-id compton -f
@@ -195,19 +213,8 @@ exec --no-startup-id setxkbmap -option caps:swapescape
 # hide cursor
 exec --no-startup-id unclutter -idle 10
 exec --no-startup-id firefox
+exec --no-startup-id geary
 exec --no-startup-id fcitx
-exec --no-startup-id mpd
+#exec --no-startup-id mpd
 exec --no-startup-id redshift
 exec --no-startup-id redshift-gtk
-
-#bindsym Control+Mod1+Up exec playerctl play-pause
-#bindsym Control+Mod1+Down exec playerctl stop
-#bindsym Control+Mod1+Right exec playerctl next
-#bindsym Control+Mod1+Left exec playerctl previous
-bindsym Print exec "scrot -e 'mv $f ~/Pictures/screenshots/; shotwell ~/Pictures/screenshots/$f'"
-
-# Apps
-assign [class="Firefox"] $ws2
-assign [class="Chromium"] $ws2
-assign [class="Nautilus"] $ws3
-assign [class="Lollypop"] $ws10
