@@ -154,3 +154,4 @@ alias sudo='sudo '
 
 alias tree='tree -I node_modules'
 alias t='task'
+alias tt='task project:work'
