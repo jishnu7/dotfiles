@@ -153,3 +153,4 @@ alias vpn='~/git/dotfiles/vpnns.sh'
 alias sudo='sudo '
 
 alias tree='tree -I node_modules'
+alias t='task'
