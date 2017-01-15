@@ -71,7 +71,7 @@ set $ws3 "3 "
 set $ws4 "4 "
 set $ws5 "5 "
 set $ws6 "6 "
-set $ws7 "7 "
+set $ws7 "7 "
 set $ws8 "8 "
 set $ws9 "9 "
 set $ws10 "10 "
@@ -147,8 +147,8 @@ hide_edge_borders both
 bindsym $mod+d exec rofi -show run
 
 bar {
-        status_command i3blocks -c ~/.config/i3/i3blocks.conf
-        position top
+    status_command i3blocks -c ~/.config/i3/i3blocks.conf
+    position top
 
     colors {
         background $bg-color
@@ -197,6 +197,7 @@ bindsym Print exec "scrot -e 'mv $f ~/Pictures/screenshots/; shotwell ~/Pictures
 assign [class="Firefox"] $ws2
 assign [class="Chromium"] $ws2
 assign [class="Nautilus"] $ws3
+assign [class="Deluge"] $ws7
 assign [class="Hexchat"] $ws8
 assign [class="Geary"] $ws9
 assign [class="Lollypop"] $ws10
@@ -218,3 +219,5 @@ exec --no-startup-id fcitx
 #exec --no-startup-id mpd
 exec --no-startup-id redshift
 exec --no-startup-id redshift-gtk
+exec --no-startup-id nm-applet
+exec --no-startup-id xfce4-power-manager
