@@ -55,6 +55,7 @@ bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+t sticky toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -170,9 +171,9 @@ bindsym $mod+Shift+x exec i3lock
 # Button control
 # $ xmodmap -pke
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5 #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5 #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pamixer -t # toggle mute
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
@@ -203,6 +204,8 @@ assign [class="Geary"] $ws9
 assign [class="Lollypop"] $ws10
 assign [class="Google Play Music Desktop Player"] $ws10
 for_window [class="Pavucontrol"] floating enable
+for_window [title="Android Emulator*"] floating enable
+for_window [class="Gnome-calendar"] floating enable
 for_window [class="Vlc"] floating enable sticky enable
 
 # Startup
