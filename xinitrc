@@ -11,7 +11,7 @@ dbus-update-activation-environment --systemd DISPLAY
 
 #exec /usr/bin/awesome >> ~/.cache/awesome/stdout 2>> ~/.cache/awesome/stderr
 
-export QT_DEVICE_PIXEL_RATIO=2
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export GDK_SCALE=2
 export GDK_DPI_SCALE=0.5
 export MOZ_USE_XINPUT2=1
