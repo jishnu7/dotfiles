@@ -171,13 +171,19 @@ bindsym $mod+Shift+x exec i3lock
 # Button control
 # $ xmodmap -pke
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5 #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5 #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pamixer -t # toggle mute
+# increase sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5 && paplay /usr/share/sounds/gnome/default/alerts/drip.ogg && pamixer --get-volume | xargs notify-send -t 1 -i /usr/share/icons/elementary/status/48/audio-volume-high-symbolic.svg
+ #decrease sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5 && paplay /usr/share/sounds/gnome/default/alerts/drip.ogg && pamixer --get-volume | xargs notify-send -t 1 -i /usr/share/icons/elementary/status/48/audio-volume-low-symbolic.svg
+# toggle mute
+bindsym XF86AudioMute exec --no-startup-id pamixer -t && paplay /usr/share/sounds/gnome/default/alerts/drip.ogg && pamixer --get-mute | xargs notify-send -t 1 -i /usr/share/icons/elementary/status/48/audio-volume-muted-symbolic.svg
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+# increase screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5 && paplay /usr/share/sounds/gnome/default/alerts/drip.ogg && xbacklight -get | xargs notify-send -t 1 -i /usr/share/icons/elementary/status/48/brightness-display-symbolic.svg
+# decrease screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5 && paplay /usr/share/sounds/gnome/default/alerts/drip.ogg && xbacklight -get | xargs notify-send -t 1 -i /usr/share/icons/elementary/status/48/brightness-display-symbolic.svg
+# decrease screen brightness
 
 # Touchpad controls
 #bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
