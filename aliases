@@ -139,7 +139,7 @@ alias gc-native-android="cd modules/devkit-core/modules/native-android"
 alias gc-native-inspector="node ~/git/gameclosure/nativeinspector/NativeInspector.js && chromium --app=http://localhost:9220"
 
 # webapps
-alias keep="chromium '--profile-directory=Profile 2' --app-id=hmjkmjkepdijhoojdojkdfohbdgmmhki"
+alias keep="chromium '--profile-directory=Profile 1' --app-id=hmjkmjkepdijhoojdojkdfohbdgmmhki"
 
 #alias indiclog="adb logcat | grep `adb shell ps | grep in.androidtweak.inputmethod.indic | cut -c11-15`"
 #

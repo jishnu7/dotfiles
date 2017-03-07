@@ -77,6 +77,8 @@ set hidden "manage hidden buffers
 set nocompatible   " Disable vi-compatibility
 set laststatus=2   " Always show the statusline
 
+set backupcopy=yes
+
 " EasyMotion keybinding and shading
 hi link EasyMotionTarget ErrorMsg
 hi link EasyMotionShade  Comment
@@ -91,7 +93,8 @@ let g:airline#extensions#tabline#enabled = 1
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 "autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
-"autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType scss setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType less setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType php setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType xml setlocal ts=2 sts=2 sw=2 expandtab
