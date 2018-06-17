@@ -15,5 +15,8 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export GDK_SCALE=2
 export GDK_DPI_SCALE=0.5
 export MOZ_USE_XINPUT2=1
+export QT_IM_MODULE=fcitx
+export GTK_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
 
 exec i3 -V >> ~/.cache/i3/i3log-$(date +'%F-%k-%M-%S') 2>&1

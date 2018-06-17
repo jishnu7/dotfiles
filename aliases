@@ -27,9 +27,10 @@ alias pingg='ping -c 1000 8.8.8.8'
 alias ..='cd ..'
 alias ...='cd ../..'
 
-alias youtube-dl='youtube-dl -t'
+#alias youtube-dl='youtube-dl -t'
 alias youtube-mp3='youtube-dl -t -x -k --audio-format mp3 --audio-quality 0'
 alias youtube-playlist='youtube-dl -t -A --autonumber-size 2 -x --audio-format mp3 --audio-quality 0 -i'
+alias youtube-best='youtube-dl -f bestvideo+bestaudio'
 
 alias today='cal | sed "s/^/ /;s/$/ /;s/ $(date +%e) / $(date +%e | sed '\''s/./#/g'\'') /"'
 
@@ -140,6 +141,7 @@ alias gc-native-inspector="node ~/git/gameclosure/nativeinspector/NativeInspecto
 
 # webapps
 alias keep="chromium '--profile-directory=Profile 1' --app-id=hmjkmjkepdijhoojdojkdfohbdgmmhki"
+alias vysor="/opt/google/chrome/google-chrome --profile-directory=Default --app-id=gidgenkbbabolejbgbpnhbimgjbffefm"
 
 #alias indiclog="adb logcat | grep `adb shell ps | grep in.androidtweak.inputmethod.indic | cut -c11-15`"
 #

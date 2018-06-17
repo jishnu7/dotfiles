@@ -4,7 +4,7 @@
 
 set $mod Mod4
 
-font pango:Inconsolata for Powerline, FontAwesome 8
+font pango:Inconsolata for Powerline, Font Awesome 8
 
 # Use Mouse+$mod to drag floating windows to their wanted on
 floating_modifier $mod
@@ -67,10 +67,10 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 set $ws1 "1 "
-set $ws2 "2 "
-set $ws3 "3 "
-set $ws4 "4 "
-set $ws5 "5 "
+set $ws2 "2 "
+set $ws3 "3 "
+set $ws4 "4 "
+set $ws5 "5 "
 set $ws6 "6 "
 set $ws7 "7 "
 set $ws8 "8 "
@@ -100,6 +100,9 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
+
+# multi-monitor
+bindsym $mod+o move workspace to output right
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -143,9 +146,17 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 hide_edge_borders both
 
+# https://github.com/airblader/i3
+gaps inner 10
+gaps outer 5
+smart_gaps on
+smart_borders on
+
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
 bindsym $mod+d exec rofi -show run
+bindsym $mod+Tab exec rofi -show window
+#bindsym $mod+d exec rofi -show drun -modi drun
 
 bar {
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
@@ -153,7 +164,7 @@ bar {
 
     colors {
         background $bg-color
-            separator #757575
+        separator #757575
         #                  border             background         text
         focused_workspace  $bg-color          $bg-color          $text-color
         inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
@@ -166,17 +177,19 @@ exec --no-startup-id xrdb -merge ~/.Xresources
 exec --no-startup-id xrandr --dpi 192
 
 bindsym $mod+x [urgent=latest] focus
-bindsym $mod+Shift+x exec i3lock
+bindsym $mod+Shift+x exec xautolock -locknow
+exec --no-startup-id "xautolock -time 5 -locker \\"~/.config/i3/scripts/lock.sh\\" -notify 10 -notifier \"notify-send -u normal -- 'Locking Screen'\" -corners -000 -detectsleep"
+#xautolock -time 5 -locker '~/.config/i3/scripts/lock.sh'
 
 # Button control
 # $ xmodmap -pke
 # Pulse Audio controls
 # increase sound volume
-bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5 && paplay /usr/share/sounds/gnome/default/alerts/drip.ogg && pamixer --get-volume | xargs notify-send -t 1 -i /usr/share/icons/elementary/status/48/audio-volume-high-symbolic.svg
+bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5 && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga && pamixer --get-volume | xargs notify-send -t 1 -i /usr/share/icons/elementary/status/48/audio-volume-high-symbolic.svg
  #decrease sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5 && paplay /usr/share/sounds/gnome/default/alerts/drip.ogg && pamixer --get-volume | xargs notify-send -t 1 -i /usr/share/icons/elementary/status/48/audio-volume-low-symbolic.svg
+bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5 && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga && pamixer --get-volume | xargs notify-send -t 1 -i /usr/share/icons/elementary/status/48/audio-volume-low-symbolic.svg
 # toggle mute
-bindsym XF86AudioMute exec --no-startup-id pamixer -t && paplay /usr/share/sounds/gnome/default/alerts/drip.ogg && pamixer --get-mute | xargs notify-send -t 1 -i /usr/share/icons/elementary/status/48/audio-volume-muted-symbolic.svg
+bindsym XF86AudioMute exec --no-startup-id pamixer -t && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga && pamixer --get-mute | xargs notify-send -t 1 -i /usr/share/icons/elementary/status/48/audio-volume-muted-symbolic.svg
 
 # Sreen brightness controls
 # increase screen brightness
@@ -201,24 +214,34 @@ bindsym Control+Mod1+Down exec playerctl stop
 bindsym Print exec "scrot -e 'mv $f ~/Pictures/screenshots/; shotwell ~/Pictures/screenshots/$f'"
 
 # Apps
-assign [class="Firefox"] $ws2
+assign [class="Firefox"] $ws3
 assign [class="Chromium"] $ws2
-assign [class="Nautilus"] $ws3
+assign [class="Google-chrome"] $ws2
+assign [class="Nautilus"] $ws4
 assign [class="Deluge"] $ws7
 assign [class="Hexchat"] $ws8
+assign [class="TelegramDesktop"] $ws8
+assign [title="Fractal"] $ws8
 assign [class="Geary"] $ws9
 assign [class="Lollypop"] $ws10
-assign [class="Google Play Music Desktop Player"] $ws10
+assign [class="Simplenote"] $ws9
 for_window [class="Pavucontrol"] floating enable
 for_window [title="Android Emulator*"] floating enable
 for_window [title="Google Keep"] floating enable
+for_window [title="Nexus 6P"] floating enable
+for_window [title="Vysor"] floating enable
+for_window [title="Cherry Tomato Clock"] floating enable sticky enable
 for_window [class="Gnome-calendar"] floating enable
-for_window [class="Vlc"] floating enable sticky enable
+for_window [class="Blueberry.py"] floating enable
+for_window [class="Mullvad"] floating enable
+for_window [title="pinentry"] floating enable
+for_window [class="vlc"] floating enable sticky enable
 # firefox min vid addon
 for_window [class="Firefox" instance="Toplevel"] floating enable sticky enable
+for_window [class="Gnome-calculator"] floating enable sticky enable
 
 # Startup
-exec --no-startup-id feh --bg-scale ~/Pictures/wall.jpg
+exec --no-startup-id feh --bg-scale ~/Pictures/this_one_flies.png
 exec --no-startup-id compton -f
 exec --no-startup-id urxvtd
 # swap caps lock and escape
@@ -226,11 +249,14 @@ exec --no-startup-id setxkbmap -option caps:swapescape
 # hide cursor
 exec --no-startup-id unclutter -idle 10
 exec --no-startup-id firefox
-exec --no-startup-id geary
+#exec --no-startup-id geary
 exec --no-startup-id fcitx
 #exec --no-startup-id mpd
-exec --no-startup-id redshift
+#exec --no-startup-id redshift
 exec --no-startup-id redshift-gtk
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id indicator-kdeconnect
+exec --no-startup-id kdeconnect-indicator
+#exec --no-startup-id xscreensaver -no-splash
+exec --no-startup-id telegram-desktop
+exec --no-startup-id blueberry-tray

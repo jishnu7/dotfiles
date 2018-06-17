@@ -106,7 +106,7 @@ globalkeys = awful.util.table.join(
     awful.key({ altkey, "Control" }, "w", random_wallpaper),
 
     -- Copy to clipboard
-    awful.key({ modkey,        }, "c",      function () os.execute("xsel -p -o | xsel -i -b") end),
+    --awful.key({ modkey,        }, "c",      function () os.execute("xsel -p -o | xsel -i -b") end),
 
     -- User programs
     awful.key({ modkey,        }, "a",      function () awful.util.spawn( "firefox", false ) end),

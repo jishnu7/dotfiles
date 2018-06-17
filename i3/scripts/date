@@ -4,4 +4,4 @@ case $BLOCK_BUTTON in
   1) gnome-calendar ;;  # left click
 esac
 
-date '+%b %d %I:%M'
+date '+%a %b %d %I:%M'

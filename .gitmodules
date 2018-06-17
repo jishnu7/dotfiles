@@ -91,3 +91,6 @@
 [submodule "vim/bundle/vim-jsx"]
 	path = vim/bundle/vim-jsx
 	url = https://github.com/mxw/vim-jsx.git
+[submodule "vim/bundle/js-beautify"]
+	path = vim/bundle/js-beautify
+	url = https://github.com/beautify-web/js-beautify.git

@@ -47,6 +47,11 @@ function run() {
     ip netns exec frootvpn sudo -u jishnu "$@"
 }
 
+function deluge() {
+    shift
+    ip netns exec frootvpn su jishnu -c "eval \$(dbus-launch --sh-syntax) && export DBUS_SESSION_BUS_ADDRESS && export DBUS_SESSION_BUS_PID && deluge"
+}
+
 function vpnip() {
     echo "Public IP: "
     curl ipecho.net/plain; echo

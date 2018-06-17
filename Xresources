@@ -42,7 +42,7 @@ URxvt.scrollWithBuffer: true
 URxvt.scrollTtyKeypress: true
 
 URxvt.secondaryScreen: 1
-URxvt.secondaryScroll: 1
+URxvt.secondaryScroll: 0
 URxvt.secondaryWheel: 1
 
 ! Cursor
@@ -152,7 +152,7 @@ URxvt*color15: S_base3
 
 ! extensions
 URxvt.perl-lib:             ~/.urxvt/ext
-URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select,font-size,matcher
+URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select,font-size,matcher,resize-font
 URxvt.url-launcher:         /usr/bin/firefox
 URxvt.url-select.launcher:  /usr/bin/firefox
 URxvt.url-select.underline: true
@@ -164,20 +164,36 @@ URxvt.keysym.M-s:           perl:keyboard-select:search
 URxvt.keysym.M-c:           perl:clipboard:copy
 URxvt.keysym.M-v:           perl:clipboard:paste
 URxvt.keysym.M-C-v:         perl:clipboard:paste_escaped
-URxvt.keysym.C-KP_Add:      perl:font-size:increase
-URxvt.keysym.C-KP_Subtract: perl:font-size:decrease
+URxvt.keysym.C-KP_Add:      font-size:increase
+URxvt.keysym.C-KP_Subtract: font-size:decrease
+URxvt.keysym.C-Up:     font-size:increase
+URxvt.keysym.C-Down:   font-size:decrease
+URxvt.keysym.C-S-Up:   font-size:incglobal
+URxvt.keysym.C-S-Down: font-size:decglob
+URxvt.iso14755: false
+URxvt.iso14755_52: false
 URxvt.tabbed.autohide:      yes
 
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------
 rofi.color-enabled: true
-rofi.color-window: argb:ba000000, argb:0ffffff, argb:0ffffff
-rofi.color-normal: argb:0ffffff, #ffffff, argb:0ffffff, argb:0ffffff, #e91e63
-rofi.color-active: argb:0ffffff, #03a9f4, argb:0ffffff, argb:0ffffff, #e91e63
-rofi.color-urgent: argb:0ffffff, #ff5722, argb:0ffffff, argb:0ffffff, #e91e63
+rofi.color-window: argb:DA222222, argb:DA222222, argb:00222222
+rofi.color-normal: argb:00000000, #e8e8e8, argb:00000000, argb:00000000, #e91e63
+rofi.color-urgent: argb:00000000, #f43753, argb:00000000, argb:00000000, #e91e63
+rofi.color-active: argb:00000000, #49bbfb, argb:00000000, argb:00000000, #e91e63
+
 rofi.modi:                           window,run
 rofi.font:                           Inconsolata for Powerline 8
 rofi.padding:                        750
 rofi.fullscreen:                     true
 rofi.dpi:                            276
+rofi.hide-scrollbar: true
+
+xscreensaver.Dialog.headingFont: -*-inconsolata-bold-r-*-*-0-200-144-144-*-*-*-*
+xscreensaver.Dialog.bodyFont: -*-inconsolata-medium-r-*-*-0-120-144-144-*-*-*-*
+xscreensaver.Dialog.labelFont: -*-inconsolata-medium-r-*-*-0-120-144-144-*-*-*-*
+xscreensaver.Dialog.unameFont: -*-inconsolata-medium-r-*-*-0-120-144-144-*-*-*-*
+xscreensaver.Dialog.buttonFont: -*-inconsolata-bold-r-*-*-0-120-144-144-*-*-*-*
+xscreensaver.Dialog.dateFont: -*-inconsolata-medium-r-*-*-0-120-144-144-*-*-*-*
+xscreensaver.passwd.passwdFont: -*-inconsolata-bold-r-*-*-0-120-144-144-*-*-*-*

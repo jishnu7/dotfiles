@@ -11,9 +11,9 @@ autocmd InsertLeave * :set rnu nu
 
 " Tabs
 set smarttab
-set tabstop=4 "width of tab character
-set softtabstop=4 "finetunes amount of white spaces to be inserted/deleted
-set shiftwidth=4 "amount of white space to be inserted/deleted on normal mode
+set tabstop=2 "width of tab character
+set softtabstop=2 "finetunes amount of white spaces to be inserted/deleted
+set shiftwidth=2 "amount of white space to be inserted/deleted on normal mode
 set expandtab "space instead of tab
 
 set ai "auto indent
