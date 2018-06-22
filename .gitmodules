@@ -1,30 +1,3 @@
-[submodule "vim/pathogen"]
-	path = vim/pathogen
-	url = https://github.com/tpope/vim-pathogen.git
-[submodule "vim/bundle/fugitive"]
-	path = vim/bundle/fugitive
-	url = https://github.com/tpope/vim-fugitive.git
-[submodule "vim/bundle/closetag"]
-	path = vim/bundle/closetag
-	url = https://github.com/docunext/closetag.vim.git
-[submodule "vim/bundle/supertab"]
-	path = vim/bundle/supertab
-	url = https://github.com/ervandew/supertab.git
-[submodule "vim/bundle/surround"]
-	path = vim/bundle/surround
-	url = https://github.com/tpope/vim-surround.git
-[submodule "vim/bundle/indent-guides"]
-	path = vim/bundle/indent-guides
-	url = https://github.com/nathanaelkane/vim-indent-guides.git
-[submodule "vim/bundle/python"]
-	path = vim/bundle/python
-	url = https://github.com/olivierverdier/python-syntax.vim.git
-[submodule "vim/bundle/colors-solarized"]
-	path = vim/bundle/colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule "vim/bundle/csapprox"]
-	path = vim/bundle/csapprox
-	url = https://github.com/godlygeek/csapprox.git
 [submodule "gnome-terminal/dircolors-solarized"]
 	path = gnome-terminal/dircolors-solarized
 	url = https://github.com/seebi/dircolors-solarized.git
@@ -37,60 +10,21 @@
 [submodule "zsh/oh-my-zsh"]
 	path = zsh/oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
-[submodule "vim/bundle/syntastic"]
-	path = vim/bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
-[submodule "vim/bundle/nerdcommenter"]
-	path = vim/bundle/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter.git
 [submodule "xchat"]
 	path = xchat
 	url = https://github.com/solarized/xchat-colors-solarized.git
-[submodule "vim/bundle/easymotion"]
-	path = vim/bundle/easymotion
-	url = https://github.com/Lokaltog/vim-easymotion.git
-[submodule "vim/bundle/detectindent"]
-	path = vim/bundle/detectindent
-	url = https://github.com/ciaranm/detectindent.git
 [submodule "dircolors"]
 	path = dircolors
 	url = https://github.com/seebi/dircolors-solarized.git
-[submodule "vim/bundle/ctrlp"]
-	path = vim/bundle/ctrlp
-	url = https://github.com/kien/ctrlp.vim.git
-[submodule "vim/bundle/vim-airline"]
-	path = vim/bundle/vim-airline
-	url = https://github.com/bling/vim-airline.git
-[submodule "vim/bundle/bufferline"]
-	path = vim/bundle/bufferline
-	url = https://github.com/bling/vim-bufferline.git
-[submodule "vim/bundle/vim-javascript"]
-	path = vim/bundle/vim-javascript
-	url = https://github.com/pangloss/vim-javascript.git
-[submodule "vim/bundle/vim-less"]
-	path = vim/bundle/vim-less
-	url = https://github.com/groenewege/vim-less.git
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
 [submodule "awesome/lain"]
 	path = awesome/lain
 	url = https://github.com/copycat-killer/lain.git
-[submodule "vim/bundle/vim-airline-themes"]
-	path = vim/bundle/vim-airline-themes
-	url = https://github.com/vim-airline/vim-airline-themes.git
-[submodule "vim/bundle/nextval"]
-	path = vim/bundle/nextval
-	url = https://github.com/vim-scripts/nextval.git
 [submodule "urxvt/ext"]
 	path = urxvt/extensions/perls
 	url = https://github.com/muennich/urxvt-perls.git
 [submodule "urxvt/extensions/font-size"]
 	path = urxvt/extensions/font-size
 	url = https://github.com/majutsushi/urxvt-font-size.git
-[submodule "vim/bundle/vim-jsx"]
-	path = vim/bundle/vim-jsx
-	url = https://github.com/mxw/vim-jsx.git
-[submodule "vim/bundle/js-beautify"]
-	path = vim/bundle/js-beautify
-	url = https://github.com/beautify-web/js-beautify.git
