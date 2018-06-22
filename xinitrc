@@ -20,3 +20,8 @@ export GTK_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 
 exec i3 -V >> ~/.cache/i3/i3log-$(date +'%F-%k-%M-%S') 2>&1
+
+# For sway
+#export XKB_DEFAULT_OPTIONS=caps:swapescapeexpot XKB_DEFAULT_LAYOUT=us
+#export XKB_DEFAULT_LAYOUT=us
+#exec sway -V >> ~/.cache/sway/log-$(date +'%F-%k-%M-%S') 2>&1

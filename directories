@@ -1,0 +1,4 @@
+hash -d git="/home/jishnu/git"
+hash -d ik="/home/jishnu/git/IndicKeyboard"
+hash -d dotfile="/home/jishnu/git/dotfiles"
+hash -d snippets="/home/jishnu/git/snippets"
