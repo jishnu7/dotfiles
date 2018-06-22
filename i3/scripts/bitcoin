@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#CONTENT=$(curl -sS 'https://www.zebapi.com/api/v1/market/ticker/btc/inr')
+CONTENT=$(curl -sS 'https://www.throughbit.com/tbit_ci/index.php/cryptoprice' --compressed)
+#RATE=$(curl 'https://api.coinmarketcap.com/v1/ticker/bitcoin/' -s | jq '.[0]["price_usd"]' | sed 's/"//g')
+#echo $CONTENT | jq '. | "BUY: \(.buy), SELL: \(.sell)"'
+echo $CONTENT | jq '.data | "\(.[0].crypto) \(.[0].buy_price)/\(.[0].sell_price), \(.[1].crypto) \(.[1].buy_price)/\(.[1].sell_price)"'
+
+#
+#case $BLOCK_BUTTON in
+#    #3) echo "$RATE" | xclip ;;
+#    *) echo "BUY: $BUY, SELL: $RATE" ;;
+#esac
