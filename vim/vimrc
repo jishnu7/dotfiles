@@ -1,3 +1,4 @@
+" Plugins {{{
 call plug#begin()
 Plug 'docunext/closetag.vim', { 'for': ['html', 'javascript', 'xhtml', 'xml', 'htmldjango', 'jinjahtml', 'eruby'] }
 Plug 'altercation/vim-colors-solarized'
@@ -25,7 +26,9 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
+"}}}
 
+" Stock Configs {{{
 set encoding=utf8 "utf8 as standard
 
 "hybrid number mode
@@ -98,9 +101,10 @@ set nocompatible   " Disable vi-compatibility
 set laststatus=2   " Always show the statusline
 
 set backupcopy=yes
+set foldmethod=marker
 
 " FileType based settings
-autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab foldmethod=indent foldlevel=1
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 "autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType scss setlocal ts=2 sts=2 sw=2 expandtab
@@ -108,8 +112,9 @@ autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType less setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType php setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType xml setlocal ts=2 sts=2 sw=2 expandtab
+"}}}
 
-"--------- KeyMaps ---------------------
+" KeyMaps{{{
 " STOP using arrow keys!
 nnoremap <up> <nop>
 nnoremap <down> <nop>
@@ -134,11 +139,14 @@ nnoremap <Leader>8 :8b<CR>
 nnoremap <Leader>9 :9b<CR>
 nnoremap <Leader>0 :10b<CR>
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
+"}}}
 
+" Commands{{{
 " Save read-only files
 command Sudow w !sudo tee % >/dev/null
+"}}}
 
-"--------- Plugins ---------------------
+" Plugin Configs {{{
 
 " nextVal
 nmap <silent> <unique> + <Plug>nextvalInc
@@ -191,8 +199,9 @@ call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\.git$\|bower_components$\|dist$\|node_modules$\|build$\|coverage$',
     \ 'file': '\.so$\|\.pyc$' }
+"}}}
 
-"--------- Functions ---------------------
+" Functions {{{
 function! <SID>StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
     let _s=@/
@@ -204,3 +213,4 @@ function! <SID>StripTrailingWhitespaces()
     let @/=_s
     call cursor(l, c)
 endfunction
+"}}}
