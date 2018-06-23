@@ -21,6 +21,7 @@ Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
 Plug 'airblade/vim-gitgutter'
 Plug 'gko/vim-coloresque'
 Plug 'ryanoasis/vim-devicons'
+Plug 'terryma/vim-multiple-cursors'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
@@ -82,8 +83,6 @@ filetype off
 filetype plugin on
 
 let mapleader = "\<space>"
-nmap <silent> <unique> + <Plug>nextvalInc
-nmap <silent> <unique> - <Plug>nextvalDec
 
 " Spell check
 nmap <silent> <leader>s :set spell!<CR>
@@ -100,27 +99,6 @@ set laststatus=2   " Always show the statusline
 
 set backupcopy=yes
 
-" EasyMotion keybinding and shading
-hi link EasyMotionTarget ErrorMsg
-hi link EasyMotionShade  Comment
-
-" airline
-let g:airline_powerline_fonts=1
-let g:airline_theme="murmur"
-let g:bufferline_echo = 0
-let g:airline#extensions#tabline#enabled = 1
-
-" NertTree
-autocmd StdinReadPre * let s:std_in=1
-" autoload nerdteee if no files were specified
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-" autoload nerdteee on folder
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-" close if only nerdtree is open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-map <C-\> :NERDTreeToggle<CR>
-
 " FileType based settings
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
@@ -130,12 +108,8 @@ autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType less setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType php setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType xml setlocal ts=2 sts=2 sw=2 expandtab
-let g:syntastic_php_checkers=[]
 
-let g:jsx_ext_required = 0
-
-" KeyMaps
-nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
+"--------- KeyMaps ---------------------
 " STOP using arrow keys!
 nnoremap <up> <nop>
 nnoremap <down> <nop>
@@ -159,8 +133,66 @@ nnoremap <Leader>7 :7b<CR>
 nnoremap <Leader>8 :8b<CR>
 nnoremap <Leader>9 :9b<CR>
 nnoremap <Leader>0 :10b<CR>
+nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 
-" Functions
+" Save read-only files
+command Sudow w !sudo tee % >/dev/null
+
+"--------- Plugins ---------------------
+
+" nextVal
+nmap <silent> <unique> + <Plug>nextvalInc
+nmap <silent> <unique> - <Plug>nextvalDec
+
+
+" EasyMotion keybinding and shading
+hi link EasyMotionTarget ErrorMsg
+hi link EasyMotionShade  Comment
+
+" airline
+let g:airline_powerline_fonts=1
+let g:airline_theme="murmur"
+let g:bufferline_echo = 0
+let g:airline#extensions#tabline#enabled = 1
+
+" NertTree
+autocmd StdinReadPre * let s:std_in=1
+" autoload nerdteee if no files were specified
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autoload nerdteee on folder
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+" close if only nerdtree is open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+map <C-\> :NERDTreeToggle<CR>
+
+" NERDTress File highlighting
+function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+ exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+ exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+endfunction
+
+call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
+call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('scss', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
+call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
+call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
+
+" ctrlp
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\.git$\|bower_components$\|dist$\|node_modules$\|build$\|coverage$',
+    \ 'file': '\.so$\|\.pyc$' }
+
+"--------- Functions ---------------------
 function! <SID>StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
     let _s=@/
@@ -172,10 +204,3 @@ function! <SID>StripTrailingWhitespaces()
     let @/=_s
     call cursor(l, c)
 endfunction
-
-" Save read-only files
-cnoremap sudow w !sudo tee % >/dev/null
-
-let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\.git$\|bower_components$\|dist$\|node_modules$\|build$\|coverage$',
-    \ 'file': '\.so$\|\.pyc$' }
