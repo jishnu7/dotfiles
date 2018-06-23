@@ -1,2 +1,4 @@
 secrets
 *.sw[po]
+vim/.netrwhist
+vim/plugged/
