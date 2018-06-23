@@ -21,7 +21,7 @@ URxvt.saveLines:            65535
 !URxvt.lineSpace:            0
 
 ! Fonts
-URxvt*font: xft:Inconsolata for Powerline:regular,xft:Dejavu Sans Mono, xft:Meera
+URxvt*font: xft:Inconsolata Nerd Font Mono, xft:Dejavu Sans Mono, xft:Meera
 
 !URxvt*imFont: xft:Inconsolata for Powerline:regular:pixelsize=16:antialias=true:hinting:true
 !URxvt*boldFont: xft:Inconsolata for Powerline:bold:pixelsize=16:antialias=true:hinting:true
@@ -54,7 +54,7 @@ URxvt.cursorUnderline:      false
 !URxvt.pointerBlank:         true
 
 ! Icon
-URxvt*iconFile: /home/jishnu/.icons/elementaryicons/apps/128/utilities-terminal.svg
+URxvt*iconFile: /usr/share/icons/elementary/apps/128/utilities-terminal.svg
 
 ! Color
 URxvt.intensityStyles: false
@@ -184,7 +184,7 @@ rofi.color-urgent: argb:00000000, #f43753, argb:00000000, argb:00000000, #e91e63
 rofi.color-active: argb:00000000, #49bbfb, argb:00000000, argb:00000000, #e91e63
 
 rofi.modi:                           window,run
-rofi.font:                           Inconsolata for Powerline 8
+rofi.font:                           Inconsolata 8
 rofi.padding:                        750
 rofi.fullscreen:                     true
 rofi.dpi:                            276

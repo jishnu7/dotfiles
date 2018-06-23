@@ -4,7 +4,7 @@
 
 set $mod Mod4
 
-font pango:Inconsolata for Powerline, Font Awesome 8
+font pango: Inconsolata Nerd Font 8
 
 # Use Mouse+$mod to drag floating windows to their wanted on
 floating_modifier $mod
