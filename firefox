@@ -1,28 +1,33 @@
 [
     {
-        "url": "https://mail.google.com/mail/u/0/#inbox",
-        "title": "GMail",
+        "url": "https://mail.google.com",
+        "label": "GMail",
         "baseDomain": "mail.google.com"
     },
     {
-        "url": "https://mail.google.com/mail/u/1/#inbox",
-        "title": "GMail",
-        "baseDomain": "mail.google.com"
+        "url": "https://tweetdeck.twitter.com/",
+        "label": "Tweetdeck",
+        "baseDomain": "tweetdeck.twitter.com"
     },
     {
-        "url": "http://getpocket.com/a/queue/",
-        "title": "Pocket",
-        "baseDomain": "getpocket.com"
+        "url": "https://keep.google.com/",
+        "label": "Keep",
+        "baseDomain": "keep.google.com"
+    },
+    {
+        "url": "https://docs.google.com/spreadsheets/u/0/",
+        "label": "Sheets",
+        "baseDomain": "docs.google.com"
     },
     {
         "url": "https://www.feedly.com/home#index",
-        "title": "feedly",
+        "title": "Feedly",
         "baseDomain": "feedly.com"
     },
     {
-        "url": "https://web.tweetdeck.com/",
-        "title": "tweetdeck",
-        "baseDomain": "web.tweetdeck.com"
+        "url": "https://www.youtube.com/feed/subscriptions",
+        "title": "Youtube",
+        "baseDomain": "youtube.com"
     },
     {
         "url": "https://github.com/",
@@ -30,14 +35,9 @@
         "baseDomain": "github.com"
     },
     {
-        "url": "https://plus.google.com/",
-        "title": "Google+",
-        "baseDomain": "plus.google.com"
-    },
-    {
-        "url": "https://www.youtube.com/feed/subscriptions",
-        "title": "Subscriptions",
-        "baseDomain": "youtube.com"
+        "url": "https://gitlab.com/dashboard/activity",
+        "title": "Gitlab",
+        "baseDomain": "gitlab.com"
     },
     {
         "url": "https://www.reddit.com/",
@@ -45,13 +45,28 @@
         "baseDomain": "reddit.com"
     },
     {
-        "url": "https://joindiaspora.com/stream",
-        "title": "Diaspora*",
-        "baseDomain": "joindiaspora.com"
+        "url": "https://social.librem.one",
+        "title": "librem social",
+        "baseDomain": "social.librem.one"
     },
     {
-        "url": "https://drive.google.com/keep/u/0/",
-        "title": "Google Keep",
-        "baseDomain": "drive.google.com"
+        "url": "https://app.getpocket.com/",
+        "title": "pocket",
+        "baseDomain": "appgetpocket.com"
+    },
+    {
+        "url": "https://kite.zerodha.com/dashboard",
+        "title": "Kite",
+        "baseDomain": "kite.zerodha.com"
+    },
+    {
+        "url": "https://kuvera.in/",
+        "title": "Kuvera",
+        "baseDomain": "kuvera.in"
+    },
+    {
+        "url": "https://pro.coinbase.com/trade/BTC-USD",
+        "title": "gdax",
+        "baseDomain": "gdax.com"
     }
 ]
