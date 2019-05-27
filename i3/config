@@ -10,7 +10,7 @@ font pango: Inconsolata Nerd Font 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -71,11 +71,11 @@ set $ws2 "2 "
 set $ws3 "3 "
 set $ws4 "4 "
 set $ws5 "5 "
-set $ws6 "6 "
-set $ws7 "7 "
-set $ws8 "8 "
-set $ws9 "9 "
-set $ws10 "10 "
+set $ws6 "6 "
+set $ws7 "7 ﴬ"
+set $ws8 "8 流"
+set $ws9 "9 "
+set $ws10 "10 "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -149,8 +149,8 @@ hide_edge_borders both
 # https://github.com/airblader/i3
 gaps inner 10
 gaps outer 5
-smart_gaps on
-smart_borders on
+#smart_gaps on
+#smart_borders on
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
@@ -178,6 +178,7 @@ exec --no-startup-id xrandr --dpi 192
 
 bindsym $mod+x [urgent=latest] focus
 bindsym $mod+Shift+x exec xautolock -locknow
+bindsym $mod+Shift+s exec setxkbmap -option caps:swapescape
 exec --no-startup-id "xautolock -time 5 -locker \\"~/.config/i3/scripts/lock.sh\\" -notify 10 -notifier \"notify-send -u normal -- 'Locking Screen'\" -corners -000 -detectsleep"
 #xautolock -time 5 -locker '~/.config/i3/scripts/lock.sh'
 
@@ -186,8 +187,10 @@ exec --no-startup-id "xautolock -time 5 -locker \\"~/.config/i3/scripts/lock.sh\
 # Pulse Audio controls
 # increase sound volume
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5 && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga && pamixer --get-volume | xargs notify-send -t 1 -i /usr/share/icons/elementary/status/48/audio-volume-high-symbolic.svg
+bindsym Ctrl+Up exec --no-startup-id pamixer -i 5 && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga && pamixer --get-volume | xargs notify-send -t 1 -i /usr/share/icons/elementary/status/48/audio-volume-high-symbolic.svg
  #decrease sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5 && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga && pamixer --get-volume | xargs notify-send -t 1 -i /usr/share/icons/elementary/status/48/audio-volume-low-symbolic.svg
+bindsym Ctrl+Down exec --no-startup-id pamixer -d 5 && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga && pamixer --get-volume | xargs notify-send -t 1 -i /usr/share/icons/elementary/status/48/audio-volume-low-symbolic.svg
 # toggle mute
 bindsym XF86AudioMute exec --no-startup-id pamixer -t && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga && pamixer --get-mute | xargs notify-send -t 1 -i /usr/share/icons/elementary/status/48/audio-volume-muted-symbolic.svg
 
@@ -218,13 +221,17 @@ assign [class="Firefox"] $ws3
 assign [class="Chromium"] $ws2
 assign [class="Google-chrome"] $ws2
 assign [class="Nautilus"] $ws4
-assign [class="Deluge"] $ws7
-assign [class="Hexchat"] $ws8
-assign [class="TelegramDesktop"] $ws8
-assign [title="Fractal"] $ws8
-assign [class="Geary"] $ws9
-assign [class="Lollypop"] $ws10
-assign [class="Simplenote"] $ws9
+assign [class="Deluge"] $ws6
+assign [class="Hexchat"] $ws9
+assign [class="TelegramDesktop"] $ws9
+assign [class="epiphany-telegram-web-866d24a5263992600b087f5cf3ec3dc149af748f"] $ws9
+assign [title="Fractal"] $ws9
+assign [class="Geary"] $ws10
+assign [class="Lollypop"] $ws7
+assign [class="Simplenote"] $ws7
+assign [class="Com.github.lainsce.quilter"] $ws7
+assign [class="Gnucash"] $ws8
+assign [class="Thunderbird"] $ws10
 for_window [class="Pavucontrol"] floating enable
 for_window [title="Android Emulator*"] floating enable
 for_window [title="Google Keep"] floating enable
@@ -239,18 +246,20 @@ for_window [class="vlc"] floating enable sticky enable
 # firefox min vid addon
 for_window [class="Firefox" instance="Toplevel"] floating enable sticky enable
 for_window [class="Gnome-calculator"] floating enable sticky enable
+for_window [class="Hamster"] floating enable
+for_window [title="Pocket: Add Item - Mozilla Firefox"] floating enable
 
 # Startup
 exec --no-startup-id feh --bg-scale ~/Pictures/this_one_flies.png
 exec --no-startup-id compton -f
-exec --no-startup-id urxvtd
+#exec --no-startup-id urxvtd
 # swap caps lock and escape
 exec --no-startup-id setxkbmap -option caps:swapescape
 # hide cursor
 exec --no-startup-id unclutter -idle 10
 exec --no-startup-id firefox
-#exec --no-startup-id geary
-exec --no-startup-id fcitx
+exec --no-startup-id geary
+exec --no-startup-id fcitx5
 #exec --no-startup-id mpd
 #exec --no-startup-id redshift
 exec --no-startup-id redshift-gtk
@@ -258,5 +267,11 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id kdeconnect-indicator
 #exec --no-startup-id xscreensaver -no-splash
-exec --no-startup-id telegram-desktop
-exec --no-startup-id blueberry-tray
+#exec --no-startup-id telegram-desktop
+#exec --no-startup-id blueberry-tray
+#exec --no-startup-id hamter
+#exec --no-startup-id thunderbird
+#exec --no-startup-id mullvad-vpn
+
+# Clipboard manager
+exec --no-startup-id parcellite

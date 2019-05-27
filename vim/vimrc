@@ -2,7 +2,7 @@
 call plug#begin()
 Plug 'docunext/closetag.vim', { 'for': ['html', 'javascript', 'xhtml', 'xml', 'htmldjango', 'jinjahtml', 'eruby'] }
 Plug 'altercation/vim-colors-solarized'
-Plug 'kien/ctrlp.vim'
+"Plug 'kien/ctrlp.vim'
 Plug 'ciaranm/detectindent'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'tpope/vim-fugitive'
@@ -25,6 +25,11 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'godlygeek/tabular'
+Plug 'tpope/vim-eunuch'
+"Plug 'w0rp/ale'
+Plug '/usr/bin/fzf'
+Plug 'junegunn/fzf.vim'
 call plug#end()
 "}}}
 
@@ -104,7 +109,7 @@ set backupcopy=yes
 set foldmethod=marker
 
 " FileType based settings
-autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab foldmethod=indent foldlevel=1
+autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab foldlevel=1
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 "autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType scss setlocal ts=2 sts=2 sw=2 expandtab
@@ -139,11 +144,24 @@ nnoremap <Leader>8 :8b<CR>
 nnoremap <Leader>9 :9b<CR>
 nnoremap <Leader>0 :10b<CR>
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
+
+" Copy to PRIMARY clipboard
+"noremap <Leader>y "*y
+"noremap <Leader>p "*p
+
+" Copy to CLIPBOARD clipboard
+noremap <Leader>y "+y
+noremap <Leader>p "+p
+
+nnoremap <C-b> :Buffers<CR>
+nnoremap <C-g>g :Ag<CR>
+nnoremap <leader><leader> :Commands<CR>
+nnoremap <C-p> :call FzfOmniFiles()<CR>
 "}}}
 
 " Commands{{{
 " Save read-only files
-command Sudow w !sudo tee % >/dev/null
+" command Sudow w !sudo tee % >/dev/null " with eunuch.vim this is not needed
 "}}}
 
 " Plugin Configs {{{
@@ -195,10 +213,18 @@ call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
 call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
 call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 
+" vim-javascript
+augroup javascript_folding
+  au!
+  au FileType javascript setlocal foldmethod=syntax
+augroup END
+
+let b:ale_fixers = {'javascript': ['eslint']}
+
 " ctrlp
-let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\.git$\|bower_components$\|dist$\|node_modules$\|build$\|coverage$',
-    \ 'file': '\.so$\|\.pyc$' }
+"let g:ctrlp_custom_ignore = {
+    "\ 'dir':  '\.git$\|bower_components$\|dist$\|node_modules$\|build$\|coverage$',
+    "\ 'file': '\.so$\|\.pyc$' }
 "}}}
 
 " Functions {{{
@@ -213,4 +239,13 @@ function! <SID>StripTrailingWhitespaces()
     let @/=_s
     call cursor(l, c)
 endfunction
+
+fun! FzfOmniFiles()
+  let is_git = system('git status')
+  if v:shell_error
+    :Files
+  else
+    :GitFiles
+  endif
+endfun
 "}}}

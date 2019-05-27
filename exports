@@ -6,14 +6,15 @@ export DEBEMAIL='jishnu7@gmail.com'
 # Android SDK, NDK path
 export PATH=${PATH}:~/android/android-sdk/platform-tools
 export PATH=${PATH}:~/android/android-sdk/tools
-export PATH=${PATH}:~/android/android-sdk/build-tools/23.0.2
+export PATH=${PATH}:~/android/android-sdk/build-tools/28.0.3
 export PATH=${PATH}:~/android/android-ndk
 export PATH=${PATH}:~/android/android-studio/bin
 #export PATH=${PATH}:~/android/apk-tool
 export PATH=${PATH}:~/android/androgenizer
 export PATH=${PATH}:~/.bin
 export PATH=${PATH}:~/.npm-bin/bin
-export PATH=${PATH}:~/.gem/ruby/2.5.0/bin
+export PATH=${PATH}:~/.yarn/bin
+export PATH=${PATH}:~/.gem/ruby/2.6.0/bin
 export PATH=${PATH}:~/.local/bin
 #export PATH=${PATH}:~/git/fdroid/fdroidserver
 
@@ -23,6 +24,7 @@ export ANDROID_SDK_ROOT=~/android/android-sdk
 export NDK_HOME=~/android/android-ndk
 export ANDROID_NDK=~/android/android-ndk
 export ANDROID_NDK_ROOT=~/android/android-ndk
+export ANDROID_NDK_HOME=~/android/android-ndk
 
 # 8 stinking colors, huh ?
 [ "$TERM" '==' "xterm" ] && export TERM=xterm-256color

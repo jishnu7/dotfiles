@@ -21,15 +21,15 @@ fi
 # Overwrite confirmation
 #alias mv='mv -i'
 
-alias ping='ping -c 4'
+#alias ping='ping -c 4'
 alias pingg='ping -c 1000 8.8.8.8'
 
 alias ..='cd ..'
 alias ...='cd ../..'
 
 #alias youtube-dl='youtube-dl -t'
-alias youtube-mp3='youtube-dl -t -x -k --audio-format mp3 --audio-quality 0'
-alias youtube-playlist='youtube-dl -t -A --autonumber-size 2 -x --audio-format mp3 --audio-quality 0 -i'
+alias youtube-mp3='youtube-dl -x -k --audio-format mp3 --audio-quality 0 -o "%(title)s.%(ext)s"'
+alias youtube-playlist='youtube-dl -A --autonumber-size 2 -x --audio-format mp3 --audio-quality 0 -i'
 alias youtube-best='youtube-dl -f bestvideo+bestaudio'
 
 alias today='cal | sed "s/^/ /;s/$/ /;s/ $(date +%e) / $(date +%e | sed '\''s/./#/g'\'') /"'
@@ -80,7 +80,7 @@ alias hibernate="systemctl hibernate"
 alias suspend="systemctl suspend"
 
 # Python server
-alias server='python2 -m SimpleHTTPServer'
+alias server='python3 -m http.server'
 
 alias emulator-jb="emulator -avd 42 -partition-size 300 -system ~/.android/avd/42.avd/system.img"
 alias virtualbox-load="sudo modprobe vboxdrv" # vboxnetflt"
