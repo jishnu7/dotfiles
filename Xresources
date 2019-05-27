@@ -182,6 +182,8 @@ rofi.color-window: argb:DA222222, argb:DA222222, argb:00222222
 rofi.color-normal: argb:00000000, #e8e8e8, argb:00000000, argb:00000000, #e91e63
 rofi.color-urgent: argb:00000000, #f43753, argb:00000000, argb:00000000, #e91e63
 rofi.color-active: argb:00000000, #49bbfb, argb:00000000, argb:00000000, #e91e63
+rofi.run-command: /bin/bash -i -c '{cmd}'
+rofi.run-list-command: source ~/git/dotfiles/rofi_alias.sh
 
 rofi.modi:                           window,run
 rofi.font:                           Inconsolata 8
