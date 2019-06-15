@@ -80,3 +80,7 @@ cpstat () {
 wifi-connect() {
     nmcli device wifi connect $1 password $2
 }
+
+set-wallpaper() {
+    feh --bg-scale ~/Pictures/this_one_flies.png
+}

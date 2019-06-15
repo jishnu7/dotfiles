@@ -250,7 +250,7 @@ for_window [class="Hamster"] floating enable
 for_window [title="Pocket: Add Item - Mozilla Firefox"] floating enable
 
 # Startup
-exec --no-startup-id feh --bg-scale ~/Pictures/this_one_flies.png
+exec --no-startup-id set-wallpaper
 exec --no-startup-id compton -f
 #exec --no-startup-id urxvtd
 # swap caps lock and escape

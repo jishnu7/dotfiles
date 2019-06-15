@@ -155,5 +155,15 @@ alias vpn='~/git/dotfiles/vpnns.sh'
 alias sudo='sudo '
 
 alias tree='tree -I node_modules'
-alias t='task'
-alias tt='task project:work'
+#alias t='task'
+#alias tt='task project:work'
+
+alias icat="kitty +kitten icat"
+
+alias telegram="epiphany --application-mode --profile='/home/jishnu/.local/share/epiphany-telegram-web-866d24a5263992600b087f5cf3ec3dc149af748f' https://web.telegram.org/"
+alias twic-slack="epiphany --application-mode --profile='/home/jishnu/.local/share/epiphany-twic-inc.slack.com-3cf33a1d9238d7a7484d0dc3650caaf1be7fd69e' https://twic-inc.slack.com/"
+alias spotify="spotify --force-device-scale-factor=2"
+
+alias d-laptop="xrandr --output eDP1 --auto --primary --output DP1 --off && set-wallpaper"
+alias d-dual="xrandr --output eDP1 --auto --output DP1 --auto --panning 3200x1800+3200+0 --scale 2x2 --right-of eDP1 && set-wallpaper"
+alias d-monitor="xrandr --output DP1 --auto --primary --panning 0x0 --scale 2x2 --output eDP1 --off && set-wallpaper"
