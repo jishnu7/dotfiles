@@ -165,6 +165,10 @@ alias twic-slack="epiphany --application-mode --profile='/home/jishnu/.local/sha
 alias spotify="spotify --force-device-scale-factor=2"
 
 alias d-laptop="xrandr --output eDP1 --auto --primary --output DP1 --off && set-wallpaper"
+# Fix display when external display is not safely disconnected.
+# This command will work only on current display. So you should
+# get back to XServer before the sleep timeout
+alias d-fix="sleep 5; xrandr --output eDP1 --auto -d :0"
 # Samsung
 #alias d-dual="xrandr --output eDP1 --auto --output DP1 --auto --panning 3200x1800+3200+0 --scale 2x2 --right-of eDP1 && set-wallpaper"
 #alias d-monitor="xrandr --output DP1 --auto --primary --panning 0x0 --scale 2x2 --output eDP1 --off && set-wallpaper"
