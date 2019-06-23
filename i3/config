@@ -1,19 +1,46 @@
-# i3 config file (v4)
-#
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+# i3 config file
 
+# Basic Config and Variables {{{
 set $mod Mod4
+set $term urxvt
+set $dpi 192
 
 font pango: Inconsolata Nerd Font 8
+
+set $a_volume "/usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"
+set $i_volume_up "/usr/share/icons/elementary/status/48/audio-volume-high-symbolic.svg"
+set $i_volume_down "/usr/share/icons/elementary/status/48/audio-volume-high-symbolic.svg"
+set $i_volume_mute "/usr/share/icons/elementary/status/48/audio-volume-muted-symbolic.svg"
+set $a_brightness "/usr/share/sounds/gnome/default/alerts/drip.ogg"
+set $i_brightness "/usr/share/icons/elementary/status/48/brightness-display-symbolic.svg"
+
+set $ws1 "1 "
+set $ws2 "2 "
+set $ws3 "3 "
+set $ws4 "4 "
+set $ws5 "5 "
+set $ws6 "6 "
+set $ws7 "7 ﴬ"
+set $ws8 "8 流"
+set $ws9 "9 "
+set $ws10 "10 "
+
+set $bg-color            #2f343f
+set $inactive-bg-color   #2f343f
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #ff5722
+
+# }}}
+
+# Window Management {{{
 
 # Use Mouse+$mod to drag floating windows to their wanted on
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec urxvt
-
 # kill focused window
 bindsym $mod+Shift+q kill
+
 
 # change focus
 bindsym $mod+h focus left
@@ -21,31 +48,27 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
 # move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+bindsym $mod+x [urgent=latest] focus
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+bindsym $mod+Shift+a focus child
 
 # split in horizontal orientation
 bindsym $mod+apostrophe split h
 # split in vertical orientation
 bindsym $mod+slash split v
-
-# enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -59,22 +82,14 @@ bindsym $mod+Shift+t sticky toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# focus the parent container
-bindsym $mod+a focus parent
+bindsym $mod+Shift+y resize shrink width 10 px or 10 ppt
+bindsym $mod+Shift+u resize grow height 10 px or 10 ppt
+bindsym $mod+Shift+i resize shrink height 10 px or 10 ppt
+bindsym $mod+Shift+o resize grow width 10 px or 10 ppt
 
-# focus the child container
-#bindsym $mod+d focus child
+# }}}
 
-set $ws1 "1 "
-set $ws2 "2 "
-set $ws3 "3 "
-set $ws4 "4 "
-set $ws5 "5 "
-set $ws6 "6 "
-set $ws7 "7 ﴬ"
-set $ws8 "8 流"
-set $ws9 "9 "
-set $ws10 "10 "
+# Workspace Management {{{
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -100,48 +115,13 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
-bindsym $mod+g workspace prev
+bindsym $mod+q workspace back_and_forth
 
 # multi-monitor
 bindsym $mod+o move workspace to output right
+# }}}
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
-bindsym $mod+r mode "resize"
-bindsym $mod+Shift+y resize shrink width 10 px or 10 ppt
-bindsym $mod+Shift+u resize grow height 10 px or 10 ppt
-bindsym $mod+Shift+i resize shrink height 10 px or 10 ppt
-bindsym $mod+Shift+o resize grow width 10 px or 10 ppt
-
-set $bg-color            #2f343f
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #ff5722
-
+# Theme and Bar {{{
 # window colors
 #                       border              background         text                 indicator
 client.focused          $bg-color           $bg-color          $text-color          #8bc34a
@@ -157,12 +137,6 @@ gaps outer 5
 #smart_gaps on
 #smart_borders on
 
-# start dmenu (a program launcher)
-#bindsym $mod+d exec dmenu_run
-bindsym $mod+d exec rofi -show run
-bindsym $mod+Tab exec rofi -show window
-#bindsym $mod+d exec rofi -show drun -modi drun
-
 bar {
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
     position top
@@ -177,57 +151,9 @@ bar {
     }
 }
 
+# }}}
 
-exec --no-startup-id xrdb -merge ~/.Xresources
-exec --no-startup-id xrandr --dpi 192
-
-bindsym $mod+x [urgent=latest] focus
-bindsym $mod+Shift+x exec xautolock -locknow
-bindsym $mod+Shift+s exec setxkbmap -option caps:swapescape
-exec --no-startup-id "xautolock -time 5 -locker \\"~/.config/i3/scripts/lock.sh\\" -notify 10 -notifier \"notify-send -u normal -- 'Locking Screen'\" -corners -000 -detectsleep"
-#xautolock -time 5 -locker '~/.config/i3/scripts/lock.sh'
-#
-set $a_volume "/usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"
-set $i_volume_up "/usr/share/icons/elementary/status/48/audio-volume-high-symbolic.svg"
-set $i_volume_down "/usr/share/icons/elementary/status/48/audio-volume-high-symbolic.svg"
-set $i_volume_mute "/usr/share/icons/elementary/status/48/audio-volume-muted-symbolic.svg"
-set $a_brightness "/usr/share/sounds/gnome/default/alerts/drip.ogg"
-set $i_brightness "/usr/share/icons/elementary/status/48/brightness-display-symbolic.svg"
-
-# Button control
-# $ xmodmap -pke
-# Pulse Audio controls
-# increase sound volume
-bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5 && paplay $a_volume && pamixer --get-volume | xargs notify-send -t 1000 -i $i_volume_up
-bindsym Ctrl+Up exec --no-startup-id pamixer -i 5 && paplay $a_volume && pamixer --get-volume | xargs notify-send -t 1000 -i $i_volume_up
- #decrease sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5 && paplay $a_volume && pamixer --get-volume | xargs notify-send -t 1000 -i $i_volume_down
-bindsym Ctrl+Down exec --no-startup-id pamixer -d 5 && paplay $a_volume && pamixer --get-volume | xargs notify-send -t 1000 -i $i_volume_down
-# toggle mute
-bindsym XF86AudioMute exec --no-startup-id pamixer -t && paplay $a_volume && pamixer --get-mute | xargs notify-send -t 1000 -i $i_volume_mute
-
-# Sreen brightness controls
-# increase screen brightness
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5 && paplay $a_brightness && xbacklight -get | xargs notify-send -t 1000 -i $i_brightness
-# decrease screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5 && paplay $a_brightness && xbacklight -get | xargs notify-send -t 1000 -i $i_brightness
-
-# Touchpad controls
-#bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
-
-# Media player controls
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioPause exec playerctl pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-
-#bindsym Control+Mod1+Up exec playerctl play-pause
-bindsym Control+Mod1+Down exec playerctl stop
-#bindsym Control+Mod1+Right exec playerctl next
-#bindsym Control+Mod1+Left exec playerctl previous
-bindsym Print exec "scrot -e 'mv $f ~/Pictures/screenshots/; shotwell ~/Pictures/screenshots/$f'"
-
-# Apps
+# Apps {{{
 assign [class="Firefox"] $ws3
 assign [class="Chromium"] $ws2
 assign [class="Google-chrome"] $ws2
@@ -235,7 +161,6 @@ assign [class="Nautilus"] $ws4
 assign [class="Deluge"] $ws6
 assign [class="Hexchat"] $ws9
 assign [class="TelegramDesktop"] $ws9
-#assign [class="epiphany-telegram-web-866d24a5263992600b087f5cf3ec3dc149af748f"] $ws9
 assign [title="Fractal"] $ws9
 assign [class="Geary"] $ws10
 assign [class="Lollypop"] $ws7
@@ -260,8 +185,12 @@ for_window [class="Firefox" instance="Toplevel"] floating enable sticky enable
 for_window [class="Gnome-calculator"] floating enable sticky enable
 for_window [class="Hamster"] floating enable
 for_window [title="Pocket: Add Item - Mozilla Firefox"] floating enable
+# }}}
 
-# Startup
+# Startup {{{
+exec --no-startup-id xrdb -merge ~/.Xresources
+exec --no-startup-id xrandr --dpi $dpi
+
 exec --no-startup-id feh --bg-scale ~/Pictures/this_one_flies.png
 exec --no-startup-id compton -f
 exec --no-startup-id urxvtd
@@ -283,8 +212,75 @@ exec --no-startup-id kdeconnect-indicator
 
 # Clipboard manager
 exec --no-startup-id parcellite
+# }}}
 
-# scratchpad [WIP]
+# Multimedia Key Control{{{
+# $ xmodmap -pke
+
+# Pulse Audio controls
+# increase sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5 && paplay $a_volume && pamixer --get-volume | xargs notify-send -t 1000 -i $i_volume_up
+bindsym Ctrl+Up exec --no-startup-id pamixer -i 5 && paplay $a_volume && pamixer --get-volume | xargs notify-send -t 1000 -i $i_volume_up
+# decrease sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5 && paplay $a_volume && pamixer --get-volume | xargs notify-send -t 1000 -i $i_volume_down
+bindsym Ctrl+Down exec --no-startup-id pamixer -d 5 && paplay $a_volume && pamixer --get-volume | xargs notify-send -t 1000 -i $i_volume_down
+# toggle mute
+bindsym XF86AudioMute exec --no-startup-id pamixer -t && paplay $a_volume && pamixer --get-mute | xargs notify-send -t 1000 -i $i_volume_mute
+
+# Sreen brightness controls
+# increase screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5 && paplay $a_brightness && xbacklight -get | xargs notify-send -t 1000 -i $i_brightness
+# decrease screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5 && paplay $a_brightness && xbacklight -get | xargs notify-send -t 1000 -i $i_brightness
+
+# Touchpad controls
+#bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+bindsym Control+Mod1+Up exec playerctl play-pause
+bindsym Control+Mod1+Down exec playerctl stop
+bindsym Control+Mod1+Right exec playerctl next
+bindsym Control+Mod1+Left exec playerctl previous
+bindsym Print exec "scrot -e 'mv $f ~/Pictures/screenshots/; shotwell ~/Pictures/screenshots/$f'"
+# }}}
+
+# Key Control {{{
+# i3 Controls
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Custom Controls
+# start a terminal
+bindsym $mod+Return exec $term
+bindsym $mod+Shift+Return exec $term -e tmux
+bindsym $mod+c exec $term -name qalc -depth 32 -bg rgba:1100/1100/1100/dddd -fn "xft:Inconsolata Nerd Font Mono:pixelsize=50" -e qalc
+
+# start rofi
+bindsym $mod+d exec rofi -show run
+bindsym $mod+Shift+d exec rofi -show window
+
+# Paste from clipboard like a human being types
+bindsym --release $mod+p exec sleep 1 && xdotool type --clearmodifiers `xclip -selection c -out`
+
+bindsym $mod+Shift+x exec xautolock -locknow
+bindsym $mod+Shift+s exec setxkbmap -option caps:swapescape
+exec --no-startup-id "xautolock -time 5 -locker \\"~/.config/i3/scripts/lock.sh\\" -notify 10 -notifier \"notify-send -u normal -- 'Locking Screen'\" -corners -000 -detectsleep"
+
+bindsym $mod+r exec $term -e ranger
+
+# }}}
+
+# [WIP] scratchpad{{{
+## Paste from clipboard like a human being types
 #for_window [instance="ranger"] floating enable
 #for_window [instance="ranger"] sticky enable
 #for_window [instance="ranger"] move position center
@@ -292,3 +288,11 @@ exec --no-startup-id parcellite
 #for_window [instance="ranger"] border pixel 5
 #exec --no-startup-id urxvt -name ranger -e ranger
 #bindsym $mod+u [instance="ranger"] scratchpad show;
+
+for_window [instance="qalc"] floating enable
+for_window [instance="qalc"] sticky enable
+for_window [instance="qalc"] move position center
+for_window [instance="qalc"] border pixel 5
+
+#
+#}}}
