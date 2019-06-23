@@ -276,7 +276,7 @@ exec --no-startup-id "xautolock -time 5 -locker \\"~/.config/i3/scripts/lock.sh\
 
 # }}}
 
-# [WIP] scratchpad{{{
+# scratchpad {{{
 for_window [instance="dropdown_*"] floating enable
 for_window [instance="dropdown_*"] move scratchpad
 for_window [instance="dropdown_*"] sticky enable
