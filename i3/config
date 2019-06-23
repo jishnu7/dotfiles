@@ -262,7 +262,6 @@ bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed 
 # start a terminal
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec $term -e tmux
-bindsym $mod+c exec $term -name qalc -depth 32 -bg rgba:1100/1100/1100/dddd -fn "xft:Inconsolata Nerd Font Mono:pixelsize=50" -e qalc
 
 # start rofi
 bindsym $mod+d exec rofi -show run
@@ -275,24 +274,20 @@ bindsym $mod+Shift+x exec xautolock -locknow
 bindsym $mod+Shift+s exec setxkbmap -option caps:swapescape
 exec --no-startup-id "xautolock -time 5 -locker \\"~/.config/i3/scripts/lock.sh\\" -notify 10 -notifier \"notify-send -u normal -- 'Locking Screen'\" -corners -000 -detectsleep"
 
-bindsym $mod+r exec $term -e ranger
-
 # }}}
 
 # [WIP] scratchpad{{{
-## Paste from clipboard like a human being types
-#for_window [instance="ranger"] floating enable
-#for_window [instance="ranger"] sticky enable
-#for_window [instance="ranger"] move position center
-#for_window [instance="ranger"] move scratchpad
-#for_window [instance="ranger"] border pixel 5
-#exec --no-startup-id urxvt -name ranger -e ranger
-#bindsym $mod+u [instance="ranger"] scratchpad show;
+for_window [instance="dropdown_*"] floating enable
+for_window [instance="dropdown_*"] move scratchpad
+for_window [instance="dropdown_*"] sticky enable
+for_window [instance="dropdown_*"] scratchpad show
+for_window [instance="dropdown_*"] border pixel 5
+for_window [instance="dropdown_qalc"] resize set 1000 1000
+for_window [instance="dropdown_ranger"] resize set 2000 1500
+for_window [instance="dropdown_*"] move position center
 
-for_window [instance="qalc"] floating enable
-for_window [instance="qalc"] sticky enable
-for_window [instance="qalc"] move position center
-for_window [instance="qalc"] border pixel 5
+bindsym $mod+c exec --no-startup-id ~/.config/i3/scripts/ddspawn qalc -fn 'xft:"Inconsolata Nerd Font Mono":pixelsize=50'
+bindsym $mod+v exec --no-startup-id ~/.config/i3/scripts/ddspawn ranger
 
 #
 #}}}
