@@ -172,3 +172,5 @@ alias d-laptop="xrandr --output eDP1 --auto --primary --output DP1 --off && set-
 # LG - 3840x2160
 alias d-dual="xrandr --output eDP1 --auto --output DP1 --auto --panning 3200x1800+3200+0 --scale 1x1 --right-of eDP1 && set-wallpaper"
 alias d-monitor="xrandr --output DP1 --auto --primary --panning 0x0 --scale 1x1 --output eDP1 --off && set-wallpaper"
+
+alias fix-sound='pulseaudio -k && pavucontrol'
