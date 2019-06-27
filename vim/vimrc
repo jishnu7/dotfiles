@@ -162,6 +162,9 @@ nnoremap <C-p> :call FzfOmniFiles()<CR>
 " Commands{{{
 " Save read-only files
 " command Sudow w !sudo tee % >/dev/null " with eunuch.vim this is not needed
+
+" CDC = Change to Directory of Current file
+command CDC cd %:p:h
 "}}}
 
 " Plugin Configs {{{

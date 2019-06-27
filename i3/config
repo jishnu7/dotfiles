@@ -116,6 +116,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 bindsym $mod+q workspace back_and_forth
+bindsym $mod+Tab workspace back_and_forth
 
 # multi-monitor
 bindsym $mod+o move workspace to output right
@@ -270,7 +271,7 @@ bindsym $mod+Shift+d exec rofi -show window
 # Paste from clipboard like a human being types
 bindsym --release $mod+p exec sleep 1 && xdotool type --clearmodifiers `xclip -selection c -out`
 
-bindsym $mod+Shift+x exec xautolock -locknow
+bindsym $mod+Shift+x exec --no-startup-id xautolock -locknow
 bindsym $mod+Shift+s exec setxkbmap -option caps:swapescape
 exec --no-startup-id "xautolock -time 5 -locker \\"~/.config/i3/scripts/lock.sh\\" -notify 10 -notifier \"notify-send -u normal -- 'Locking Screen'\" -corners -000 -detectsleep"
 
@@ -282,12 +283,15 @@ for_window [instance="dropdown_*"] move scratchpad
 for_window [instance="dropdown_*"] sticky enable
 for_window [instance="dropdown_*"] scratchpad show
 for_window [instance="dropdown_*"] border pixel 5
+for_window [instance="dropdown_tmux"] resize set 1500 1000
 for_window [instance="dropdown_qalc"] resize set 1000 1000
 for_window [instance="dropdown_ranger"] resize set 2000 1500
 for_window [instance="dropdown_*"] move position center
 
-bindsym $mod+c exec --no-startup-id ~/.config/i3/scripts/ddspawn qalc -fn 'xft:"Inconsolata Nerd Font Mono":pixelsize=50'
-bindsym $mod+v exec --no-startup-id ~/.config/i3/scripts/ddspawn ranger
+bindsym $mod+z exec --no-startup-id ~/.local/bin/ddspawn tmux
+bindsym $mod+c exec --no-startup-id ~/.local/bin/ddspawn qalc -fn 'xft:"Inconsolata Nerd Font Mono":pixelsize=50'
+bindsym $mod+v exec --no-startup-id ~/.local/bin/ddspawn ranger
 
+bindsym $mod+n exec --no-startup-id ~/.local/bin/ddspawn ~/.local/bin/notes.sh
 #
 #}}}
