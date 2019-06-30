@@ -79,8 +79,11 @@ let g:netrw_liststyle=3
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
-"set background=light
-set background=dark
+if has('gui_running')
+  set background=light
+else
+  set background=dark
+endif
 let g:solarized_termtrans=1
 let g:solarized_termcolors=256
 "let g:solarized_contrast="high"
@@ -109,7 +112,7 @@ set backupcopy=yes
 set foldmethod=marker
 
 " FileType based settings
-autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab foldlevel=1
+autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 "autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType scss setlocal ts=2 sts=2 sw=2 expandtab
@@ -117,6 +120,13 @@ autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType less setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType php setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType xml setlocal ts=2 sts=2 sw=2 expandtab
+
+" GVim options
+set guioptions-=m  "remove menu bar
+set guioptions-=T  "remove toolbar
+set guioptions-=r  "remove right-hand scroll bar
+set guioptions-=L  "remove left-hand scroll bar
+
 "}}}
 
 " KeyMaps{{{
@@ -179,8 +189,14 @@ hi link EasyMotionTarget ErrorMsg
 hi link EasyMotionShade  Comment
 
 " airline
+if has('gui_running')
+  let g:airline_theme="solarized"
+else
+  let g:airline_theme="murmur"
+endif
+
 let g:airline_powerline_fonts=1
-let g:airline_theme="murmur"
+"let g:airline_solarized_bg="dark"
 let g:bufferline_echo = 0
 let g:airline#extensions#tabline#enabled = 1
 
@@ -217,12 +233,28 @@ call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
 call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 
 " vim-javascript
-augroup javascript_folding
-  au!
-  au FileType javascript setlocal foldmethod=syntax
-augroup END
+"augroup javascript_folding
+"  au!
+"  au FileType javascript setlocal foldmethod=syntax
+"augroup END
 
 let b:ale_fixers = {'javascript': ['eslint']}
+
+" Limelight
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+
+" Goyo
+function! s:goyo_enter()
+  set noshowmode
+  set noshowcmd
+  set scrolloff=999
+  " reverse of previous autocmd
+  autocmd InsertEnter * :set nonu
+  autocmd InsertLeave * :set nornu nonu
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
 
 " ctrlp
 "let g:ctrlp_custom_ignore = {

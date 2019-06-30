@@ -16,5 +16,8 @@ then
 	i3 "[instance=\"dropdown_$script\"] scratchpad show; [instance=\"dropdown_$script\"] move position center"
 else
 	echo "Window not detected... spawning."
-	i3 "exec --no-startup-id urxvt -depth 32 -bg rgba:0000/4300/5400/dddd -name dropdown_$script $@ -e $script"
+	i3 "exec --no-startup-id $@ -name dropdown_$script"
+	# hack for gvim to work.
+	sleep 1
+	i3 "[instance=\"dropdown_$script\"] resize set 1300 1300; [instance=\"dropdown_$script\"] move position center"
 fi

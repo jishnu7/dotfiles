@@ -286,12 +286,12 @@ for_window [instance="dropdown_*"] border pixel 5
 for_window [instance="dropdown_tmux"] resize set 1500 1000
 for_window [instance="dropdown_qalc"] resize set 1000 1000
 for_window [instance="dropdown_ranger"] resize set 2000 1500
-for_window [instance="dropdown_notes.sh"] resize set 1300 1300
+for_window [instance="dropdown_notes"] resize set 1300 1300
 for_window [instance="dropdown_*"] move position center
 
 bindsym $mod+z exec --no-startup-id ~/.local/bin/ddspawn tmux
 bindsym $mod+c exec --no-startup-id ~/.local/bin/ddspawn qalc -fn 'xft:"Inconsolata Nerd Font Mono":pixelsize=50'
 bindsym $mod+v exec --no-startup-id ~/.local/bin/ddspawn ranger
-bindsym $mod+n exec --no-startup-id ~/.local/bin/ddspawn notes.sh
+bindsym $mod+n exec --no-startup-id ~/.local/bin/ddspawnapp notes gvim +Goyo +CDC ~/git/notes/readme.md
 #
 #}}}
