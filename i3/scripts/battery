@@ -24,7 +24,6 @@ my $status;
 my $percent;
 my $full_text;
 my $short_text;
-my $status_text;
 my $icon;
 my $color;
 my $bat_number = $ENV{BLOCK_INSTANCE} || 0;
@@ -42,26 +41,40 @@ if ($acpi !~ /state: (\w+) percentage: (\d+)%/) {
 $status = $1;
 $percent = $2;
 
-if ($percent < 20) {
-	$icon = "";
-	$color = "#FF0000";
+if ($percent < 10) {
+	$icon = "";
+  $color = "#FF0000";
+} elsif ($percent < 20) {
+	$icon = "";
+  $color = "#FFAE00";
 } elsif ($percent < 30) {
-	$icon = "";
-	$color = "#FFAE00";
+	$icon = "";
+  $color = "#FFF600";
+} elsif ($percent < 40) {
+	$icon = "";
+  $color = "#FFF600";
+} elsif ($percent < 50) {
+	$icon = "";
+  $color = "#FFF600";
 } elsif ($percent < 60) {
-	$icon = "";
-	$color = "#FFF600";
-} elsif ($percent < 85) {
-	$icon = "";
-	$color = "#A8FF00";
+	$icon = "";
+  $color = "#A8FF00";
+} elsif ($percent < 70) {
+	$icon = "";
+  $color = "#A8FF00";
+} elsif ($percent < 80) {
+	$icon = "";
+  $color = "#A8FF00";
+} elsif ($percent < 90) {
+	$icon = "";
+  $color = "#A8FF00";
 } else {
-	$icon = "";
-	$color = "#A8FF00";
+	$icon = "";
+  $color = "#A8FF00";
 }
 
-$status_text = '';
 if ($status eq 'charging') {
-	$status_text = ' ⚡';
+	$icon = '';
 }
 
 $full_text = "$percent%";
@@ -75,14 +88,8 @@ if ($acpi =~ /(\d\d:\d\d):/) {
 # to print utf-8
 use open ':std', ':encoding(UTF-8)';
 
-print "$icon $status_text $full_text\n";
+print "$icon $full_text\n";
 print "$short_text\n";
-
-if ($status eq 'Discharging') {
-	print "$color\n";
-	if ($percent < 5) {
-		exit(33);
-	}
-}
+print "$color\n";
 
 exit(0);
