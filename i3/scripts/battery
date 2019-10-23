@@ -1,9 +1,11 @@
 #!/usr/bin/perl
 #
+# UPower Script
+# Copyright 2017-19 Jishnu Mohan <jishnu7@gmail.com>
+#
+# Original ACPI Script by
 # Copyright 2014 Pierre Mavro <deimos@deimos.fr>
 # Copyright 2014 Vivien Didelot <vivien@didelot.org>
-# Copyright 2017 Jishnu Mohan <jishnu7@gmail.com>
-#
 # Licensed under the terms of the GNU GPL v3, or any later version.
 #
 # This script is meant to use with i3blocks. It parses the output of the "acpi"
@@ -28,12 +30,12 @@ my $color;
 my $bat_number = $ENV{BLOCK_INSTANCE} || 0;
 
 # read the first line of the "acpi" command output
-open (ACPI, "acpi -b | grep 'Battery $bat_number' |") or die;
+open (ACPI, "upower --show-info /org/freedesktop/UPower/devices/battery_BAT$bat_number | egrep 'state|percentage' | xargs |") or die;
 $acpi = <ACPI>;
 close(ACPI);
 
 # fail on unexpected output
-if ($acpi !~ /: (\w+), (\d+)%/) {
+if ($acpi !~ /state: (\w+) percentage: (\d+)%/) {
 	die "$acpi\n";
 }
 
@@ -57,9 +59,8 @@ if ($percent < 20) {
 	$color = "#A8FF00";
 }
 
-if ($status eq 'Discharging') {
-	$status_text = '';
-} elsif ($status eq 'Charging') {
+$status_text = '';
+if ($status eq 'charging') {
 	$status_text = ' ⚡';
 }
 
