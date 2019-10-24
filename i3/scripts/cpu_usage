@@ -45,7 +45,7 @@ close(MPSTAT);
 $cpu_usage eq -1 and die 'Can\'t find CPU information';
 
 # Print short_text, full_text
-printf "%d%%\n", $cpu_usage;
+printf "$ENV{'icon'} %d%%\n", $cpu_usage;
 printf "%d%%\n", $cpu_usage;
 
 # Print color, if needed
