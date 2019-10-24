@@ -48,41 +48,41 @@ if ($acpi =~ /state: (\w+) time to (\w+): (\d+.\d+ \w+) percentage: (\d+)%/) {
 }
 
 if ($percent < 10) {
-	$icon = "";
+  $icon = "";
   $color = "#FF0000";
 } elsif ($percent < 20) {
-	$icon = "";
+  $icon = "";
   $color = "#FFAE00";
 } elsif ($percent < 30) {
-	$icon = "";
+  $icon = "";
   $color = "#FFF600";
 } elsif ($percent < 40) {
-	$icon = "";
+  $icon = "";
   $color = "#FFF600";
 } elsif ($percent < 50) {
-	$icon = "";
+  $icon = "";
   $color = "#FFF600";
 } elsif ($percent < 60) {
-	$icon = "";
+  $icon = "";
   $color = "#A8FF00";
 } elsif ($percent < 70) {
-	$icon = "";
+  $icon = "";
   $color = "#A8FF00";
 } elsif ($percent < 80) {
-	$icon = "";
+  $icon = "";
   $color = "#A8FF00";
 } elsif ($percent < 90) {
-	$icon = "";
+  $icon = "";
   $color = "#A8FF00";
 } else {
-	$icon = "";
+  $icon = "";
   $color = "#A8FF00";
 }
 
 if ($status eq 'charging') {
-	$icon = '';
+  $icon = '';
 } elsif ($status eq 'fully-charged') {
-	$icon = '';
+  $icon = '';
 }
 
 $full_text = "$percent% $timeleft";
