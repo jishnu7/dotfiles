@@ -34,13 +34,18 @@ $acpi = <ACPI>;
 close(ACPI);
 
 # fail on unexpected output
-if ($acpi !~ /state: (\w+) time to (\w+): (\d+.\d+ \w+) percentage: (\d+)%/) {
-	die "$acpi\n";
+if ($acpi =~ /state: (\w+) time to (\w+): (\d+.\d+ \w+) percentage: (\d+)%/) {
+  $status = $1;
+  $timeleft = $3;
+  $percent = $4;
+} elsif ($acpi =~ /state: (\w+-\w+) percentage: (\d+)%/) {
+  # Condition for fully charged
+  $status = $1;
+  $timeleft = "";
+  $percent = $2;
+} else {
+  die "$acpi\n";
 }
-
-$status = $1;
-$timeleft = $3;
-$percent = $4;
 
 if ($percent < 10) {
 	$icon = "";
