@@ -26,20 +26,21 @@ my $full_text;
 my $short_text;
 my $icon;
 my $color;
+my $timeleft;
 my $bat_number = $ENV{BLOCK_INSTANCE} || 0;
 
-# read the first line of the "acpi" command output
-open (ACPI, "upower --show-info /org/freedesktop/UPower/devices/battery_BAT$bat_number | egrep 'state|percentage' | xargs |") or die;
+open (ACPI, "upower --show-info /org/freedesktop/UPower/devices/battery_BAT$bat_number | egrep 'state|percentage|time to empty|time to full' | xargs |") or die;
 $acpi = <ACPI>;
 close(ACPI);
 
 # fail on unexpected output
-if ($acpi !~ /state: (\w+) percentage: (\d+)%/) {
+if ($acpi !~ /state: (\w+) time to (\w+): (\d+.\d+ \w+) percentage: (\d+)%/) {
 	die "$acpi\n";
 }
 
 $status = $1;
-$percent = $2;
+$timeleft = $3;
+$percent = $4;
 
 if ($percent < 10) {
 	$icon = "";
@@ -74,16 +75,14 @@ if ($percent < 10) {
 }
 
 if ($status eq 'charging') {
+	$icon = '';
+} elsif ($status eq 'fully-charged') {
 	$icon = '';
 }
 
-$full_text = "$percent%";
+$full_text = "$percent% $timeleft";
 
 $short_text = $full_text;
-
-if ($acpi =~ /(\d\d:\d\d):/) {
-	$full_text .= " $1";
-}
 
 # to print utf-8
 use open ':std', ':encoding(UTF-8)';
