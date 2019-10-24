@@ -24,7 +24,7 @@ esac
 df -h -P -l "$DIR" | awk -v alert_low=$ALERT_LOW '
 /\/.*/ {
 	# full text
-  printf(" ", $5)
+	printf(" ", $5)
 
 	# short text
 	print $5
