@@ -178,3 +178,7 @@ alias d-dual="xrandr --output eDP1 --auto --output DP1 --auto --left-of eDP1 && 
 alias d-monitor="xrandr --output DP1 --auto --primary --output eDP1 --off && set-wallpaper"
 
 alias fix-sound='pulseaudio -k && pavucontrol'
+alias fix-display="sleep 5; xrandr --output eDP1 --auto -d :0"
+
+alias wiki='ddgr --gb --np \!w'
+alias ddgr='ddgr --colors bjdxxy -r in-en'

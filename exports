@@ -25,6 +25,7 @@ export NDK_HOME=~/android/android-ndk
 export ANDROID_NDK=~/android/android-ndk
 export ANDROID_NDK_ROOT=~/android/android-ndk
 export ANDROID_NDK_HOME=~/android/android-ndk
+export REACT_EDITOR=gedit
 
 # 8 stinking colors, huh ?
 [ "$TERM" '==' "xterm" ] && export TERM=xterm-256color

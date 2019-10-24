@@ -30,6 +30,7 @@ Plug 'tpope/vim-eunuch'
 "Plug 'w0rp/ale'
 Plug '/usr/bin/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/limelight.vim'
 call plug#end()
 "}}}
 
