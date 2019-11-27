@@ -1,0 +1,27 @@
+shell 
+shell ls
+ls
+e
+e!
+search search
+search janvi
+rename handmobile.mp4
+search Documents
+search git
+search twic
+search Document
+search ta
+search tax
+set colorscheme jungle
+set colorscheme default
+open_with vim
+find il
+rename 
+find note
+gedit
+open_with gedit
+open_with gedit f
+set colorscheme solarized
+open_with vlc
+
+delete
