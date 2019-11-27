@@ -68,5 +68,10 @@
         "url": "https://pro.coinbase.com/trade/BTC-USD",
         "title": "gdax",
         "baseDomain": "gdax.com"
+    },
+    {
+        "url": "https://play.pocketcasts.com/podcasts",
+        "title": "Pocket Casts",
+        "baseDomain": "pocketcasts.com"
     }
 ]

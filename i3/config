@@ -163,6 +163,7 @@ assign [class="Nautilus"] $ws4
 assign [class="Deluge"] $ws6
 assign [class="Hexchat"] $ws9
 assign [class="TelegramDesktop"] $ws9
+assign [class="Slack"] $ws9
 assign [title="Fractal"] $ws9
 assign [class="Geary"] $ws10
 assign [class="Lollypop"] $ws7
@@ -172,7 +173,7 @@ assign [class="Gnucash"] $ws8
 assign [class="Thunderbird"] $ws10
 for_window [class="Pavucontrol"] floating enable
 for_window [title="Android Emulator*"] floating enable
-for_window [title="Google Keep"] floating enable
+#for_window [title="Google Keep"] floating enable
 for_window [title="Nexus 6P"] floating enable
 for_window [title="Vysor"] floating enable
 for_window [title="Cherry Tomato Clock"] floating enable sticky enable
@@ -211,7 +212,7 @@ exec --no-startup-id kdeconnect-indicator
 #exec --no-startup-id blueberry-tray
 #exec --no-startup-id hamter
 #exec --no-startup-id mullvad-vpn
-exec_always --no-startup-id compton
+exec_always --no-startup-id picom
 
 # Clipboard manager
 exec --no-startup-id parcellite
