@@ -277,7 +277,7 @@ bindsym $mod+d exec rofi -show run
 bindsym $mod+Shift+d exec rofi -show window
 
 # Paste from clipboard like a human being types
-bindsym --release $mod+p exec sleep 1 && xdotool type --clearmodifiers `xclip -selection c -out`
+bindsym --release $mod+p exec sleep 1 && xdotool type --clearmodifiers -- `xclip -selection c -out`
 
 bindsym $mod+Shift+x exec --no-startup-id xautolock -locknow
 bindsym $mod+Shift+s exec --no-startup-id setxkbmap -option caps:swapescape
