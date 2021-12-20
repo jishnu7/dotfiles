@@ -4,14 +4,12 @@ git submodule init
 git submodule update
 
 #bash
-rm -f ~/.bashrc
-ln -s $PWD/bash/bashrc ~/.bashrc
+#rm -f ~/.bashrc
+#ln -s $PWD/bash/bashrc ~/.bashrc
 
 #zsh
 rm -f ~/.zshrc
-rm -f ~/.zlogin
 ln -s $PWD/zsh/zshrc ~/.zshrc
-ln -s $PWD/zsh/zlogin ~/.zlogin
 
 #git
 rm -f ~/.gitconfig
@@ -22,8 +20,8 @@ rm -f ~/.npmrc
 ln -s $PWD/npmrc ~/.npmrc
 
 #debian
-rm -f ~/.quiltrc-dpkg
-ln -s $PWD/debian/quiltrc-dpkg ~/.quiltrc-dpkg
+#rm -f ~/.quiltrc-dpkg
+#ln -s $PWD/debian/quiltrc-dpkg ~/.quiltrc-dpkg
 
 #vim
 rm -f ~/.vimrc
@@ -32,20 +30,22 @@ ln -s $PWD/vim/vimrc ~/.vimrc
 ln -s $PWD/vim ~/.vim
 
 #mpd & ncmpcpp
-mkdir -p ~/.mpd ~/.ncmpcpp
-rm -f ~/.mpd/mpd.conf
-ln -s $PWD/mpd/mpd.conf ~/.mpd/mpd.conf
-rm -f ~/.ncmpcpp/config
-ln -s $PWD/mpd/ncmpcpp.config ~/.ncmpcpp/config
+#mkdir -p ~/.mpd ~/.ncmpcpp
+#rm -f ~/.mpd/mpd.conf
+#ln -s $PWD/mpd/mpd.conf ~/.mpd/mpd.conf
+#rm -f ~/.ncmpcpp/config
+#ln -s $PWD/mpd/ncmpcpp.config ~/.ncmpcpp/config
 
 #awesome & xinit
-mkdir -p ~/.config
-rm -rf ~/.xinitrc
-rm -rf ~/.Xresources
-rm -rf ~/.config/awesome
-ln -s $PWD/xinitrc ~/.xinitrc
-ln -s $PWD/Xresources ~/.Xresources
-ln -s $PWD/awesome ~/.config/awesome
+#rm -f ~/.zlogin
+#ln -s $PWD/zsh/zlogin ~/.zlogin
+#mkdir -p ~/.config
+#rm -rf ~/.xinitrc
+#rm -rf ~/.Xresources
+#rm -rf ~/.config/awesome
+#ln -s $PWD/xinitrc ~/.xinitrc
+#ln -s $PWD/Xresources ~/.Xresources
+#ln -s $PWD/awesome ~/.config/awesome
 
 #tmux
 rm -rf ~/.tmux.conf
