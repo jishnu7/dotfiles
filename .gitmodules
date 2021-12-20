@@ -22,3 +22,6 @@
 [submodule "zsh/zsh-autosuggestions"]
 	path = zsh/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule "gnome-terminal/dircolors-solarized"]
+	path = gnome-terminal/dircolors-solarized
+	url = https://github.com/seebi/dircolors-solarized.git
