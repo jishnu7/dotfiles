@@ -17,6 +17,7 @@ ln -s $PWD/zsh/p10k.zsh ~/.p10k.zsh
 # Add OhMyZsh plugins
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 #git
 rm -f ~/.gitconfig
@@ -72,5 +73,5 @@ ln -s $PWD/dircolors/dircolors.ansi-dark ~/.dircolors
 touch ~/.hushlogin
 # Packages
 brew install --cask iterm2 numi keyman
-brew install tmux
+brew install tmux wget
 brew install --cask homebrew/cask-fonts/font-inconsolata-for-powerline
