@@ -35,6 +35,7 @@ rm -f ~/.vimrc
 rm -rf ~/.vim
 ln -s $PWD/vim/vimrc ~/.vimrc
 ln -s $PWD/vim ~/.vim
+vim +'PlugInstall --sync' +qa
 
 #mpd & ncmpcpp
 #mkdir -p ~/.mpd ~/.ncmpcpp
