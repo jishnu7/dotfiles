@@ -64,3 +64,7 @@ ln -s $PWD/dircolors/dircolors.ansi-dark ~/.dircolors
 
 # Arch Packages
 #sudo pacman -S ttf-meslo-nerd-font-powerlevel10k nodejs tmux
+
+# MacOS
+# Disabled 'last login' greeter
+touch ~/.hushlogin

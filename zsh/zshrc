@@ -46,9 +46,10 @@ precmd () (
     echo -ne '\a'
 )
 
-if [ -f $DOTFILES_GIT/zsh/bash_greeter.sh ]; then
-    . $DOTFILES_GIT/zsh/bash_greeter.sh
-fi
+# greeter with disk usage and uptime info
+#if [ -f $DOTFILES_GIT/zsh/bash_greeter.sh ]; then
+#    . $DOTFILES_GIT/zsh/bash_greeter.sh
+#fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
