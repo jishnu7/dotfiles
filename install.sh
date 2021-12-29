@@ -2,6 +2,7 @@ PWD=$(pwd)
 
 git submodule init
 git submodule update
+touch secrets
 
 #bash
 #rm -f ~/.bashrc
@@ -10,10 +11,12 @@ git submodule update
 #zsh
 rm -f ~/.zshrc
 ln -s $PWD/zsh/zshrc ~/.zshrc
+ln -s $PWD/zsh/oh-my-zsh ~/.oh-my-zsh
+ln -s $PWD/zsh/p10k.zsh ~/.p10k.zsh
 
 # Add OhMyZsh plugins
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 #git
 rm -f ~/.gitconfig
@@ -60,4 +63,4 @@ rm -rf ~/.dircolors
 ln -s $PWD/dircolors/dircolors.ansi-dark ~/.dircolors
 
 # Arch Packages
-sudo pacman -S ttf-meslo-nerd-font-powerlevel10k nodejs tmux
+#sudo pacman -S ttf-meslo-nerd-font-powerlevel10k nodejs tmux
