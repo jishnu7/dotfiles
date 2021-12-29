@@ -1,7 +1,6 @@
 " Plugins {{{
 call plug#begin()
 Plug 'docunext/closetag.vim', { 'for': ['html', 'javascript', 'xhtml', 'xml', 'htmldjango', 'jinjahtml', 'eruby'] }
-"Plug 'altercation/vim-colors-solarized'
 "Plug 'kien/ctrlp.vim'
 Plug 'ciaranm/detectindent'
 Plug 'Lokaltog/vim-easymotion'
@@ -31,7 +30,8 @@ Plug 'tpope/vim-eunuch'
 Plug '/usr/bin/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'arcticicestudio/nord-vim'
+"Plug 'arcticicestudio/nord-vim'
+Plug 'altercation/vim-colors-solarized'
 call plug#end()
 "}}}
 
@@ -88,9 +88,9 @@ else
 endif
 let g:solarized_termtrans=1
 let g:solarized_termcolors=256
-"let g:solarized_contrast="high"
-"let g:solarized_visibility="high"
-colorscheme nord
+let g:solarized_contrast="high"
+let g:solarized_visibility="high"
+colorscheme solarized
 
 filetype off
 filetype plugin on

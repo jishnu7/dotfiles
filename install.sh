@@ -11,6 +11,10 @@ git submodule update
 rm -f ~/.zshrc
 ln -s $PWD/zsh/zshrc ~/.zshrc
 
+# Add OhMyZsh plugins
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
 #git
 rm -f ~/.gitconfig
 ln -s $PWD/git/gitconfig ~/.gitconfig
@@ -54,3 +58,6 @@ ln -s $PWD/tmux.conf ~/.tmux.conf
 #dircolors
 rm -rf ~/.dircolors
 ln -s $PWD/dircolors/dircolors.ansi-dark ~/.dircolors
+
+# Arch Packages
+sudo pacman -S ttf-meslo-nerd-font-powerlevel10k nodejs tmux
