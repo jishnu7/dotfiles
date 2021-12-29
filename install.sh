@@ -57,6 +57,7 @@ ln -s $PWD/vim ~/.vim
 #tmux
 rm -rf ~/.tmux.conf
 ln -s $PWD/tmux.conf ~/.tmux.conf
+ln -s $PWD/tmux ~/.tmux
 
 #dircolors
 rm -rf ~/.dircolors
@@ -68,3 +69,7 @@ ln -s $PWD/dircolors/dircolors.ansi-dark ~/.dircolors
 # MacOS
 # Disabled 'last login' greeter
 touch ~/.hushlogin
+# Packages
+brew install --cask iterm2 numi keyman
+brew install tmux
+brew install --cask homebrew/cask-fonts/font-inconsolata-for-powerline
