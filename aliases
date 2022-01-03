@@ -181,3 +181,5 @@ alias fix-display="sleep 5; xrandr --output eDP1 --auto -d :0"
 
 alias wiki='ddgr --gb --np \!w'
 alias ddgr='ddgr --colors bjdxxy -r in-en'
+
+alias commit_gnucash='cd ~/git/gnucash/ && git add -u && git commit -m "`date +"%d %b"`" && git push origin master'
