@@ -87,9 +87,9 @@ else
   set background=dark
 endif
 let g:solarized_termtrans=1
-let g:solarized_termcolors=256
-let g:solarized_contrast="high"
-let g:solarized_visibility="high"
+"let g:solarized_termcolors=256
+"let g:solarized_contrast="high"
+"let g:solarized_visibility="high"
 colorscheme solarized
 
 filetype off
@@ -191,14 +191,10 @@ hi link EasyMotionTarget ErrorMsg
 hi link EasyMotionShade  Comment
 
 " airline
-if has('gui_running')
-  let g:airline_theme="solarized"
-else
-  let g:airline_theme="murmur"
-endif
+let g:airline_theme="solarized"
 
 let g:airline_powerline_fonts=1
-"let g:airline_solarized_bg="dark"
+let g:airline_solarized_bg="dark"
 let g:bufferline_echo = 0
 let g:airline#extensions#tabline#enabled = 1
 

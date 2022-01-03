@@ -17,7 +17,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 DEFAULT_USER="jishnu"
 DISABLE_AUTO_TITLE="true"
 
-plugins=(git archlinux systemd urltools zsh-syntax-highlighting command-not-found history-substring-search web-search)
+# Arch
+#plugins=(git archlinux systemd urltools zsh-syntax-highlighting command-not-found history-substring-search web-search zsh-autosuggestions)
+# MacOS
+plugins=(git urltools zsh-syntax-highlighting command-not-found history-substring-search zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
