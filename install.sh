@@ -73,5 +73,5 @@ ln -s $PWD/dircolors/dircolors.ansi-dark ~/.dircolors
 touch ~/.hushlogin
 # Packages
 brew install --cask iterm2 numi keyman dozer rectangle libreoffice
-brew install tmux wget
+brew install tmux wget htop tree
 brew install --cask homebrew/cask-fonts/font-inconsolata-for-powerline
