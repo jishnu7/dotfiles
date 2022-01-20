@@ -141,9 +141,9 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
-" Buffers - next/previous: F12, Shift-F12.
+" Buffers - next/previous: F12, F10.
 nnoremap <silent> <F12> :bn<CR>
-nnoremap <silent> <F11> :bp<CR>
+nnoremap <silent> <F10> :bp<CR>
 nnoremap <Leader>b :ls<CR>
 nnoremap <Leader>1 :1b<CR>
 nnoremap <Leader>2 :2b<CR>
@@ -254,6 +254,11 @@ endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 
+" Empty value to disable preview window altogether
+let g:fzf_preview_window = []
+" [Buffers] Jump to the existing window if possible
+let g:fzf_buffers_jump = 1
+
 " ctrlp
 "let g:ctrlp_custom_ignore = {
     "\ 'dir':  '\.git$\|bower_components$\|dist$\|node_modules$\|build$\|coverage$',
@@ -276,7 +281,7 @@ endfunction
 fun! FzfOmniFiles()
   let is_git = system('git status')
   if v:shell_error
-    :Files
+    :Files ./
   else
     :GitFiles
   endif
