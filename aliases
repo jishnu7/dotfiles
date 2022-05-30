@@ -85,7 +85,10 @@ alias server='python3 -m http.server'
 alias emulator-jb="emulator -avd 42 -partition-size 300 -system ~/.android/avd/42.avd/system.img"
 alias virtualbox-load="sudo modprobe vboxdrv" # vboxnetflt"
 
-alias open="xdg-open"
+# Only for linux
+if [[ $CONFIG_OS == "Linux" ]]; then
+  alias open="xdg-open"
+fi
 
 # pastebin service
 alias pastebin="sprunge"

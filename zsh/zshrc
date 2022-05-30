@@ -5,6 +5,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Sets $CONFIG_OS
+case "$(uname -s)" in
+    Linux*)     CONFIG_OS=Linux;;
+    Darwin*)    CONFIG_OS=MacOS;;
+    *)          CONFIG_OS="Unknown"
+esac
+echo $CONFIG_OS
+
 DOTFILES_GIT=$HOME/git/dotfiles
 
 # Path to oh-my-zsh configuration.
@@ -17,10 +25,13 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 DEFAULT_USER="jishnu"
 DISABLE_AUTO_TITLE="true"
 
-# Arch
-#plugins=(git archlinux systemd urltools zsh-syntax-highlighting command-not-found history-substring-search web-search zsh-autosuggestions)
-# MacOS
-plugins=(git urltools zsh-syntax-highlighting command-not-found history-substring-search zsh-autosuggestions)
+if [[ $CONFIG_OS == "MacOS" ]]; then
+  # MacOS
+  plugins=(git urltools zsh-syntax-highlighting command-not-found history-substring-search zsh-autosuggestions)
+else
+  # Arch
+  plugins=(git archlinux systemd urltools zsh-syntax-highlighting command-not-found history-substring-search web-search zsh-autosuggestions)
+fi
 
 source $ZSH/oh-my-zsh.sh
 
