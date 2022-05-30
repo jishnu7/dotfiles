@@ -54,11 +54,8 @@ alias bashreload="source ~/.bashrc"
 alias fixfile="find ./ -type f -exec chmod 644 {} +"
 alias fixfolder="find ./ -type d -exec chmod 755 {} +"
 
-#debian packaging stuff
-alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
-
 #lamp in arch
-alias lampp="sudo systemctl restart httpd mysqld memcached"
+#alias lampp="sudo systemctl restart httpd mysqld memcached"
 
 #largest 50 files in folder
 alias largest="find . -type f -print0 | xargs -0 du -s | sort -n | tail -50 | cut -f2 | xargs -I{} du -sh {}"
@@ -71,14 +68,6 @@ alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias zshreload="source ~/.zshrc"
 
-# Start kate & gedit always silent
-alias kate='kate >/dev/null 2>&1'
-alias gedit='gedit >/dev/null 2>&1'
-
-# System
-alias hibernate="systemctl hibernate"
-alias suspend="systemctl suspend"
-
 # Python server
 alias server='python3 -m http.server'
 
@@ -87,18 +76,32 @@ alias virtualbox-load="sudo modprobe vboxdrv" # vboxnetflt"
 
 # Only for linux
 if [[ $CONFIG_OS == "Linux" ]]; then
+  #debian packaging stuff
+  alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
+
+  # Start kate & gedit always silent
+  alias kate='kate >/dev/null 2>&1'
+  alias gedit='gedit >/dev/null 2>&1'
+
+  # System
+  alias hibernate="systemctl hibernate"
+  alias suspend="systemctl suspend"
+
   alias open="xdg-open"
+
+  alias ftp-android="systemctl start proftpd"
+
+  # With grep
+  #alias mpd-kill="ps -ef | grep mpd | grep -v grep | awk '{print \$2}' | xargs kill -9"
+  # Without grep
+  alias mpd-kill="ps -ef | awk '/mpd/ && !/awk/ {print \$2}' | xargs kill -9"
+
+  alias wifi-scan='nmcli dev wifi list'
 fi
 
 # pastebin service
 alias pastebin="sprunge"
 
-alias ftp-android="systemctl start proftpd"
-
-# With grep
-#alias mpd-kill="ps -ef | grep mpd | grep -v grep | awk '{print \$2}' | xargs kill -9"
-# Without grep
-alias mpd-kill="ps -ef | awk '/mpd/ && !/awk/ {print \$2}' | xargs kill -9"
 
 # show public ip
 #alias ifconfig-pub="curl ifconfig.me"
@@ -111,8 +114,6 @@ alias ifconfig-pub4="curl ident.me; echo"
 alias tmux-reload="tmux source-file ~/.tmux.conf"
 
 alias bower='noglob bower'
-
-alias wifi-scan='nmcli dev wifi list'
 
 # vimpager is really slow!
 #export PAGER=/usr/bin/vimpager
@@ -138,13 +139,13 @@ if [ $SHELL = 'zsh' ]; then
 fi
 
 # gameclosure
-alias gc-timestep="cd modules/devkit-core/modules/timestep/src"
-alias gc-native-android="cd modules/devkit-core/modules/native-android"
-alias gc-native-inspector="node ~/git/gameclosure/nativeinspector/NativeInspector.js && chromium --app=http://localhost:9220"
+#alias gc-timestep="cd modules/devkit-core/modules/timestep/src"
+#alias gc-native-android="cd modules/devkit-core/modules/native-android"
+#alias gc-native-inspector="node ~/git/gameclosure/nativeinspector/NativeInspector.js && chromium --app=http://localhost:9220"
 
 # webapps
-alias keep="chromium '--profile-directory=Profile 1' --app-id=hmjkmjkepdijhoojdojkdfohbdgmmhki"
-alias vysor="/opt/google/chrome/google-chrome --profile-directory=Default --app-id=gidgenkbbabolejbgbpnhbimgjbffefm"
+#alias keep="chromium '--profile-directory=Profile 1' --app-id=hmjkmjkepdijhoojdojkdfohbdgmmhki"
+#alias vysor="/opt/google/chrome/google-chrome --profile-directory=Default --app-id=gidgenkbbabolejbgbpnhbimgjbffefm"
 
 #alias indiclog="adb logcat | grep `adb shell ps | grep in.androidtweak.inputmethod.indic | cut -c11-15`"
 #
@@ -163,7 +164,7 @@ alias tree='tree -I node_modules'
 
 alias icat="kitty +kitten icat"
 
-alias telegram="epiphany --application-mode --profile='/home/jishnu/.local/share/epiphany-telegram-web-866d24a5263992600b087f5cf3ec3dc149af748f' https://web.telegram.org/"
+#alias telegram="epiphany --application-mode --profile='/home/jishnu/.local/share/epiphany-telegram-web-866d24a5263992600b087f5cf3ec3dc149af748f' https://web.telegram.org/"
 #alias spotify="spotify --force-device-scale-factor=2"
 
 alias d-laptop="xrandr --output eDP1 --auto --primary --output DP1 --off && set-wallpaper"
