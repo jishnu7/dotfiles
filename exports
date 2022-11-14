@@ -29,6 +29,13 @@ export ANDROID_NDK_ROOT=~/android/android-ndk
 export ANDROID_NDK_HOME=~/android/android-ndk
 export REACT_EDITOR=gedit
 
+# Tizen
+export TIZEN_STUDIO="~/tizen/studio"
+export PATH=$PATH:$<TIZEN_STUDIO>/tools/tizen-core/
+export PATH=$PATH:$<TIZEN_STUDIO>/tools/
+export PATH=$PATH:$<TIZEN_STUDIO>/tools/ide/bin
+
+
 # 8 stinking colors, huh ?
 if [[ $CONFIG_OS == "Linux" ]]; then
   [ "$TERM" '==' "xterm" ] && export TERM=xterm-256color
