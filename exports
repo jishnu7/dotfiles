@@ -31,9 +31,9 @@ export REACT_EDITOR=gedit
 
 # Tizen
 export TIZEN_STUDIO="~/tizen/studio"
-export PATH=$PATH:$<TIZEN_STUDIO>/tools/tizen-core/
-export PATH=$PATH:$<TIZEN_STUDIO>/tools/
-export PATH=$PATH:$<TIZEN_STUDIO>/tools/ide/bin
+export PATH=$PATH:${TIZEN_STUDIO}/tools/tizen-core/
+export PATH=$PATH:${TIZEN_STUDIO}/tools/
+export PATH=$PATH:${TIZEN_STUDIO}/tools/ide/bin
 
 
 # 8 stinking colors, huh ?

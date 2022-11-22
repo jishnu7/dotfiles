@@ -69,9 +69,11 @@ ln -s $PWD/dircolors/dircolors.ansi-dark ~/.dircolors
 #sudo pacman -S ttf-meslo-nerd-font-powerlevel10k nodejs tmux
 
 # MacOS
-# Disabled 'last login' greeter
-touch ~/.hushlogin
-# Packages
-brew install --cask iterm2 numi keyman dozer rectangle libreoffice gimp inkscape
-brew install tmux wget htop tree fnm
-brew install --cask homebrew/cask-fonts/font-inconsolata-for-powerline
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  # Disabled 'last login' greeter
+  touch ~/.hushlogin
+  # Packages
+  brew install --cask iterm2 numi keyman dozer rectangle libreoffice gimp inkscape
+  brew install tmux wget htop tree fnm basictex
+  brew install --cask homebrew/cask-fonts/font-inconsolata-for-powerline
+fi
