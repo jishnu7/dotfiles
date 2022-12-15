@@ -12,11 +12,13 @@
 	ignore = !git update-index --assume-unchanged
 	unignore = !git update-index --no-assume-unchanged
 	ignored = !git ls-files -v | grep ^[a-z]
-	dc = !git diff --cached
+	dc = diff --cached
 	edit-unmerged = "!f() { git ls-files --unmerged ./ | cut -f2 | sort -u ; }; vim `f`"
 	edit-modified = "!f() { git ls-files --modified ./ | cut -f2 ; }; vim `f`"
 	contributors = !git shortlog -s -n
 	sl = "!git stash list | awk -F: '{ print $0; system(\"git stash show -p \" $1); }' -"
+	sb = status -sb
+	gp = "!git grep $1 -- ':!*.test.js' #"
 
 [push]
 	default = simple
