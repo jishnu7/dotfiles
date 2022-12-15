@@ -76,4 +76,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew install --cask iterm2 numi keyman dozer rectangle libreoffice gimp inkscape
   brew install tmux wget htop tree fnm basictex
   brew install --cask homebrew/cask-fonts/font-inconsolata-for-powerline
+  brew tap mongodb/brew && brew update
+  brew install mongodb-community@6.0
+  brew services start mongodb-community@6.0
 fi

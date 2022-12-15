@@ -15,6 +15,7 @@ export PATH=${PATH}:~/android/android-studio/bin
 export PATH=${PATH}:~/android/androgenizer
 export PATH=${PATH}:~/.bin
 export PATH=${PATH}:~/.npm-bin/bin
+export PATH=${PATH}:~/.npm/bin
 export PATH=${PATH}:~/.yarn/bin
 export PATH=${PATH}:~/.gem/ruby/2.6.0/bin
 export PATH=${PATH}:~/.local/bin

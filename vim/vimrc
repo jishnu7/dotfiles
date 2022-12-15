@@ -70,6 +70,7 @@ set incsearch
 set pastetoggle=<F2>
 
 syntax enable "syntax highlighting
+set re=0 "Use new regular expression engine. This will fix ts file load
 
 set wildmenu " Display all matching files when we tab complete
 "set path+=** "search subfolders
