@@ -9,19 +9,22 @@ Plug 'tpope/vim-surround'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-scripts/nextval'
-Plug 'olivierverdier/python-syntax.vim', { 'for': 'python'}
 Plug 'ervandew/supertab'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"Plug 'mxw/vim-jsx', { 'for': 'javascript' }
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-"Plug 'leafgarland/typescript-vim'
-Plug 'yuezk/vim-js'
 Plug 'HerringtonDarkholme/yats.vim'
+
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'yuezk/vim-js'
+Plug 'olivierverdier/python-syntax.vim', { 'for': 'python'}
+Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+"Plug 'mxw/vim-jsx', { 'for': 'javascript' }
+"Plug 'leafgarland/typescript-vim'
 "Plug 'groenewege/vim-less', { 'for': 'less' }
 "Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
-Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
+
 Plug 'airblade/vim-gitgutter'
 Plug 'gko/vim-coloresque'
 Plug 'ryanoasis/vim-devicons'
@@ -84,8 +87,8 @@ let g:netrw_banner=0
 let g:netrw_browse_split=4
 let g:netrw_altv=1
 let g:netrw_liststyle=3
-let g:netrw_list_hide=netrw_gitignore#Hide()
-let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
+"let g:netrw_list_hide=netrw_gitignore#Hide()
+"let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
 if has('gui_running')
   set background=light
@@ -130,6 +133,7 @@ autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType less setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType php setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType xml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType go setlocal ts=4 sts=4 sw=4 expandtab
 
 " GVim options
 set guioptions-=m  "remove menu bar
@@ -272,6 +276,20 @@ let g:fzf_buffers_jump = 1
     "\ 'dir':  '\.git$\|bower_components$\|dist$\|node_modules$\|build$\|coverage$',
     "\ 'file': '\.so$\|\.pyc$' }
 "}}}
+"
+" Vim-Go
+let g:go_highlight_operators = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_parameters = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_generate_tags = 1
+let g:go_highlight_variable_declarations = 1
+let g:go_highlight_variable_assignments = 1
+let g:go_fmt_autosave = 0
+let g:go_imports_autosave = 0
 
 " Functions {{{
 function! <SID>StripTrailingWhitespaces()
