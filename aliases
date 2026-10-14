@@ -187,3 +187,26 @@ alias wiki='ddgr --gb --np \!w'
 alias ddgr='ddgr --colors bjdxxy -r in-en'
 
 alias commit_gnucash='cd ~/git/gnucash/ && git add -u && git commit -m "`date +"%d %b"`" && git push origin master && cd -'
+
+setopt NO_NOMATCH
+askclaude() {
+  if [ -t 0 ]; then
+    claude -p "$*"
+  else
+    input=$(cat)
+    claude -p "$input
+  $*"
+    fi
+}
+alias '??'='askclaude'
+lastcmd() {
+  cmd=$(fc -ln -1)
+  eval "$cmd" | claude -p "$*"
+}
+alias '???'='lastcmd'
+
+alias vimu='{ git diff --name-only -z; git ls-files --others --exclude-standard -z; } | xargs -0 -o vim'
+alias vimp='pbpaste | vim -c "set paste" -'
+
+#workmux
+alias wm='workmux'

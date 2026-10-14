@@ -1,9 +1,15 @@
 [user]
 	email = jishnu7@gmail.com
 	name = Jishnu Mohan
+[core]
+	editor = vim
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+
 
 [includeIf "gitdir:~/git/"]
-  path = ~/.config/git/personal.config
+	path = ~/.config/git/personal.config
 
 [color]
 	ui = auto
@@ -14,27 +20,37 @@
 	unignore = !git update-index --no-assume-unchanged
 	ignored = !git ls-files -v | grep ^[a-z]
 	dc = diff --cached
-	edit-unmerged = "!f() { git ls-files --unmerged ./ | cut -f2 | sort -u ; }; vim `f`"
-	edit-modified = "!f() { git ls-files --modified ./ | cut -f2 ; }; vim `f`"
+	edit-unmerged = "!f() { git diff --name-only --diff-filter=U -z -- \"$@\" | xargs -r -0 vim; }; f"
+	edit-staged = "!f() { git diff --cached --name-only -z -- \"$@\" | xargs -r -0 vim; }; f"
+	edit-modified = "!f() { git ls-files --modified -z -- \"$@\" | xargs -r -0 vim; }; f"
 	contributors = !git shortlog -s -n
 	sl = "!git stash list | awk -F: '{ print $0; system(\"git stash show -p \" $1); }' -"
 	sb = status -sb
 	gp = "!git grep $1 -- ':!*.test.js' #"
+	pushall = "!f() { b=$(git branch --show-current); for r in $(git remote); do echo \"→ $r\"; git push \"$r\" \"$b\" \"$@\"; done; }; f"
+	rm-merged = "!git worktree prune && git branch --format='%(if)%(worktreepath)%(then)%(else)%(refname:short)%(end)' --merged HEAD | grep . | xargs -r -n 1 git branch -d"
+
 
 [push]
 	default = simple
 
-[diff]
-    tool = kitty
-    guitool = kitty.gui
-[difftool]
-    prompt = false
-    trustExitCode = true
-[difftool "kitty"]
-    cmd = kitty +kitten diff $LOCAL $REMOTE
-[difftool "kitty.gui"]
-    cmd = kitty kitty +kitten diff $LOCAL $REMOTE
-[core]
-	editor = vim
+#[diff]
+#	tool = kitty
+#	guitool = kitty.gui
+#[difftool]
+#	prompt = false
+#	trustExitCode = true
+#[difftool "kitty"]
+#	cmd = kitty +kitten diff $LOCAL $REMOTE
+#[difftool "kitty.gui"]
+#	cmd = kitty kitty +kitten diff $LOCAL $REMOTE
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[delta]
+	navigate = true  # use n and N to move between diff sections
+	dark = true      # or light = true, or omit for auto-detection
+	line-numbers = true
+  #side-by-side = true
+
+#[merge]
+  #conflictStyle = zdiff3
